@@ -1,0 +1,21 @@
+mode: production
+port: 8080
+
+database:
+  type: mysql
+  dsn: "user:password@tcp(127.0.0.1:3306)/yokai_zen?charset=utf8mb4&parseTime=True&loc=Local"
+
+project:
+  name: 禅妖山海行
+  team:
+    name: LingByte
+    org: LingByte Studio
+    members:
+      - developer
+
+log:
+  level: info
+  filename: logs/app.log
+  max_size: 500
+  max_age: 90
+  max_backups: 20

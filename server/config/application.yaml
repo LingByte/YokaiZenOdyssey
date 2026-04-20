@@ -1,0 +1,21 @@
+mode: development
+port: 8080
+
+database:
+  type: sqlite
+  dsn: "file::memory:"
+
+project:
+  name: 禅妖山海行
+  team:
+    name: LingByte
+    org: LingByte Studio
+    members:
+      - developer
+
+log:
+  level: debug
+  filename: logs/app.log
+  max_size: 200
+  max_age: 30
+  max_backups: 5

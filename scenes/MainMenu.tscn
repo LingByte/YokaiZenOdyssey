@@ -1,8 +1,8 @@
-[gd_scene load_steps=115 format=3 uid="uid://dk3y177gwfvsj"]
+[gd_scene format=3 uid="uid://dk3y177gwfvsj"]
 
 [ext_resource type="Script" uid="uid://gvjx1ty01oc5" path="res://scripts/MainMenu.gd" id="1_0tp18"]
 [ext_resource type="Texture2D" uid="uid://ecr6fijsp0lq" path="res://assets/game_begin_backrgound.png" id="2_7iseh"]
-[ext_resource type="Texture2D" uid="uid://dw3mjyny0w4gq" path="res://assets/Banner_Logo.png" id="3_fn0tp"]
+[ext_resource type="Texture2D" uid="uid://ro5gre2fjp3s" path="res://assets/Banner_Logo.png" id="3_fn0tp"]
 [ext_resource type="FontFile" uid="uid://cjwrhhp33sbrk" path="res://assets/ttf/FZSTK.TTF" id="4_7ovgv"]
 [ext_resource type="Texture2D" uid="uid://dqsrn4ukryd51" path="res://assets/button/button01.png" id="5_wjfkx"]
 [ext_resource type="Script" uid="uid://dd1dt46gifp6b" path="res://scripts/ui/newStartButton.gd" id="6_tf4bb"]
@@ -31,8 +31,8 @@
 [ext_resource type="Texture2D" uid="uid://cld8oybcmlh2y" path="res://assets/dialog/confirm_dialog.png" id="21_oy52w"]
 [ext_resource type="Script" uid="uid://r1lx4obicnfp" path="res://scripts/systems/SuccessDialog.gd" id="22_sr5ea"]
 [ext_resource type="Script" uid="uid://ihn1kb1k8vkx" path="res://scripts/ui/RegisterButton.gd" id="23_register"]
-[ext_resource type="Script" path="res://scripts/ui/SettingsPanel.gd" id="24_settings"]
-[ext_resource type="Script" path="res://scripts/ui/CharacterSelectPanel.gd" id="25_character"]
+[ext_resource type="Script" uid="uid://c28bnmkqs8m1k" path="res://scripts/ui/SettingsPanel.gd" id="24_settings"]
+[ext_resource type="Script" uid="uid://8l1oke17h8k" path="res://scripts/ui/CharacterSelectPanel.gd" id="25_character"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kcvos"]
 texture = ExtResource("5_wjfkx")
@@ -289,21 +289,21 @@ texture_margin_bottom = 4.0
 expand_margin_right = 5.0
 expand_margin_bottom = 2.0
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Node2D" unique_id=1897503096]
 script = ExtResource("1_0tp18")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." unique_id=1893791155]
 position = Vector2(640, 360)
 scale = Vector2(0.833333, 0.703125)
 texture = ExtResource("2_7iseh")
 metadata/_edit_lock_ = true
 
-[node name="GameIcon" type="Sprite2D" parent="."]
-position = Vector2(843, 114)
-scale = Vector2(0.788889, 0.770833)
+[node name="GameIcon" type="Sprite2D" parent="." unique_id=2067617143]
+position = Vector2(872.164, 100.36981)
+scale = Vector2(0.71304, 0.63772416)
 texture = ExtResource("3_fn0tp")
 
-[node name="StartGame" type="Button" parent="."]
+[node name="StartGame" type="Button" parent="." unique_id=845785385]
 offset_left = 986.0
 offset_top = 213.0
 offset_right = 1150.0
@@ -324,7 +324,7 @@ text = "新的开始"
 script = ExtResource("6_tf4bb")
 metadata/_edit_use_anchors_ = true
 
-[node name="SystemSet" type="Button" parent="."]
+[node name="SystemSet" type="Button" parent="." unique_id=479902723]
 offset_left = 988.0
 offset_top = 413.0
 offset_right = 1151.0
@@ -346,7 +346,7 @@ text = "设置"
 script = ExtResource("8_gk7bs")
 metadata/_edit_use_anchors_ = true
 
-[node name="GameExit" type="Button" parent="."]
+[node name="GameExit" type="Button" parent="." unique_id=1655130229]
 offset_left = 989.0
 offset_top = 526.0
 offset_right = 1151.0
@@ -368,7 +368,7 @@ text = "退出游戏"
 script = ExtResource("10_31igq")
 metadata/_edit_use_anchors_ = true
 
-[node name="LoadArchive" type="Button" parent="."]
+[node name="LoadArchive" type="Button" parent="." unique_id=765672776]
 offset_left = 989.0
 offset_top = 309.0
 offset_right = 1163.0
@@ -390,13 +390,13 @@ text = "读取存档"
 script = ExtResource("12_ruhar")
 metadata/_edit_use_anchors_ = true
 
-[node name="InputBlocker" type="ColorRect" parent="."]
+[node name="InputBlocker" type="ColorRect" parent="." unique_id=538008600]
 visible = false
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0, 0, 0, 0.184314)
 
-[node name="SaveSelectPanel" type="Panel" parent="."]
+[node name="SaveSelectPanel" type="Panel" parent="." unique_id=205787575]
 visible = false
 offset_left = 253.0
 offset_top = 83.0
@@ -404,14 +404,14 @@ offset_right = 1043.0
 offset_bottom = 652.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_uo2xn")
 
-[node name="SaveSlot1" type="Button" parent="SaveSelectPanel"]
+[node name="SaveSlot1" type="Button" parent="SaveSelectPanel" unique_id=760716654]
 layout_mode = 0
 offset_left = 75.0
 offset_top = 135.0
 offset_right = 377.0
 offset_bottom = 209.0
 
-[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot1"]
+[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot1" unique_id=759412775]
 layout_mode = 0
 offset_left = 109.0
 offset_top = 15.0
@@ -420,7 +420,7 @@ offset_bottom = 38.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "默认名字"
 
-[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot1"]
+[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot1" unique_id=812662470]
 layout_mode = 0
 offset_left = 110.0
 offset_top = 50.0
@@ -429,7 +429,7 @@ offset_bottom = 73.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "默认角色"
 
-[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot1"]
+[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot1" unique_id=1962443248]
 layout_mode = 0
 offset_left = 207.0
 offset_top = 49.0
@@ -438,7 +438,7 @@ offset_bottom = 72.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "Time"
 
-[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot1"]
+[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot1" unique_id=1490612386]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 7.0
@@ -446,19 +446,19 @@ offset_right = 103.0
 offset_bottom = 69.0
 texture = SubResource("ImageTexture_oe8y1")
 
-[node name="Numbers-1" type="Sprite2D" parent="SaveSelectPanel/SaveSlot1"]
+[node name="Numbers-1" type="Sprite2D" parent="SaveSelectPanel/SaveSlot1" unique_id=1276825606]
 position = Vector2(19.5, 38)
 scale = Vector2(1.15625, 1.125)
 texture = ExtResource("14_pl0ud")
 
-[node name="SaveSlot2" type="Button" parent="SaveSelectPanel"]
+[node name="SaveSlot2" type="Button" parent="SaveSelectPanel" unique_id=763619358]
 layout_mode = 0
 offset_left = 413.0
 offset_top = 135.0
 offset_right = 715.0
 offset_bottom = 209.0
 
-[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot2"]
+[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot2" unique_id=203297825]
 layout_mode = 0
 offset_left = 109.0
 offset_top = 15.0
@@ -467,7 +467,7 @@ offset_bottom = 38.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "默认名字"
 
-[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot2"]
+[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot2" unique_id=342708046]
 layout_mode = 0
 offset_left = 110.0
 offset_top = 50.0
@@ -476,7 +476,7 @@ offset_bottom = 73.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "默认角色"
 
-[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot2"]
+[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot2" unique_id=1703484154]
 layout_mode = 0
 offset_left = 207.0
 offset_top = 49.0
@@ -485,7 +485,7 @@ offset_bottom = 72.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "Time"
 
-[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot2"]
+[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot2" unique_id=344338404]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 7.0
@@ -493,19 +493,19 @@ offset_right = 103.0
 offset_bottom = 69.0
 texture = SubResource("ImageTexture_oe8y1")
 
-[node name="Numbers-2" type="Sprite2D" parent="SaveSelectPanel/SaveSlot2"]
+[node name="Numbers-2" type="Sprite2D" parent="SaveSelectPanel/SaveSlot2" unique_id=696200066]
 position = Vector2(19.5, 38)
 scale = Vector2(1.15625, 1.125)
 texture = ExtResource("15_updjh")
 
-[node name="SaveSlot3" type="Button" parent="SaveSelectPanel"]
+[node name="SaveSlot3" type="Button" parent="SaveSelectPanel" unique_id=324953431]
 layout_mode = 0
 offset_left = 75.0
 offset_top = 233.0
 offset_right = 377.0
 offset_bottom = 306.0
 
-[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot3"]
+[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot3" unique_id=215200917]
 layout_mode = 0
 offset_left = 109.0
 offset_top = 15.0
@@ -514,7 +514,7 @@ offset_bottom = 38.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "默认名字"
 
-[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot3"]
+[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot3" unique_id=1605937569]
 layout_mode = 0
 offset_left = 110.0
 offset_top = 50.0
@@ -523,7 +523,7 @@ offset_bottom = 73.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "默认角色"
 
-[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot3"]
+[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot3" unique_id=1278053743]
 layout_mode = 0
 offset_left = 207.0
 offset_top = 49.0
@@ -532,7 +532,7 @@ offset_bottom = 72.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "Time"
 
-[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot3"]
+[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot3" unique_id=86334099]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 7.0
@@ -540,19 +540,19 @@ offset_right = 103.0
 offset_bottom = 69.0
 texture = SubResource("ImageTexture_oe8y1")
 
-[node name="Numbers-3" type="Sprite2D" parent="SaveSelectPanel/SaveSlot3"]
+[node name="Numbers-3" type="Sprite2D" parent="SaveSelectPanel/SaveSlot3" unique_id=1554556277]
 position = Vector2(19.5, 38)
 scale = Vector2(1.15625, 1.125)
 texture = ExtResource("16_u6ce3")
 
-[node name="SaveSlot4" type="Button" parent="SaveSelectPanel"]
+[node name="SaveSlot4" type="Button" parent="SaveSelectPanel" unique_id=1999399499]
 layout_mode = 0
 offset_left = 414.0
 offset_top = 233.0
 offset_right = 715.0
 offset_bottom = 306.0
 
-[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot4"]
+[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot4" unique_id=953474663]
 layout_mode = 0
 offset_left = 109.0
 offset_top = 15.0
@@ -561,7 +561,7 @@ offset_bottom = 38.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "默认名字"
 
-[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot4"]
+[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot4" unique_id=214273857]
 layout_mode = 0
 offset_left = 110.0
 offset_top = 50.0
@@ -570,7 +570,7 @@ offset_bottom = 73.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "默认角色"
 
-[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot4"]
+[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot4" unique_id=984943026]
 layout_mode = 0
 offset_left = 207.0
 offset_top = 49.0
@@ -579,7 +579,7 @@ offset_bottom = 72.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "Time"
 
-[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot4"]
+[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot4" unique_id=1621010879]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 7.0
@@ -587,19 +587,19 @@ offset_right = 103.0
 offset_bottom = 69.0
 texture = SubResource("ImageTexture_oe8y1")
 
-[node name="Numbers-4" type="Sprite2D" parent="SaveSelectPanel/SaveSlot4"]
+[node name="Numbers-4" type="Sprite2D" parent="SaveSelectPanel/SaveSlot4" unique_id=187197440]
 position = Vector2(19.5, 38)
 scale = Vector2(1.15625, 1.125)
 texture = ExtResource("17_6dabs")
 
-[node name="SaveSlot5" type="Button" parent="SaveSelectPanel"]
+[node name="SaveSlot5" type="Button" parent="SaveSelectPanel" unique_id=1729866407]
 layout_mode = 0
 offset_left = 76.0
 offset_top = 332.0
 offset_right = 377.0
 offset_bottom = 405.0
 
-[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot5"]
+[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot5" unique_id=1035790024]
 layout_mode = 0
 offset_left = 109.0
 offset_top = 15.0
@@ -608,7 +608,7 @@ offset_bottom = 38.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "默认名字"
 
-[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot5"]
+[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot5" unique_id=1984907611]
 layout_mode = 0
 offset_left = 110.0
 offset_top = 50.0
@@ -617,7 +617,7 @@ offset_bottom = 73.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "默认角色"
 
-[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot5"]
+[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot5" unique_id=1912539248]
 layout_mode = 0
 offset_left = 207.0
 offset_top = 49.0
@@ -626,7 +626,7 @@ offset_bottom = 72.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "Time"
 
-[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot5"]
+[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot5" unique_id=258642115]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 7.0
@@ -634,19 +634,19 @@ offset_right = 103.0
 offset_bottom = 69.0
 texture = SubResource("ImageTexture_oe8y1")
 
-[node name="Numbers-5" type="Sprite2D" parent="SaveSelectPanel/SaveSlot5"]
+[node name="Numbers-5" type="Sprite2D" parent="SaveSelectPanel/SaveSlot5" unique_id=1745591931]
 position = Vector2(19.5, 38)
 scale = Vector2(1.15625, 1.125)
 texture = ExtResource("18_a3l8e")
 
-[node name="SaveSlot6" type="Button" parent="SaveSelectPanel"]
+[node name="SaveSlot6" type="Button" parent="SaveSelectPanel" unique_id=2065908933]
 layout_mode = 0
 offset_left = 413.0
 offset_top = 332.0
 offset_right = 715.0
 offset_bottom = 405.0
 
-[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot6"]
+[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot6" unique_id=1839211748]
 layout_mode = 0
 offset_left = 109.0
 offset_top = 15.0
@@ -655,7 +655,7 @@ offset_bottom = 38.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "默认名字"
 
-[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot6"]
+[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot6" unique_id=1810040974]
 layout_mode = 0
 offset_left = 110.0
 offset_top = 50.0
@@ -664,7 +664,7 @@ offset_bottom = 73.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "默认角色"
 
-[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot6"]
+[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot6" unique_id=250174168]
 layout_mode = 0
 offset_left = 207.0
 offset_top = 49.0
@@ -673,7 +673,7 @@ offset_bottom = 72.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "Time"
 
-[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot6"]
+[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot6" unique_id=1087067203]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 7.0
@@ -681,19 +681,19 @@ offset_right = 103.0
 offset_bottom = 69.0
 texture = SubResource("ImageTexture_oe8y1")
 
-[node name="Numbers-6" type="Sprite2D" parent="SaveSelectPanel/SaveSlot6"]
+[node name="Numbers-6" type="Sprite2D" parent="SaveSelectPanel/SaveSlot6" unique_id=2147256023]
 position = Vector2(19.5, 38)
 scale = Vector2(1.15625, 1.125)
 texture = ExtResource("19_ad4u8")
 
-[node name="SaveSlot7" type="Button" parent="SaveSelectPanel"]
+[node name="SaveSlot7" type="Button" parent="SaveSelectPanel" unique_id=1758590928]
 layout_mode = 0
 offset_left = 76.0
 offset_top = 428.0
 offset_right = 377.0
 offset_bottom = 505.0
 
-[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot7"]
+[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot7" unique_id=829240399]
 layout_mode = 0
 offset_left = 109.0
 offset_top = 15.0
@@ -702,7 +702,7 @@ offset_bottom = 38.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "默认名字"
 
-[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot7"]
+[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot7" unique_id=1687457654]
 layout_mode = 0
 offset_left = 110.0
 offset_top = 50.0
@@ -711,7 +711,7 @@ offset_bottom = 73.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "默认角色"
 
-[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot7"]
+[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot7" unique_id=777988972]
 layout_mode = 0
 offset_left = 207.0
 offset_top = 49.0
@@ -720,7 +720,7 @@ offset_bottom = 72.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "Time"
 
-[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot7"]
+[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot7" unique_id=902817935]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 7.0
@@ -728,19 +728,19 @@ offset_right = 103.0
 offset_bottom = 69.0
 texture = SubResource("ImageTexture_oe8y1")
 
-[node name="Numbers-7" type="Sprite2D" parent="SaveSelectPanel/SaveSlot7"]
+[node name="Numbers-7" type="Sprite2D" parent="SaveSelectPanel/SaveSlot7" unique_id=422260523]
 position = Vector2(19.5, 38)
 scale = Vector2(1.15625, 1.125)
 texture = ExtResource("20_n3cy3")
 
-[node name="SaveSlot8" type="Button" parent="SaveSelectPanel"]
+[node name="SaveSlot8" type="Button" parent="SaveSelectPanel" unique_id=1776160634]
 layout_mode = 0
 offset_left = 412.0
 offset_top = 429.0
 offset_right = 715.0
 offset_bottom = 504.0
 
-[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot8"]
+[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot8" unique_id=271102778]
 layout_mode = 0
 offset_left = 109.0
 offset_top = 15.0
@@ -749,7 +749,7 @@ offset_bottom = 38.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "默认名字"
 
-[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot8"]
+[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot8" unique_id=142072383]
 layout_mode = 0
 offset_left = 110.0
 offset_top = 50.0
@@ -758,7 +758,7 @@ offset_bottom = 73.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "默认角色"
 
-[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot8"]
+[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot8" unique_id=1224831497]
 layout_mode = 0
 offset_left = 207.0
 offset_top = 49.0
@@ -767,7 +767,7 @@ offset_bottom = 72.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 text = "Time"
 
-[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot8"]
+[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot8" unique_id=495912560]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 7.0
@@ -775,12 +775,12 @@ offset_right = 103.0
 offset_bottom = 69.0
 texture = SubResource("ImageTexture_oe8y1")
 
-[node name="Numbers-8" type="Sprite2D" parent="SaveSelectPanel/SaveSlot8"]
+[node name="Numbers-8" type="Sprite2D" parent="SaveSelectPanel/SaveSlot8" unique_id=1849260024]
 position = Vector2(19.5, 38)
 scale = Vector2(1.15625, 1.125)
 texture = ExtResource("21_nxt54")
 
-[node name="CloseButton" type="Button" parent="SaveSelectPanel"]
+[node name="CloseButton" type="Button" parent="SaveSelectPanel" unique_id=1006682930]
 layout_mode = 0
 offset_left = 710.0
 offset_top = 9.0
@@ -799,7 +799,7 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_8kemq")
 theme_override_styles/focus = SubResource("StyleBoxTexture_j201f")
 script = ExtResource("16_b2sbe")
 
-[node name="LoginPanel" type="Panel" parent="."]
+[node name="LoginPanel" type="Panel" parent="." unique_id=1476469003]
 visible = false
 offset_left = 382.0
 offset_top = 94.0
@@ -808,7 +808,7 @@ offset_bottom = 650.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_53p47")
 script = ExtResource("18_lknoo")
 
-[node name="UsernameInput" type="LineEdit" parent="LoginPanel"]
+[node name="UsernameInput" type="LineEdit" parent="LoginPanel" unique_id=876503267]
 layout_mode = 0
 offset_left = 162.0
 offset_top = 190.0
@@ -817,7 +817,7 @@ offset_bottom = 225.0
 theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_styles/focus = SubResource("StyleBoxLine_qdlbp")
 
-[node name="UsernameLabel" type="Label" parent="LoginPanel"]
+[node name="UsernameLabel" type="Label" parent="LoginPanel" unique_id=1158804510]
 layout_mode = 0
 offset_left = 97.0
 offset_top = 190.0
@@ -827,7 +827,7 @@ theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 28
 text = "账号"
 
-[node name="PasswordInput" type="LineEdit" parent="LoginPanel"]
+[node name="PasswordInput" type="LineEdit" parent="LoginPanel" unique_id=989072552]
 layout_mode = 0
 offset_left = 163.0
 offset_top = 300.0
@@ -837,7 +837,7 @@ theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_styles/focus = SubResource("StyleBoxLine_cg0cp")
 secret = true
 
-[node name="PasswordLabel" type="Label" parent="LoginPanel"]
+[node name="PasswordLabel" type="Label" parent="LoginPanel" unique_id=444601796]
 layout_mode = 0
 offset_left = 95.0
 offset_top = 299.0
@@ -847,7 +847,7 @@ theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 28
 text = "密码"
 
-[node name="NameLabel" type="Label" parent="LoginPanel"]
+[node name="NameLabel" type="Label" parent="LoginPanel" unique_id=1760294276]
 visible = false
 layout_mode = 0
 offset_left = 95.0
@@ -858,7 +858,7 @@ theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 28
 text = "昵称"
 
-[node name="NameInput" type="LineEdit" parent="LoginPanel"]
+[node name="NameInput" type="LineEdit" parent="LoginPanel" unique_id=1959041858]
 visible = false
 layout_mode = 0
 offset_left = 163.0
@@ -869,7 +869,7 @@ theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_styles/focus = SubResource("StyleBoxLine_qdlbp")
 placeholder_text = "昵称（可选）"
 
-[node name="LoginButton" type="Button" parent="LoginPanel"]
+[node name="LoginButton" type="Button" parent="LoginPanel" unique_id=2016702144]
 layout_mode = 0
 offset_left = 178.0
 offset_top = 445.0
@@ -888,9 +888,9 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_bdvkk")
 theme_override_styles/focus = SubResource("StyleBoxTexture_pxkio")
 script = ExtResource("20_wuyfp")
 
-[node name="LoginRequest" type="HTTPRequest" parent="LoginPanel"]
+[node name="LoginRequest" type="HTTPRequest" parent="LoginPanel" unique_id=1629749578]
 
-[node name="RegisterButton" type="Button" parent="LoginPanel"]
+[node name="RegisterButton" type="Button" parent="LoginPanel" unique_id=1791155228]
 visible = false
 layout_mode = 0
 offset_left = 178.0
@@ -911,9 +911,9 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_pxkio")
 text = "注册"
 script = ExtResource("23_register")
 
-[node name="RegisterRequest" type="HTTPRequest" parent="LoginPanel"]
+[node name="RegisterRequest" type="HTTPRequest" parent="LoginPanel" unique_id=1170188831]
 
-[node name="SwitchModeButton" type="Button" parent="LoginPanel"]
+[node name="SwitchModeButton" type="Button" parent="LoginPanel" unique_id=800759429]
 layout_mode = 0
 offset_left = 178.0
 offset_top = 501.0
@@ -924,18 +924,18 @@ theme_override_font_sizes/font_size = 16
 text = "没有账号？注册"
 flat = true
 
-[node name="UserAgree" type="HBoxContainer" parent="LoginPanel"]
+[node name="UserAgree" type="HBoxContainer" parent="LoginPanel" unique_id=1445629969]
 layout_mode = 0
 offset_left = 108.0
 offset_top = 359.0
 offset_right = 409.0
 offset_bottom = 399.0
 
-[node name="AgreeCheckBox" type="CheckBox" parent="LoginPanel/UserAgree"]
+[node name="AgreeCheckBox" type="CheckBox" parent="LoginPanel/UserAgree" unique_id=969006967]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxLine_hhv2k")
 
-[node name="AgreementLabel" type="RichTextLabel" parent="LoginPanel/UserAgree"]
+[node name="AgreementLabel" type="RichTextLabel" parent="LoginPanel/UserAgree" unique_id=636940981]
 custom_minimum_size = Vector2(250, 10)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("4_7ovgv")
@@ -943,7 +943,7 @@ bbcode_enabled = true
 text = "我已阅读并同意 [url=user]《用户协议》[/url] 和 [url=privacy]《隐私政策》[/url]"
 tab_size = 0
 
-[node name="CloseButton" type="Button" parent="LoginPanel"]
+[node name="CloseButton" type="Button" parent="LoginPanel" unique_id=583841084]
 layout_mode = 0
 offset_left = 431.0
 offset_top = 18.0
@@ -962,7 +962,7 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_kljlu")
 theme_override_styles/focus = SubResource("StyleBoxTexture_ig0hn")
 script = ExtResource("16_b2sbe")
 
-[node name="SuccessDialog" type="AcceptDialog" parent="LoginPanel"]
+[node name="SuccessDialog" type="AcceptDialog" parent="LoginPanel" unique_id=1482923427]
 transparent_bg = true
 size = Vector2i(165, 126)
 borderless = true
@@ -974,7 +974,7 @@ dialog_text = "
 dialog_autowrap = true
 script = ExtResource("22_sr5ea")
 
-[node name="SettingsPanel" type="Panel" parent="."]
+[node name="SettingsPanel" type="Panel" parent="." unique_id=776203971]
 visible = false
 offset_left = 340.0
 offset_top = 100.0
@@ -983,104 +983,95 @@ offset_bottom = 620.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_53p47")
 script = ExtResource("24_settings")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPanel" unique_id=2082616161]
 layout_mode = 1
 offset_left = 50.0
 offset_top = 80.0
 offset_right = 550.0
 offset_bottom = 480.0
 
-[node name="TitleLabel" type="Label" parent="SettingsPanel/VBoxContainer"]
+[node name="TitleLabel" type="Label" parent="SettingsPanel/VBoxContainer" unique_id=1811339736]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 36
 text = "游戏设置"
 horizontal_alignment = 1
 
-[node name="AudioSettings" type="VBoxContainer" parent="SettingsPanel/VBoxContainer"]
+[node name="AudioSettings" type="VBoxContainer" parent="SettingsPanel/VBoxContainer" unique_id=1464725545]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="AudioTitleLabel" type="Label" parent="SettingsPanel/VBoxContainer/AudioSettings"]
+[node name="AudioTitleLabel" type="Label" parent="SettingsPanel/VBoxContainer/AudioSettings" unique_id=202557469]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 24
 text = "音频设置"
 
-[node name="MasterVolumeLabel" type="Label" parent="SettingsPanel/VBoxContainer/AudioSettings"]
+[node name="MasterVolumeLabel" type="Label" parent="SettingsPanel/VBoxContainer/AudioSettings" unique_id=40424867]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 20
 text = "主音量: 100%"
 
-[node name="MasterVolumeSlider" type="HSlider" parent="SettingsPanel/VBoxContainer/AudioSettings"]
+[node name="MasterVolumeSlider" type="HSlider" parent="SettingsPanel/VBoxContainer/AudioSettings" unique_id=1916214580]
 layout_mode = 2
-min_value = 0.0
-max_value = 100.0
-step = 1.0
 value = 100.0
 
-[node name="MusicVolumeLabel" type="Label" parent="SettingsPanel/VBoxContainer/AudioSettings"]
+[node name="MusicVolumeLabel" type="Label" parent="SettingsPanel/VBoxContainer/AudioSettings" unique_id=1524713245]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 20
 text = "音乐音量: 80%"
 
-[node name="MusicVolumeSlider" type="HSlider" parent="SettingsPanel/VBoxContainer/AudioSettings"]
+[node name="MusicVolumeSlider" type="HSlider" parent="SettingsPanel/VBoxContainer/AudioSettings" unique_id=1990999969]
 layout_mode = 2
-min_value = 0.0
-max_value = 100.0
-step = 1.0
 value = 80.0
 
-[node name="SFXVolumeLabel" type="Label" parent="SettingsPanel/VBoxContainer/AudioSettings"]
+[node name="SFXVolumeLabel" type="Label" parent="SettingsPanel/VBoxContainer/AudioSettings" unique_id=1431497029]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 20
 text = "音效音量: 80%"
 
-[node name="SFXVolumeSlider" type="HSlider" parent="SettingsPanel/VBoxContainer/AudioSettings"]
+[node name="SFXVolumeSlider" type="HSlider" parent="SettingsPanel/VBoxContainer/AudioSettings" unique_id=440010772]
 layout_mode = 2
-min_value = 0.0
-max_value = 100.0
-step = 1.0
 value = 80.0
 
-[node name="VideoSettings" type="VBoxContainer" parent="SettingsPanel/VBoxContainer"]
+[node name="VideoSettings" type="VBoxContainer" parent="SettingsPanel/VBoxContainer" unique_id=1042208880]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="VideoTitleLabel" type="Label" parent="SettingsPanel/VBoxContainer/VideoSettings"]
+[node name="VideoTitleLabel" type="Label" parent="SettingsPanel/VBoxContainer/VideoSettings" unique_id=1990917826]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 24
 text = "视频设置"
 
-[node name="FullscreenCheckBox" type="CheckBox" parent="SettingsPanel/VBoxContainer/VideoSettings"]
+[node name="FullscreenCheckBox" type="CheckBox" parent="SettingsPanel/VBoxContainer/VideoSettings" unique_id=1084249258]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 20
 text = "全屏模式"
 
-[node name="VSyncCheckBox" type="CheckBox" parent="SettingsPanel/VBoxContainer/VideoSettings"]
+[node name="VSyncCheckBox" type="CheckBox" parent="SettingsPanel/VBoxContainer/VideoSettings" unique_id=631984876]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 20
 button_pressed = true
 text = "垂直同步"
 
-[node name="ResolutionLabel" type="Label" parent="SettingsPanel/VBoxContainer/VideoSettings"]
+[node name="ResolutionLabel" type="Label" parent="SettingsPanel/VBoxContainer/VideoSettings" unique_id=1010272835]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 20
 text = "分辨率"
 
-[node name="ResolutionOption" type="OptionButton" parent="SettingsPanel/VBoxContainer/VideoSettings"]
+[node name="ResolutionOption" type="OptionButton" parent="SettingsPanel/VBoxContainer/VideoSettings" unique_id=549886687]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 18
 
-[node name="CloseButton" type="Button" parent="SettingsPanel"]
+[node name="CloseButton" type="Button" parent="SettingsPanel" unique_id=1534152084]
 layout_mode = 0
 offset_left = 489.0
 offset_top = 18.0
@@ -1098,7 +1089,7 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_1be2j")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_kljlu")
 theme_override_styles/focus = SubResource("StyleBoxTexture_ig0hn")
 
-[node name="CharacterSelectPanel" type="Panel" parent="."]
+[node name="CharacterSelectPanel" type="Panel" parent="." unique_id=1295479816]
 visible = false
 offset_left = 340.0
 offset_top = 150.0
@@ -1107,7 +1098,7 @@ offset_bottom = 570.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_53p47")
 script = ExtResource("25_character")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CharacterSelectPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterSelectPanel" unique_id=635877664]
 layout_mode = 1
 offset_left = 50.0
 offset_top = 80.0
@@ -1115,46 +1106,46 @@ offset_right = 550.0
 offset_bottom = 380.0
 theme_override_constants/separation = 20
 
-[node name="TitleLabel" type="Label" parent="CharacterSelectPanel/VBoxContainer"]
+[node name="TitleLabel" type="Label" parent="CharacterSelectPanel/VBoxContainer" unique_id=979695345]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 36
 text = "创建角色"
 horizontal_alignment = 1
 
-[node name="CharacterInfo" type="VBoxContainer" parent="CharacterSelectPanel/VBoxContainer"]
+[node name="CharacterInfo" type="VBoxContainer" parent="CharacterSelectPanel/VBoxContainer" unique_id=202090898]
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="NameLabel" type="Label" parent="CharacterSelectPanel/VBoxContainer/CharacterInfo"]
+[node name="NameLabel" type="Label" parent="CharacterSelectPanel/VBoxContainer/CharacterInfo" unique_id=1703889481]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 24
 text = "角色名称"
 
-[node name="NameInput" type="LineEdit" parent="CharacterSelectPanel/VBoxContainer/CharacterInfo"]
-layout_mode = 2
+[node name="NameInput" type="LineEdit" parent="CharacterSelectPanel/VBoxContainer/CharacterInfo" unique_id=990053822]
 custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxLine_qdlbp")
 placeholder_text = "请输入角色名称"
 
-[node name="JobLabel" type="Label" parent="CharacterSelectPanel/VBoxContainer/CharacterInfo"]
+[node name="JobLabel" type="Label" parent="CharacterSelectPanel/VBoxContainer/CharacterInfo" unique_id=1337727120]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 24
 text = "选择职业"
 
-[node name="JobOption" type="OptionButton" parent="CharacterSelectPanel/VBoxContainer/CharacterInfo"]
-layout_mode = 2
+[node name="JobOption" type="OptionButton" parent="CharacterSelectPanel/VBoxContainer/CharacterInfo" unique_id=488502564]
 custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 20
 
-[node name="CreateButton" type="Button" parent="CharacterSelectPanel/VBoxContainer"]
-layout_mode = 2
+[node name="CreateButton" type="Button" parent="CharacterSelectPanel/VBoxContainer" unique_id=1429817642]
 custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxTexture_fnfl2")
@@ -1170,9 +1161,9 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_bdvkk")
 theme_override_styles/focus = SubResource("StyleBoxTexture_pxkio")
 text = "创建角色"
 
-[node name="CancelButton" type="Button" parent="CharacterSelectPanel/VBoxContainer"]
-layout_mode = 2
+[node name="CancelButton" type="Button" parent="CharacterSelectPanel/VBoxContainer" unique_id=824547482]
 custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxTexture_mx3h4")
@@ -1188,7 +1179,7 @@ theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_kx7wx")
 theme_override_styles/focus = SubResource("StyleBoxTexture_ro27t")
 text = "取消"
 
-[node name="CloseButton" type="Button" parent="CharacterSelectPanel"]
+[node name="CloseButton" type="Button" parent="CharacterSelectPanel" unique_id=955402007]
 layout_mode = 0
 offset_left = 489.0
 offset_top = 18.0
@@ -1206,9 +1197,9 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_1be2j")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_kljlu")
 theme_override_styles/focus = SubResource("StyleBoxTexture_ig0hn")
 
-[node name="CreateRequest" type="HTTPRequest" parent="CharacterSelectPanel"]
+[node name="CreateRequest" type="HTTPRequest" parent="CharacterSelectPanel" unique_id=1822245820]
 
-[node name="LoadArchiveRequest" type="HTTPRequest" parent="."]
+[node name="LoadArchiveRequest" type="HTTPRequest" parent="." unique_id=1165966732]
 
 [connection signal="mouse_entered" from="StartGame" to="StartGame" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="StartGame" to="StartGame" method="_on_mouse_exited"]
