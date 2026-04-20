@@ -1,0 +1,888 @@
+[gd_scene load_steps=95 format=3 uid="uid://c4rvfp2r37yuf"]
+
+[ext_resource type="Texture2D" uid="uid://chdedn23dj4kg" path="res://assets/level/shenxiao/map_background.png" id="1_6yk1v"]
+[ext_resource type="Script" path="res://scripts/levels/shenxiao/shenxiao.gd" id="1_iac8a"]
+[ext_resource type="Script" path="res://scripts/levels/shenxiao/TianmenLevel.gd" id="2_ofirc"]
+[ext_resource type="Texture2D" uid="uid://bkm0p8rkb4tvo" path="res://assets/level/shenxiao/shenxiao_level01.png" id="2_pnp0r"]
+[ext_resource type="FontFile" uid="uid://cjwrhhp33sbrk" path="res://assets/ttf/FZSTK.TTF" id="3_88tyd"]
+[ext_resource type="Texture2D" uid="uid://cxqmf60p1l221" path="res://assets/button/return_button_press.png" id="7_2ute2"]
+[ext_resource type="Texture2D" uid="uid://db7r5yk7tt62q" path="res://assets/level/shenxiao/shenxiao_level01_grow.png" id="8_ldoll"]
+[ext_resource type="Texture2D" uid="uid://c8lqygxnwo14l" path="res://assets/button/return_button.png" id="8_v2eqs"]
+[ext_resource type="Script" path="res://scripts/systems/ReturnButton.gd" id="9_ns513"]
+[ext_resource type="Script" path="res://scripts/levels/shenxiao/YuntaiLevel.gd" id="10_k6iob"]
+[ext_resource type="Texture2D" uid="uid://cr0gqdb1f0r2s" path="res://assets/level/shenxiao/shenxiao_level02.png" id="10_s2qi7"]
+[ext_resource type="Texture2D" uid="uid://ds2qrspdu84u6" path="res://assets/level/shenxiao/grow.png" id="12_4bhcr"]
+[ext_resource type="Texture2D" uid="uid://74qcjagv3xyo" path="res://assets/level/shenxiao/shenxiao_level03.png" id="12_4roje"]
+[ext_resource type="Script" path="res://scripts/levels/shenxiao/YuqueLvel.gd" id="13_yaart"]
+[ext_resource type="Texture2D" uid="uid://bvjwo80ps3urt" path="res://assets/level/shenxiao/shenxiao_level03_grow.png" id="14_t1ld4"]
+[ext_resource type="Texture2D" uid="uid://dqasf4atyeowd" path="res://assets/level/shenxiao/shenxiao_level04.png" id="16_8whgy"]
+[ext_resource type="Script" path="res://scripts/levels/shenxiao/Lingquan.gd" id="16_o00st"]
+[ext_resource type="Texture2D" uid="uid://d2f46grcisr0h" path="res://assets/level/shenxiao/shenxiao_level04_grow.png" id="17_r26l6"]
+[ext_resource type="Script" path="res://scripts/levels/shenxiao/TianhengLevel.gd" id="19_h6qs7"]
+[ext_resource type="Texture2D" uid="uid://dfd26p7r6fpj1" path="res://assets/level/shenxiao/shenxiao_level05.png" id="19_hx5vo"]
+[ext_resource type="Texture2D" uid="uid://bk35chinsysst" path="res://assets/level/shenxiao/shenxiao_level05_grow.png" id="20_tj7t7"]
+[ext_resource type="Texture2D" uid="uid://b21xvpd7eq1ee" path="res://assets/level/shenxiao/shenxiao_level06.png" id="22_7prki"]
+[ext_resource type="Script" path="res://scripts/levels/shenxiao/TianxingtaiLevel.gd" id="22_pwtek"]
+[ext_resource type="Texture2D" uid="uid://d4ajmyv7qyydn" path="res://assets/level/shenxiao/shenxiao_level06_grow.png" id="23_h3xyk"]
+[ext_resource type="Script" path="res://scripts/levels/shenxiao/ShenyuhexinLevel.gd" id="25_61dk4"]
+[ext_resource type="Texture2D" uid="uid://cot4b4hbunmqu" path="res://assets/level/shenxiao/shenxiao_level07.png" id="25_t04qn"]
+[ext_resource type="Texture2D" uid="uid://c6q6xl1npsnqv" path="res://assets/level/shenxiao/shenxiao_level07_grow.png" id="26_efh3l"]
+[ext_resource type="Texture2D" uid="uid://w7epn4mokxfl" path="res://assets/avatarframes/default_frames.png" id="28_fo420"]
+[ext_resource type="Texture2D" uid="uid://c3m4fsi52553w" path="res://assets/common/backpack_open.png" id="28_ivi0i"]
+[ext_resource type="Texture2D" uid="uid://dd6rrhx5gstc6" path="res://assets/common/backpack.png" id="28_p5vn1"]
+[ext_resource type="Script" path="res://scripts/ui/Backpack.gd" id="29_gw7md"]
+[ext_resource type="Texture2D" uid="uid://cjbo1exfceoga" path="res://assets/common/pack_panel.png" id="32_daowl"]
+[ext_resource type="Texture2D" uid="uid://dinu4udc0bbs4" path="res://assets/button/close_button_press.png" id="33_a8yqr"]
+[ext_resource type="Texture2D" uid="uid://dbu3bedsb3rpf" path="res://assets/sprites/first_frame.png" id="33_b4ahg"]
+[ext_resource type="Texture2D" uid="uid://bbapo0igstqpk" path="res://assets/button/close_button.png" id="34_ae1wy"]
+[ext_resource type="Script" path="res://scripts/levels/shenxiao/pack_close_button.gd" id="35_3qmri"]
+[ext_resource type="Texture2D" uid="uid://dwl4rx0j2ym47" path="res://assets/common/Level_Banner.png" id="37_m8qlp"]
+[ext_resource type="Texture2D" uid="uid://5xs74r345x1g" path="res://assets/numbers/font_number_1.png" id="38_oil6w"]
+[ext_resource type="Texture2D" uid="uid://cs72utj7iglcg" path="res://assets/items/1300.png" id="39_rd6sh"]
+[ext_resource type="Texture2D" uid="uid://jevbgkhumjdr" path="res://assets/items/1303.png" id="40_s1mjb"]
+[ext_resource type="Texture2D" uid="uid://bxft2br6ixae0" path="res://assets/items/1302.png" id="41_4rhmy"]
+[ext_resource type="Texture2D" uid="uid://chwj7t8qjcbbw" path="res://assets/items/1301.png" id="42_thrqp"]
+[ext_resource type="Texture2D" uid="uid://bolxybde4xssv" path="res://assets/items/1307.png" id="43_oemmg"]
+[ext_resource type="Texture2D" uid="uid://csd7sl8e5rjfd" path="res://assets/items/1311.png" id="44_2eg3m"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r0373"]
+texture = ExtResource("7_2ute2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_18hoy"]
+texture = ExtResource("8_v2eqs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x4hiv"]
+texture = ExtResource("8_v2eqs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_agu3u"]
+texture = ExtResource("7_2ute2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qlvol"]
+texture = ExtResource("7_2ute2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uxvho"]
+texture = ExtResource("7_2ute2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u1fi1"]
+texture = ExtResource("7_2ute2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ss21"]
+texture = ExtResource("7_2ute2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_djkti"]
+texture = ExtResource("7_2ute2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ikscr"]
+texture = ExtResource("8_v2eqs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ut24"]
+texture = ExtResource("8_v2eqs")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k2ppb"]
+radius = 26.0
+height = 76.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_im17n"]
+radius = 38.0
+height = 138.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fvdje"]
+radius = 58.7175
+height = 207.801
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uq6ah"]
+radius = 38.0
+height = 96.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u4xft"]
+radius = 67.0
+height = 152.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rdclg"]
+radius = 67.0
+height = 150.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x1jf8"]
+radius = 45.0111
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kbk38"]
+radius = 33.0
+height = 66.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dt5ea"]
+texture = ExtResource("28_fo420")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_077nu"]
+texture = ExtResource("32_daowl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2kn5r"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h68ly"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_raqxr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_onjra"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8120l"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_37gjr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j680e"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g1use"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_56etu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_43ck7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x4mvb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yvl4u"]
+texture = ExtResource("33_a8yqr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ny00b"]
+texture = ExtResource("34_ae1wy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3xllv"]
+texture = ExtResource("34_ae1wy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ftv7h"]
+texture = ExtResource("33_a8yqr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a6drg"]
+texture = ExtResource("33_a8yqr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n0wxe"]
+texture = ExtResource("33_a8yqr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_io6gv"]
+texture = ExtResource("33_a8yqr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ueao"]
+texture = ExtResource("33_a8yqr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lxxf4"]
+texture = ExtResource("33_a8yqr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_si5ki"]
+texture = ExtResource("33_a8yqr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kf5y8"]
+texture = ExtResource("34_ae1wy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7gxdb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j1itj"]
+texture = ExtResource("39_rd6sh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u0bku"]
+texture = ExtResource("40_s1mjb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xv7io"]
+texture = ExtResource("41_4rhmy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tq5gj"]
+texture = ExtResource("42_thrqp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mijma"]
+texture = ExtResource("43_oemmg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ro7xl"]
+texture = ExtResource("44_2eg3m")
+
+[node name="Shenxiao" type="Node2D"]
+script = ExtResource("1_iac8a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(0.833333, 0.703125)
+texture = ExtResource("1_6yk1v")
+metadata/_edit_lock_ = true
+
+[node name="HeartbeatRequest" type="HTTPRequest" parent="."]
+
+[node name="HeartbeatTimer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[node name="ReturnButton" type="Button" parent="."]
+offset_left = 1176.0
+offset_top = 649.0
+offset_right = 1253.0
+offset_bottom = 700.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_r0373")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_18hoy")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_x4hiv")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_agu3u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_qlvol")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_uxvho")
+theme_override_styles/hover = SubResource("StyleBoxTexture_u1fi1")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_8ss21")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_djkti")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ikscr")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8ut24")
+script = ExtResource("9_ns513")
+
+[node name="Tianmen" type="Node2D" parent="."]
+script = ExtResource("2_ofirc")
+
+[node name="Icon" type="Sprite2D" parent="Tianmen"]
+position = Vector2(824, 627.75)
+scale = Vector2(0.827383, 0.768182)
+texture = ExtResource("2_pnp0r")
+metadata/_edit_lock_ = true
+
+[node name="Glow" type="Sprite2D" parent="Tianmen"]
+position = Vector2(825, 627)
+scale = Vector2(0.208, 0.156591)
+texture = ExtResource("8_ldoll")
+
+[node name="Label" type="Label" parent="Tianmen"]
+offset_left = 792.0
+offset_top = 646.0
+offset_right = 856.0
+offset_bottom = 669.0
+theme_override_fonts/font = ExtResource("3_88tyd")
+text = "天门试炼"
+
+[node name="Area2D" type="Area2D" parent="Tianmen"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tianmen/Area2D"]
+position = Vector2(823, 627)
+shape = SubResource("CapsuleShape2D_k2ppb")
+
+[node name="Yuntai" type="Node2D" parent="."]
+script = ExtResource("10_k6iob")
+
+[node name="Icon" type="Sprite2D" parent="Yuntai"]
+position = Vector2(286.5, 527)
+scale = Vector2(0.850467, 0.797945)
+texture = ExtResource("10_s2qi7")
+
+[node name="Glow" type="Sprite2D" parent="Yuntai"]
+position = Vector2(286, 533)
+scale = Vector2(0.128906, 0.126302)
+texture = ExtResource("12_4bhcr")
+
+[node name="Label" type="Label" parent="Yuntai"]
+offset_left = 257.0
+offset_top = 586.0
+offset_right = 321.0
+offset_bottom = 609.0
+theme_override_fonts/font = ExtResource("3_88tyd")
+text = "云台灵阵"
+
+[node name="Area2D" type="Area2D" parent="Yuntai"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Yuntai/Area2D"]
+position = Vector2(288, 523)
+shape = SubResource("CapsuleShape2D_im17n")
+
+[node name="Yuque" type="Node2D" parent="."]
+script = ExtResource("13_yaart")
+
+[node name="Icon" type="Sprite2D" parent="Yuque"]
+position = Vector2(174, 365)
+scale = Vector2(0.816327, 0.690083)
+texture = ExtResource("12_4roje")
+
+[node name="Glow" type="Sprite2D" parent="Yuque"]
+position = Vector2(175.5, 374.875)
+scale = Vector2(0.502, 0.3805)
+texture = ExtResource("14_t1ld4")
+
+[node name="Label" type="Label" parent="Yuque"]
+offset_left = 114.0
+offset_top = 421.0
+offset_right = 219.0
+offset_bottom = 455.0
+theme_override_fonts/font = ExtResource("3_88tyd")
+theme_override_font_sizes/font_size = 23
+text = "玉阙擎天台"
+
+[node name="Area2D" type="Area2D" parent="Yuque"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Yuque/Area2D"]
+position = Vector2(168, 384)
+rotation = -1.60595
+shape = SubResource("CapsuleShape2D_fvdje")
+metadata/_edit_lock_ = true
+
+[node name="Lingquan" type="Node2D" parent="."]
+script = ExtResource("16_o00st")
+
+[node name="Icon" type="Sprite2D" parent="Lingquan"]
+position = Vector2(381, 305)
+scale = Vector2(0.843182, 0.738095)
+texture = ExtResource("16_8whgy")
+
+[node name="Glow" type="Sprite2D" parent="Lingquan"]
+position = Vector2(360, 311)
+scale = Vector2(0.272, 0.224)
+texture = ExtResource("17_r26l6")
+
+[node name="Label" type="Label" parent="Lingquan"]
+offset_left = 325.0
+offset_top = 336.0
+offset_right = 393.0
+offset_bottom = 358.0
+theme_override_fonts/font = ExtResource("3_88tyd")
+theme_override_font_sizes/font_size = 17
+text = "灵泉幻境"
+
+[node name="Area2D" type="Area2D" parent="Lingquan"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lingquan/Area2D"]
+position = Vector2(358, 312)
+shape = SubResource("CapsuleShape2D_uq6ah")
+
+[node name="Tianheng" type="Node2D" parent="."]
+script = ExtResource("19_h6qs7")
+
+[node name="Icon" type="Sprite2D" parent="Tianheng"]
+position = Vector2(632.563, 313)
+scale = Vector2(0.838005, 0.698113)
+texture = ExtResource("19_hx5vo")
+
+[node name="Glow" type="Sprite2D" parent="Tianheng"]
+position = Vector2(631, 321)
+scale = Vector2(0.4, 0.344)
+texture = ExtResource("20_tj7t7")
+
+[node name="Label" type="Label" parent="Tianheng"]
+offset_left = 576.0
+offset_top = 367.0
+offset_right = 665.0
+offset_bottom = 390.0
+theme_override_fonts/font = ExtResource("3_88tyd")
+theme_override_font_sizes/font_size = 19
+text = "天衡宫殿"
+
+[node name="Area2D" type="Area2D" parent="Tianheng"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tianheng/Area2D"]
+position = Vector2(632, 320)
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_u4xft")
+
+[node name="Tianxingtai" type="Node2D" parent="."]
+script = ExtResource("22_pwtek")
+
+[node name="Icon" type="Sprite2D" parent="Tianxingtai"]
+position = Vector2(949.25, 128.938)
+scale = Vector2(0.84593, 0.725962)
+texture = ExtResource("22_7prki")
+
+[node name="Glow" type="Sprite2D" parent="Tianxingtai"]
+position = Vector2(951.5, 134)
+scale = Vector2(0.466, 0.366)
+texture = ExtResource("23_h3xyk")
+
+[node name="Label" type="Label" parent="Tianxingtai"]
+offset_left = 900.0
+offset_top = 189.0
+offset_right = 987.0
+offset_bottom = 223.0
+theme_override_fonts/font = ExtResource("3_88tyd")
+theme_override_font_sizes/font_size = 29
+text = "天刑台"
+
+[node name="Area2D" type="Area2D" parent="Tianxingtai"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tianxingtai/Area2D"]
+position = Vector2(951, 138)
+shape = SubResource("CapsuleShape2D_rdclg")
+
+[node name="Shenyuhexin" type="Node2D" parent="."]
+script = ExtResource("25_61dk4")
+
+[node name="Icon" type="Sprite2D" parent="Shenyuhexin"]
+position = Vector2(640.625, 117.75)
+scale = Vector2(0.861889, 0.708333)
+texture = ExtResource("25_t04qn")
+
+[node name="Glow" type="Sprite2D" parent="Shenyuhexin"]
+position = Vector2(640.5, 127)
+scale = Vector2(0.314, 0.216)
+texture = ExtResource("26_efh3l")
+
+[node name="Label" type="Label" parent="Shenyuhexin"]
+offset_left = 604.0
+offset_top = 154.0
+offset_right = 668.0
+offset_bottom = 177.0
+theme_override_fonts/font = ExtResource("3_88tyd")
+text = "神域核心"
+
+[node name="Area2D" type="Area2D" parent="Shenyuhexin"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shenyuhexin/Area2D"]
+position = Vector2(640, 131)
+shape = SubResource("CircleShape2D_x1jf8")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(11, 0)
+script = ExtResource("29_gw7md")
+
+[node name="ClosePack" type="Sprite2D" parent="Node2D"]
+position = Vector2(38, 672)
+scale = Vector2(0.1395, 0.1315)
+texture = ExtResource("28_p5vn1")
+
+[node name="OpenPack" type="Sprite2D" parent="Node2D"]
+visible = false
+position = Vector2(38, 670)
+scale = Vector2(0.138, 0.14275)
+texture = ExtResource("28_ivi0i")
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = 12.0
+offset_top = 681.0
+offset_right = 56.0
+offset_bottom = 706.0
+theme_override_fonts/font = ExtResource("3_88tyd")
+theme_override_font_sizes/font_size = 22
+text = "背包"
+
+[node name="Area2D" type="Area2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
+position = Vector2(37, 675)
+shape = SubResource("CapsuleShape2D_kbk38")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 19.0
+offset_top = 11.0
+offset_right = 128.0
+offset_bottom = 115.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dt5ea")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 22.0
+offset_right = 90.0
+offset_bottom = 88.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+visible = false
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_077nu")
+
+[node name="Equipment" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 602.0
+offset_top = 74.0
+offset_right = 730.0
+offset_bottom = 107.0
+theme_override_fonts/font = ExtResource("3_88tyd")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/focus = SubResource("StyleBoxTexture_2kn5r")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_h68ly")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_raqxr")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_onjra")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_8120l")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_37gjr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_j680e")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_g1use")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_56etu")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_43ck7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_x4mvb")
+text = "装备"
+
+[node name="Property" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 752.0
+offset_top = 73.0
+offset_right = 880.0
+offset_bottom = 106.0
+theme_override_fonts/font = ExtResource("3_88tyd")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/focus = SubResource("StyleBoxTexture_2kn5r")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_h68ly")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_raqxr")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_onjra")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_8120l")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_37gjr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_j680e")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_g1use")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_56etu")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_43ck7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_x4mvb")
+text = "道具"
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 1225.0
+offset_top = 6.99997
+offset_right = 1275.0
+offset_bottom = 56.0
+rotation = -0.261799
+theme_override_styles/focus = SubResource("StyleBoxTexture_yvl4u")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_ny00b")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_3xllv")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_ftv7h")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_a6drg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_n0wxe")
+theme_override_styles/hover = SubResource("StyleBoxTexture_io6gv")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_8ueao")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lxxf4")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_si5ki")
+theme_override_styles/normal = SubResource("StyleBoxTexture_kf5y8")
+script = ExtResource("35_3qmri")
+
+[node name="Fashionable" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 899.0
+offset_top = 74.0
+offset_right = 1027.0
+offset_bottom = 107.0
+theme_override_fonts/font = ExtResource("3_88tyd")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/focus = SubResource("StyleBoxTexture_2kn5r")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_h68ly")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_raqxr")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_onjra")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_8120l")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_37gjr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_j680e")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_g1use")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_56etu")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_43ck7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_x4mvb")
+text = "时装"
+
+[node name="Scripture" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 1046.0
+offset_top = 73.0
+offset_right = 1174.0
+offset_bottom = 106.0
+theme_override_fonts/font = ExtResource("3_88tyd")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/focus = SubResource("StyleBoxTexture_2kn5r")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_h68ly")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_raqxr")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_onjra")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_8120l")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_37gjr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_j680e")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_g1use")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_56etu")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_43ck7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_x4mvb")
+text = "经文"
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 97.0
+offset_right = 541.0
+offset_bottom = 637.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_7gxdb")
+
+[node name="Role" type="Sprite2D" parent="CanvasLayer/Panel/Panel"]
+position = Vector2(123, 121)
+scale = Vector2(1.268, 1.092)
+texture = ExtResource("33_b4ahg")
+
+[node name="Node2D" type="Node2D" parent="CanvasLayer/Panel/Panel"]
+
+[node name="Heath" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+offset_left = 33.0
+offset_top = 288.0
+offset_right = 167.0
+offset_bottom = 319.0
+theme_override_font_sizes/font_size = 22
+text = "HP:     70"
+
+[node name="Mana" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+offset_left = 285.0
+offset_top = 288.0
+offset_right = 419.0
+offset_bottom = 319.0
+theme_override_font_sizes/font_size = 22
+text = "MP:     100"
+
+[node name="Attack" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+offset_left = 33.0
+offset_top = 334.0
+offset_right = 167.0
+offset_bottom = 365.0
+theme_override_font_sizes/font_size = 22
+text = "攻击:     10"
+
+[node name="Luck" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+offset_left = 33.0
+offset_top = 368.0
+offset_right = 167.0
+offset_bottom = 399.0
+theme_override_font_sizes/font_size = 22
+text = "幸运:     70"
+
+[node name="Defend" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+offset_left = 285.0
+offset_top = 332.0
+offset_right = 419.0
+offset_bottom = 363.0
+theme_override_font_sizes/font_size = 22
+text = "防御:     0"
+
+[node name="Sidestep" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+offset_left = 285.0
+offset_top = 367.0
+offset_right = 419.0
+offset_bottom = 398.0
+theme_override_font_sizes/font_size = 22
+text = "闪避:     0%"
+
+[node name="Mana2" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+offset_left = 285.0
+offset_top = 288.0
+offset_right = 419.0
+offset_bottom = 319.0
+theme_override_font_sizes/font_size = 22
+text = "MP:     100"
+
+[node name="ReBlood" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+offset_left = 33.0
+offset_top = 412.0
+offset_right = 167.0
+offset_bottom = 443.0
+theme_override_font_sizes/font_size = 22
+text = "回血:     0"
+
+[node name="ReMana" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+offset_left = 33.0
+offset_top = 446.0
+offset_right = 167.0
+offset_bottom = 477.0
+theme_override_font_sizes/font_size = 22
+text = "回蓝:     0"
+
+[node name="Crit" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+offset_left = 285.0
+offset_top = 410.0
+offset_right = 419.0
+offset_bottom = 441.0
+theme_override_font_sizes/font_size = 22
+text = "暴击:     0%"
+
+[node name="ReMagic" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+offset_left = 285.0
+offset_top = 445.0
+offset_right = 419.0
+offset_bottom = 476.0
+theme_override_font_sizes/font_size = 22
+text = "魔抗:     0%"
+
+[node name="EXP" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+offset_left = 6.0
+offset_top = 500.0
+offset_right = 460.0
+offset_bottom = 531.0
+theme_override_font_sizes/font_size = 22
+text = "EXP:                           0/135"
+
+[node name="Equipment" type="Node2D" parent="CanvasLayer/Panel/Panel"]
+
+[node name="Button" type="Button" parent="CanvasLayer/Panel/Panel/Equipment"]
+offset_left = 304.0
+offset_top = 73.0
+offset_right = 369.0
+offset_bottom = 138.0
+text = "武器"
+
+[node name="Button2" type="Button" parent="CanvasLayer/Panel/Panel/Equipment"]
+offset_left = 384.0
+offset_top = 73.0
+offset_right = 449.0
+offset_bottom = 138.0
+text = "饰品"
+
+[node name="Button3" type="Button" parent="CanvasLayer/Panel/Panel/Equipment"]
+offset_left = 304.0
+offset_top = 181.0
+offset_right = 369.0
+offset_bottom = 246.0
+text = "装备"
+
+[node name="Button4" type="Button" parent="CanvasLayer/Panel/Panel/Equipment"]
+offset_left = 384.0
+offset_top = 181.0
+offset_right = 449.0
+offset_bottom = 246.0
+text = "法宝"
+
+[node name="LevelBanner" type="Sprite2D" parent="CanvasLayer/Panel/Panel"]
+position = Vector2(377, 26.75)
+scale = Vector2(0.304, 0.201)
+texture = ExtResource("37_m8qlp")
+
+[node name="Numbers-1" type="Sprite2D" parent="CanvasLayer/Panel/Panel"]
+position = Vector2(376.25, 26.25)
+scale = Vector2(0.944444, 0.950704)
+texture = ExtResource("38_oil6w")
+
+[node name="Button" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 2
+offset_left = 609.0
+offset_top = 131.0
+offset_right = 695.0
+offset_bottom = 204.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_j1itj")
+
+[node name="Button2" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 131.0
+offset_right = 986.0
+offset_bottom = 204.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_u0bku")
+
+[node name="Button3" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 804.0
+offset_top = 131.0
+offset_right = 890.0
+offset_bottom = 204.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_xv7io")
+
+[node name="Button4" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 707.0
+offset_top = 130.0
+offset_right = 793.0
+offset_bottom = 203.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_tq5gj")
+
+[node name="Button5" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 997.0
+offset_top = 131.0
+offset_right = 1083.0
+offset_bottom = 204.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_mijma")
+
+[node name="Button6" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 1094.0
+offset_top = 131.0
+offset_right = 1180.0
+offset_bottom = 204.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_ro7xl")
+
+[node name="Button7" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 609.0
+offset_top = 215.0
+offset_right = 695.0
+offset_bottom = 288.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_j1itj")
+
+[node name="Button8" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 215.0
+offset_right = 986.0
+offset_bottom = 288.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_u0bku")
+
+[node name="Button9" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 804.0
+offset_top = 215.0
+offset_right = 890.0
+offset_bottom = 288.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_xv7io")
+
+[node name="Button10" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 707.0
+offset_top = 214.0
+offset_right = 793.0
+offset_bottom = 287.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_tq5gj")
+
+[node name="Button11" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 997.0
+offset_top = 215.0
+offset_right = 1083.0
+offset_bottom = 288.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_mijma")
+
+[node name="Button12" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 1094.0
+offset_top = 215.0
+offset_right = 1180.0
+offset_bottom = 288.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_ro7xl")
+
+[node name="Button13" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 609.0
+offset_top = 300.0
+offset_right = 695.0
+offset_bottom = 373.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_j1itj")
+
+[node name="Button14" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 300.0
+offset_right = 986.0
+offset_bottom = 373.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_u0bku")
+
+[node name="Button15" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 804.0
+offset_top = 300.0
+offset_right = 890.0
+offset_bottom = 373.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_xv7io")
+
+[node name="Button16" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 707.0
+offset_top = 299.0
+offset_right = 793.0
+offset_bottom = 372.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_tq5gj")
+
+[node name="Button17" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 997.0
+offset_top = 300.0
+offset_right = 1083.0
+offset_bottom = 373.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_mijma")
+
+[node name="Button18" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 1094.0
+offset_top = 300.0
+offset_right = 1180.0
+offset_bottom = 373.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_ro7xl")
+
+[connection signal="mouse_entered" from="ReturnButton" to="ReturnButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ReturnButton" to="ReturnButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="ReturnButton" to="ReturnButton" method="_on_pressed"]
+[connection signal="input_event" from="Tianmen/Area2D" to="Tianmen" method="_on_area_input_event"]
+[connection signal="mouse_entered" from="Tianmen/Area2D" to="Tianmen" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Tianmen/Area2D" to="Tianmen" method="_on_mouse_exited"]
+[connection signal="input_event" from="Yuntai/Area2D" to="Yuntai" method="_on_area_input_event"]
+[connection signal="mouse_entered" from="Yuntai/Area2D" to="Yuntai" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Yuntai/Area2D" to="Yuntai" method="_on_mouse_exited"]
+[connection signal="input_event" from="Node2D/Area2D" to="Node2D" method="_on_input_event"]
+[connection signal="mouse_entered" from="Node2D/Area2D" to="Node2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/Area2D" to="Node2D" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Panel/CloseButton" to="CanvasLayer/Panel/CloseButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Panel/CloseButton" to="CanvasLayer/Panel/CloseButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Panel/CloseButton" to="CanvasLayer/Panel/CloseButton" method="_on_pressed"]

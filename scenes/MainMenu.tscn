@@ -1,0 +1,1242 @@
+[gd_scene load_steps=115 format=3 uid="uid://dk3y177gwfvsj"]
+
+[ext_resource type="Script" uid="uid://gvjx1ty01oc5" path="res://scripts/MainMenu.gd" id="1_0tp18"]
+[ext_resource type="Texture2D" uid="uid://ecr6fijsp0lq" path="res://assets/game_begin_backrgound.png" id="2_7iseh"]
+[ext_resource type="Texture2D" uid="uid://dw3mjyny0w4gq" path="res://assets/Banner_Logo.png" id="3_fn0tp"]
+[ext_resource type="FontFile" uid="uid://cjwrhhp33sbrk" path="res://assets/ttf/FZSTK.TTF" id="4_7ovgv"]
+[ext_resource type="Texture2D" uid="uid://dqsrn4ukryd51" path="res://assets/button/button01.png" id="5_wjfkx"]
+[ext_resource type="Script" uid="uid://dd1dt46gifp6b" path="res://scripts/ui/newStartButton.gd" id="6_tf4bb"]
+[ext_resource type="Texture2D" uid="uid://d3g1slfjbopw4" path="res://assets/button/button02.png" id="7_vd6e7"]
+[ext_resource type="Script" uid="uid://dtm70xjns52du" path="res://scripts/ui/SystemSetButton.gd" id="8_gk7bs"]
+[ext_resource type="Texture2D" uid="uid://dtxayvt44nxxx" path="res://assets/button/button03.png" id="9_r8jx5"]
+[ext_resource type="Script" uid="uid://bcp02oxfyxsrc" path="res://scripts/ui/GameExit.gd" id="10_31igq"]
+[ext_resource type="Texture2D" uid="uid://ccnxgi7h3q1by" path="res://assets/button/button04.png" id="11_kg113"]
+[ext_resource type="Script" uid="uid://ielyvvdvxtvt" path="res://scripts/ui/LoadArchive.gd" id="12_ruhar"]
+[ext_resource type="Texture2D" uid="uid://daxu5ioiv13tt" path="res://assets/loadArchive.png" id="13_ss1rh"]
+[ext_resource type="Texture2D" uid="uid://dinu4udc0bbs4" path="res://assets/button/close_button_press.png" id="14_1lsru"]
+[ext_resource type="Texture2D" uid="uid://1tw2ay406lnb" path="res://assets/numbers/numbers-1.png" id="14_pl0ud"]
+[ext_resource type="Texture2D" uid="uid://bbapo0igstqpk" path="res://assets/button/close_button.png" id="15_d7r6v"]
+[ext_resource type="Texture2D" uid="uid://c1yqyr6eunfqg" path="res://assets/numbers/numbers-2.png" id="15_updjh"]
+[ext_resource type="Script" uid="uid://b0l35y8ifpbvv" path="res://scripts/ui/CloseButton.gd" id="16_b2sbe"]
+[ext_resource type="Texture2D" uid="uid://lrhaan6h7ds8" path="res://assets/numbers/numbers-3.png" id="16_u6ce3"]
+[ext_resource type="Texture2D" uid="uid://b2x5dcg0ef2ko" path="res://assets/numbers/numbers-4.png" id="17_6dabs"]
+[ext_resource type="Texture2D" uid="uid://bh4owa0k0acuk" path="res://assets/loginPanel.png" id="17_vwdl8"]
+[ext_resource type="Texture2D" uid="uid://cij3xglcmhtcy" path="res://assets/numbers/numbers-5.png" id="18_a3l8e"]
+[ext_resource type="Script" uid="uid://dhn8m6hhei6p" path="res://scripts/ui/LoginPanel.gd" id="18_lknoo"]
+[ext_resource type="Texture2D" uid="uid://ckp3o4vnu3cqu" path="res://assets/button/loginButton.png" id="19_2m507"]
+[ext_resource type="Texture2D" uid="uid://dt1pkkxq4op41" path="res://assets/numbers/numbers-6.png" id="19_ad4u8"]
+[ext_resource type="Texture2D" uid="uid://dnnk4pbedinvs" path="res://assets/numbers/numbers-7.png" id="20_n3cy3"]
+[ext_resource type="Script" uid="uid://pevbuslyrrbb" path="res://scripts/ui/LoginButton.gd" id="20_wuyfp"]
+[ext_resource type="Texture2D" uid="uid://b6ljq30uik2wy" path="res://assets/numbers/numbers-8.png" id="21_nxt54"]
+[ext_resource type="Texture2D" uid="uid://cld8oybcmlh2y" path="res://assets/dialog/confirm_dialog.png" id="21_oy52w"]
+[ext_resource type="Script" uid="uid://r1lx4obicnfp" path="res://scripts/systems/SuccessDialog.gd" id="22_sr5ea"]
+[ext_resource type="Script" uid="uid://ihn1kb1k8vkx" path="res://scripts/ui/RegisterButton.gd" id="23_register"]
+[ext_resource type="Script" path="res://scripts/ui/SettingsPanel.gd" id="24_settings"]
+[ext_resource type="Script" path="res://scripts/ui/CharacterSelectPanel.gd" id="25_character"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kcvos"]
+texture = ExtResource("5_wjfkx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n4lqb"]
+texture = ExtResource("5_wjfkx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i055d"]
+texture = ExtResource("5_wjfkx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_leas3"]
+texture = ExtResource("5_wjfkx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fv8is"]
+texture = ExtResource("5_wjfkx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_stajs"]
+texture = ExtResource("5_wjfkx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ty4c"]
+texture = ExtResource("5_wjfkx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3sb7e"]
+texture = ExtResource("5_wjfkx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yqrea"]
+texture = ExtResource("5_wjfkx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wrfj0"]
+texture = ExtResource("5_wjfkx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_as7h6"]
+texture = ExtResource("7_vd6e7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xfqyn"]
+texture = ExtResource("7_vd6e7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fyyv5"]
+texture = ExtResource("7_vd6e7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_26kbu"]
+texture = ExtResource("7_vd6e7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tqdut"]
+texture = ExtResource("7_vd6e7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6qqwe"]
+texture = ExtResource("7_vd6e7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dqcdo"]
+texture = ExtResource("7_vd6e7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_75tps"]
+texture = ExtResource("7_vd6e7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y0rql"]
+texture = ExtResource("7_vd6e7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5i6i8"]
+texture = ExtResource("7_vd6e7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_th70n"]
+texture = ExtResource("7_vd6e7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mx3h4"]
+texture = ExtResource("9_r8jx5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cryww"]
+texture = ExtResource("9_r8jx5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hh676"]
+texture = ExtResource("9_r8jx5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xroya"]
+texture = ExtResource("9_r8jx5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_870we"]
+texture = ExtResource("9_r8jx5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eq7ut"]
+texture = ExtResource("9_r8jx5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_700jx"]
+texture = ExtResource("9_r8jx5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jyc6a"]
+texture = ExtResource("9_r8jx5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k47va"]
+texture = ExtResource("9_r8jx5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kx7wx"]
+texture = ExtResource("9_r8jx5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ro27t"]
+texture = ExtResource("9_r8jx5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r5rcr"]
+texture = ExtResource("11_kg113")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vkmkb"]
+texture = ExtResource("11_kg113")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g8h6g"]
+texture = ExtResource("11_kg113")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cnsrw"]
+texture = ExtResource("11_kg113")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1cgi7"]
+texture = ExtResource("11_kg113")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8oacy"]
+texture = ExtResource("11_kg113")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v102i"]
+texture = ExtResource("11_kg113")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x1gs1"]
+texture = ExtResource("11_kg113")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v8txe"]
+texture = ExtResource("11_kg113")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ilroo"]
+texture = ExtResource("11_kg113")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s8jnq"]
+texture = ExtResource("11_kg113")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uo2xn"]
+texture = ExtResource("13_ss1rh")
+
+[sub_resource type="ImageTexture" id="ImageTexture_oe8y1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1kcpy"]
+texture = ExtResource("15_d7r6v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qtoja"]
+texture = ExtResource("14_1lsru")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wtx68"]
+texture = ExtResource("14_1lsru")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xs4vk"]
+texture = ExtResource("14_1lsru")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcgd1"]
+texture = ExtResource("14_1lsru")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_krfga"]
+texture = ExtResource("14_1lsru")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s5op4"]
+texture = ExtResource("14_1lsru")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8mo1f"]
+texture = ExtResource("14_1lsru")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v3lh3"]
+texture = ExtResource("15_d7r6v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8kemq"]
+texture = ExtResource("15_d7r6v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j201f"]
+texture = ExtResource("14_1lsru")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_53p47"]
+texture = ExtResource("17_vwdl8")
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_qdlbp"]
+color = Color(0.341176, 0.341176, 0.341176, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_cg0cp"]
+color = Color(0.340339, 0.340339, 0.340339, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fnfl2"]
+texture = ExtResource("19_2m507")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_riu5o"]
+texture = ExtResource("19_2m507")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c5j2r"]
+texture = ExtResource("19_2m507")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_df7jl"]
+texture = ExtResource("19_2m507")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nu0ot"]
+texture = ExtResource("19_2m507")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6l7wo"]
+texture = ExtResource("19_2m507")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ywst"]
+texture = ExtResource("19_2m507")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcrcq"]
+texture = ExtResource("19_2m507")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5gxup"]
+texture = ExtResource("19_2m507")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bdvkk"]
+texture = ExtResource("19_2m507")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pxkio"]
+texture = ExtResource("19_2m507")
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_hhv2k"]
+color = Color(0.351563, 0.351563, 0.351563, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pw1f4"]
+texture = ExtResource("15_d7r6v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_di0ve"]
+texture = ExtResource("15_d7r6v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ttex"]
+texture = ExtResource("14_1lsru")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kap0k"]
+texture = ExtResource("14_1lsru")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ta2y"]
+texture = ExtResource("14_1lsru")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nnf46"]
+texture = ExtResource("14_1lsru")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jox1c"]
+texture = ExtResource("14_1lsru")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yfjuu"]
+texture = ExtResource("14_1lsru")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1be2j"]
+texture = ExtResource("15_d7r6v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kljlu"]
+texture = ExtResource("15_d7r6v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ig0hn"]
+texture = ExtResource("14_1lsru")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_30jol"]
+content_margin_left = 9.0
+content_margin_top = 12.0
+texture = ExtResource("21_oy52w")
+texture_margin_left = 1.0
+texture_margin_right = 10.0
+texture_margin_bottom = 4.0
+expand_margin_right = 5.0
+expand_margin_bottom = 2.0
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_0tp18")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(0.833333, 0.703125)
+texture = ExtResource("2_7iseh")
+metadata/_edit_lock_ = true
+
+[node name="GameIcon" type="Sprite2D" parent="."]
+position = Vector2(843, 114)
+scale = Vector2(0.788889, 0.770833)
+texture = ExtResource("3_fn0tp")
+
+[node name="StartGame" type="Button" parent="."]
+offset_left = 986.0
+offset_top = 213.0
+offset_right = 1150.0
+offset_bottom = 290.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_kcvos")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_n4lqb")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_i055d")
+theme_override_styles/hover = SubResource("StyleBoxTexture_leas3")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_fv8is")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_stajs")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_0ty4c")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_3sb7e")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_yqrea")
+theme_override_styles/focus = SubResource("StyleBoxTexture_wrfj0")
+text = "新的开始"
+script = ExtResource("6_tf4bb")
+metadata/_edit_use_anchors_ = true
+
+[node name="SystemSet" type="Button" parent="."]
+offset_left = 988.0
+offset_top = 413.0
+offset_right = 1151.0
+offset_bottom = 498.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_as7h6")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_xfqyn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fyyv5")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_26kbu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tqdut")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_6qqwe")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_dqcdo")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_75tps")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_y0rql")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_5i6i8")
+theme_override_styles/focus = SubResource("StyleBoxTexture_th70n")
+text = "设置"
+script = ExtResource("8_gk7bs")
+metadata/_edit_use_anchors_ = true
+
+[node name="GameExit" type="Button" parent="."]
+offset_left = 989.0
+offset_top = 526.0
+offset_right = 1151.0
+offset_bottom = 603.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_mx3h4")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_cryww")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hh676")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_xroya")
+theme_override_styles/hover = SubResource("StyleBoxTexture_870we")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_eq7ut")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_700jx")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_jyc6a")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_k47va")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_kx7wx")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ro27t")
+text = "退出游戏"
+script = ExtResource("10_31igq")
+metadata/_edit_use_anchors_ = true
+
+[node name="LoadArchive" type="Button" parent="."]
+offset_left = 989.0
+offset_top = 309.0
+offset_right = 1163.0
+offset_bottom = 393.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_r5rcr")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_vkmkb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_g8h6g")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_cnsrw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1cgi7")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_8oacy")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_v102i")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_x1gs1")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_v8txe")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_ilroo")
+theme_override_styles/focus = SubResource("StyleBoxTexture_s8jnq")
+text = "读取存档"
+script = ExtResource("12_ruhar")
+metadata/_edit_use_anchors_ = true
+
+[node name="InputBlocker" type="ColorRect" parent="."]
+visible = false
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0.184314)
+
+[node name="SaveSelectPanel" type="Panel" parent="."]
+visible = false
+offset_left = 253.0
+offset_top = 83.0
+offset_right = 1043.0
+offset_bottom = 652.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_uo2xn")
+
+[node name="SaveSlot1" type="Button" parent="SaveSelectPanel"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 135.0
+offset_right = 377.0
+offset_bottom = 209.0
+
+[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot1"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 15.0
+offset_right = 194.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "默认名字"
+
+[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot1"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 50.0
+offset_right = 174.0
+offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "默认角色"
+
+[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot1"]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 49.0
+offset_right = 294.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "Time"
+
+[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot1"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 7.0
+offset_right = 103.0
+offset_bottom = 69.0
+texture = SubResource("ImageTexture_oe8y1")
+
+[node name="Numbers-1" type="Sprite2D" parent="SaveSelectPanel/SaveSlot1"]
+position = Vector2(19.5, 38)
+scale = Vector2(1.15625, 1.125)
+texture = ExtResource("14_pl0ud")
+
+[node name="SaveSlot2" type="Button" parent="SaveSelectPanel"]
+layout_mode = 0
+offset_left = 413.0
+offset_top = 135.0
+offset_right = 715.0
+offset_bottom = 209.0
+
+[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot2"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 15.0
+offset_right = 194.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "默认名字"
+
+[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot2"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 50.0
+offset_right = 174.0
+offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "默认角色"
+
+[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot2"]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 49.0
+offset_right = 294.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "Time"
+
+[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot2"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 7.0
+offset_right = 103.0
+offset_bottom = 69.0
+texture = SubResource("ImageTexture_oe8y1")
+
+[node name="Numbers-2" type="Sprite2D" parent="SaveSelectPanel/SaveSlot2"]
+position = Vector2(19.5, 38)
+scale = Vector2(1.15625, 1.125)
+texture = ExtResource("15_updjh")
+
+[node name="SaveSlot3" type="Button" parent="SaveSelectPanel"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 233.0
+offset_right = 377.0
+offset_bottom = 306.0
+
+[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot3"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 15.0
+offset_right = 194.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "默认名字"
+
+[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot3"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 50.0
+offset_right = 174.0
+offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "默认角色"
+
+[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot3"]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 49.0
+offset_right = 294.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "Time"
+
+[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot3"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 7.0
+offset_right = 103.0
+offset_bottom = 69.0
+texture = SubResource("ImageTexture_oe8y1")
+
+[node name="Numbers-3" type="Sprite2D" parent="SaveSelectPanel/SaveSlot3"]
+position = Vector2(19.5, 38)
+scale = Vector2(1.15625, 1.125)
+texture = ExtResource("16_u6ce3")
+
+[node name="SaveSlot4" type="Button" parent="SaveSelectPanel"]
+layout_mode = 0
+offset_left = 414.0
+offset_top = 233.0
+offset_right = 715.0
+offset_bottom = 306.0
+
+[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot4"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 15.0
+offset_right = 194.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "默认名字"
+
+[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot4"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 50.0
+offset_right = 174.0
+offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "默认角色"
+
+[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot4"]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 49.0
+offset_right = 294.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "Time"
+
+[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot4"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 7.0
+offset_right = 103.0
+offset_bottom = 69.0
+texture = SubResource("ImageTexture_oe8y1")
+
+[node name="Numbers-4" type="Sprite2D" parent="SaveSelectPanel/SaveSlot4"]
+position = Vector2(19.5, 38)
+scale = Vector2(1.15625, 1.125)
+texture = ExtResource("17_6dabs")
+
+[node name="SaveSlot5" type="Button" parent="SaveSelectPanel"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 332.0
+offset_right = 377.0
+offset_bottom = 405.0
+
+[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot5"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 15.0
+offset_right = 194.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "默认名字"
+
+[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot5"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 50.0
+offset_right = 174.0
+offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "默认角色"
+
+[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot5"]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 49.0
+offset_right = 294.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "Time"
+
+[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot5"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 7.0
+offset_right = 103.0
+offset_bottom = 69.0
+texture = SubResource("ImageTexture_oe8y1")
+
+[node name="Numbers-5" type="Sprite2D" parent="SaveSelectPanel/SaveSlot5"]
+position = Vector2(19.5, 38)
+scale = Vector2(1.15625, 1.125)
+texture = ExtResource("18_a3l8e")
+
+[node name="SaveSlot6" type="Button" parent="SaveSelectPanel"]
+layout_mode = 0
+offset_left = 413.0
+offset_top = 332.0
+offset_right = 715.0
+offset_bottom = 405.0
+
+[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot6"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 15.0
+offset_right = 194.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "默认名字"
+
+[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot6"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 50.0
+offset_right = 174.0
+offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "默认角色"
+
+[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot6"]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 49.0
+offset_right = 294.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "Time"
+
+[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot6"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 7.0
+offset_right = 103.0
+offset_bottom = 69.0
+texture = SubResource("ImageTexture_oe8y1")
+
+[node name="Numbers-6" type="Sprite2D" parent="SaveSelectPanel/SaveSlot6"]
+position = Vector2(19.5, 38)
+scale = Vector2(1.15625, 1.125)
+texture = ExtResource("19_ad4u8")
+
+[node name="SaveSlot7" type="Button" parent="SaveSelectPanel"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 428.0
+offset_right = 377.0
+offset_bottom = 505.0
+
+[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot7"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 15.0
+offset_right = 194.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "默认名字"
+
+[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot7"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 50.0
+offset_right = 174.0
+offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "默认角色"
+
+[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot7"]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 49.0
+offset_right = 294.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "Time"
+
+[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot7"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 7.0
+offset_right = 103.0
+offset_bottom = 69.0
+texture = SubResource("ImageTexture_oe8y1")
+
+[node name="Numbers-7" type="Sprite2D" parent="SaveSelectPanel/SaveSlot7"]
+position = Vector2(19.5, 38)
+scale = Vector2(1.15625, 1.125)
+texture = ExtResource("20_n3cy3")
+
+[node name="SaveSlot8" type="Button" parent="SaveSelectPanel"]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 429.0
+offset_right = 715.0
+offset_bottom = 504.0
+
+[node name="NameLabel" type="Label" parent="SaveSelectPanel/SaveSlot8"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 15.0
+offset_right = 194.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "默认名字"
+
+[node name="JobLabel" type="Label" parent="SaveSelectPanel/SaveSlot8"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 50.0
+offset_right = 174.0
+offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "默认角色"
+
+[node name="LoginTimeLabel" type="Label" parent="SaveSelectPanel/SaveSlot8"]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 49.0
+offset_right = 294.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+text = "Time"
+
+[node name="Avatar" type="TextureRect" parent="SaveSelectPanel/SaveSlot8"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 7.0
+offset_right = 103.0
+offset_bottom = 69.0
+texture = SubResource("ImageTexture_oe8y1")
+
+[node name="Numbers-8" type="Sprite2D" parent="SaveSelectPanel/SaveSlot8"]
+position = Vector2(19.5, 38)
+scale = Vector2(1.15625, 1.125)
+texture = ExtResource("21_nxt54")
+
+[node name="CloseButton" type="Button" parent="SaveSelectPanel"]
+layout_mode = 0
+offset_left = 710.0
+offset_top = 9.0
+offset_right = 776.0
+offset_bottom = 71.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_1kcpy")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_qtoja")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wtx68")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_xs4vk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rcgd1")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_krfga")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_s5op4")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_8mo1f")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_v3lh3")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_8kemq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_j201f")
+script = ExtResource("16_b2sbe")
+
+[node name="LoginPanel" type="Panel" parent="."]
+visible = false
+offset_left = 382.0
+offset_top = 94.0
+offset_right = 893.0
+offset_bottom = 650.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_53p47")
+script = ExtResource("18_lknoo")
+
+[node name="UsernameInput" type="LineEdit" parent="LoginPanel"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 190.0
+offset_right = 401.0
+offset_bottom = 225.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_styles/focus = SubResource("StyleBoxLine_qdlbp")
+
+[node name="UsernameLabel" type="Label" parent="LoginPanel"]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 190.0
+offset_right = 155.0
+offset_bottom = 226.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 28
+text = "账号"
+
+[node name="PasswordInput" type="LineEdit" parent="LoginPanel"]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 300.0
+offset_right = 401.0
+offset_bottom = 331.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_styles/focus = SubResource("StyleBoxLine_cg0cp")
+secret = true
+
+[node name="PasswordLabel" type="Label" parent="LoginPanel"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 299.0
+offset_right = 153.0
+offset_bottom = 338.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 28
+text = "密码"
+
+[node name="NameLabel" type="Label" parent="LoginPanel"]
+visible = false
+layout_mode = 0
+offset_left = 95.0
+offset_top = 243.0
+offset_right = 155.0
+offset_bottom = 276.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 28
+text = "昵称"
+
+[node name="NameInput" type="LineEdit" parent="LoginPanel"]
+visible = false
+layout_mode = 0
+offset_left = 163.0
+offset_top = 244.0
+offset_right = 401.0
+offset_bottom = 275.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_styles/focus = SubResource("StyleBoxLine_qdlbp")
+placeholder_text = "昵称（可选）"
+
+[node name="LoginButton" type="Button" parent="LoginPanel"]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 445.0
+offset_right = 326.0
+offset_bottom = 503.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_fnfl2")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_riu5o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c5j2r")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_df7jl")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nu0ot")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_6l7wo")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_1ywst")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_rcrcq")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_5gxup")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_bdvkk")
+theme_override_styles/focus = SubResource("StyleBoxTexture_pxkio")
+script = ExtResource("20_wuyfp")
+
+[node name="LoginRequest" type="HTTPRequest" parent="LoginPanel"]
+
+[node name="RegisterButton" type="Button" parent="LoginPanel"]
+visible = false
+layout_mode = 0
+offset_left = 178.0
+offset_top = 428.0
+offset_right = 326.0
+offset_bottom = 486.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_fnfl2")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_riu5o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c5j2r")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_df7jl")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nu0ot")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_6l7wo")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_1ywst")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_rcrcq")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_5gxup")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_bdvkk")
+theme_override_styles/focus = SubResource("StyleBoxTexture_pxkio")
+text = "注册"
+script = ExtResource("23_register")
+
+[node name="RegisterRequest" type="HTTPRequest" parent="LoginPanel"]
+
+[node name="SwitchModeButton" type="Button" parent="LoginPanel"]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 501.0
+offset_right = 326.0
+offset_bottom = 531.0
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 16
+text = "没有账号？注册"
+flat = true
+
+[node name="UserAgree" type="HBoxContainer" parent="LoginPanel"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 359.0
+offset_right = 409.0
+offset_bottom = 399.0
+
+[node name="AgreeCheckBox" type="CheckBox" parent="LoginPanel/UserAgree"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxLine_hhv2k")
+
+[node name="AgreementLabel" type="RichTextLabel" parent="LoginPanel/UserAgree"]
+custom_minimum_size = Vector2(250, 10)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("4_7ovgv")
+bbcode_enabled = true
+text = "我已阅读并同意 [url=user]《用户协议》[/url] 和 [url=privacy]《隐私政策》[/url]"
+tab_size = 0
+
+[node name="CloseButton" type="Button" parent="LoginPanel"]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 18.0
+offset_right = 483.0
+offset_bottom = 71.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_pw1f4")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_di0ve")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4ttex")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_kap0k")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4ta2y")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_nnf46")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_jox1c")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_yfjuu")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_1be2j")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_kljlu")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ig0hn")
+script = ExtResource("16_b2sbe")
+
+[node name="SuccessDialog" type="AcceptDialog" parent="LoginPanel"]
+transparent_bg = true
+size = Vector2i(165, 126)
+borderless = true
+transparent = true
+theme_override_styles/panel = SubResource("StyleBoxTexture_30jol")
+ok_button_text = "确定"
+dialog_text = "           
+ 登录成功!"
+dialog_autowrap = true
+script = ExtResource("22_sr5ea")
+
+[node name="SettingsPanel" type="Panel" parent="."]
+visible = false
+offset_left = 340.0
+offset_top = 100.0
+offset_right = 940.0
+offset_bottom = 620.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_53p47")
+script = ExtResource("24_settings")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPanel"]
+layout_mode = 1
+offset_left = 50.0
+offset_top = 80.0
+offset_right = 550.0
+offset_bottom = 480.0
+
+[node name="TitleLabel" type="Label" parent="SettingsPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 36
+text = "游戏设置"
+horizontal_alignment = 1
+
+[node name="AudioSettings" type="VBoxContainer" parent="SettingsPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="AudioTitleLabel" type="Label" parent="SettingsPanel/VBoxContainer/AudioSettings"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 24
+text = "音频设置"
+
+[node name="MasterVolumeLabel" type="Label" parent="SettingsPanel/VBoxContainer/AudioSettings"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 20
+text = "主音量: 100%"
+
+[node name="MasterVolumeSlider" type="HSlider" parent="SettingsPanel/VBoxContainer/AudioSettings"]
+layout_mode = 2
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+value = 100.0
+
+[node name="MusicVolumeLabel" type="Label" parent="SettingsPanel/VBoxContainer/AudioSettings"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 20
+text = "音乐音量: 80%"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="SettingsPanel/VBoxContainer/AudioSettings"]
+layout_mode = 2
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+value = 80.0
+
+[node name="SFXVolumeLabel" type="Label" parent="SettingsPanel/VBoxContainer/AudioSettings"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 20
+text = "音效音量: 80%"
+
+[node name="SFXVolumeSlider" type="HSlider" parent="SettingsPanel/VBoxContainer/AudioSettings"]
+layout_mode = 2
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+value = 80.0
+
+[node name="VideoSettings" type="VBoxContainer" parent="SettingsPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="VideoTitleLabel" type="Label" parent="SettingsPanel/VBoxContainer/VideoSettings"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 24
+text = "视频设置"
+
+[node name="FullscreenCheckBox" type="CheckBox" parent="SettingsPanel/VBoxContainer/VideoSettings"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 20
+text = "全屏模式"
+
+[node name="VSyncCheckBox" type="CheckBox" parent="SettingsPanel/VBoxContainer/VideoSettings"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 20
+button_pressed = true
+text = "垂直同步"
+
+[node name="ResolutionLabel" type="Label" parent="SettingsPanel/VBoxContainer/VideoSettings"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 20
+text = "分辨率"
+
+[node name="ResolutionOption" type="OptionButton" parent="SettingsPanel/VBoxContainer/VideoSettings"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 18
+
+[node name="CloseButton" type="Button" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 489.0
+offset_top = 18.0
+offset_right = 541.0
+offset_bottom = 71.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_pw1f4")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_di0ve")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4ttex")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_kap0k")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4ta2y")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_nnf46")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_jox1c")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_yfjuu")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_1be2j")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_kljlu")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ig0hn")
+
+[node name="CharacterSelectPanel" type="Panel" parent="."]
+visible = false
+offset_left = 340.0
+offset_top = 150.0
+offset_right = 940.0
+offset_bottom = 570.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_53p47")
+script = ExtResource("25_character")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterSelectPanel"]
+layout_mode = 1
+offset_left = 50.0
+offset_top = 80.0
+offset_right = 550.0
+offset_bottom = 380.0
+theme_override_constants/separation = 20
+
+[node name="TitleLabel" type="Label" parent="CharacterSelectPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 36
+text = "创建角色"
+horizontal_alignment = 1
+
+[node name="CharacterInfo" type="VBoxContainer" parent="CharacterSelectPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="NameLabel" type="Label" parent="CharacterSelectPanel/VBoxContainer/CharacterInfo"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 24
+text = "角色名称"
+
+[node name="NameInput" type="LineEdit" parent="CharacterSelectPanel/VBoxContainer/CharacterInfo"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 40)
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxLine_qdlbp")
+placeholder_text = "请输入角色名称"
+
+[node name="JobLabel" type="Label" parent="CharacterSelectPanel/VBoxContainer/CharacterInfo"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 24
+text = "选择职业"
+
+[node name="JobOption" type="OptionButton" parent="CharacterSelectPanel/VBoxContainer/CharacterInfo"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 40)
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 20
+
+[node name="CreateButton" type="Button" parent="CharacterSelectPanel/VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_fnfl2")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_riu5o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c5j2r")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_df7jl")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nu0ot")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_6l7wo")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_1ywst")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_rcrcq")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_5gxup")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_bdvkk")
+theme_override_styles/focus = SubResource("StyleBoxTexture_pxkio")
+text = "创建角色"
+
+[node name="CancelButton" type="Button" parent="CharacterSelectPanel/VBoxContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
+theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_mx3h4")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_cryww")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hh676")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_xroya")
+theme_override_styles/hover = SubResource("StyleBoxTexture_870we")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_eq7ut")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_700jx")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_jyc6a")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_k47va")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_kx7wx")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ro27t")
+text = "取消"
+
+[node name="CloseButton" type="Button" parent="CharacterSelectPanel"]
+layout_mode = 0
+offset_left = 489.0
+offset_top = 18.0
+offset_right = 541.0
+offset_bottom = 71.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_pw1f4")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_di0ve")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4ttex")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_kap0k")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4ta2y")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_nnf46")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_jox1c")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_yfjuu")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_1be2j")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_kljlu")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ig0hn")
+
+[node name="CreateRequest" type="HTTPRequest" parent="CharacterSelectPanel"]
+
+[node name="LoadArchiveRequest" type="HTTPRequest" parent="."]
+
+[connection signal="mouse_entered" from="StartGame" to="StartGame" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StartGame" to="StartGame" method="_on_mouse_exited"]
+[connection signal="pressed" from="StartGame" to="StartGame" method="_on_pressed"]
+[connection signal="mouse_entered" from="SystemSet" to="SystemSet" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="SystemSet" to="SystemSet" method="_on_mouse_exited"]
+[connection signal="pressed" from="SystemSet" to="SystemSet" method="_on_pressed"]
+[connection signal="mouse_entered" from="GameExit" to="GameExit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="GameExit" to="GameExit" method="_on_mouse_exited"]
+[connection signal="pressed" from="GameExit" to="." method="_on_game_exit_pressed"]
+[connection signal="mouse_entered" from="LoadArchive" to="LoadArchive" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="LoadArchive" to="LoadArchive" method="_on_mouse_exited"]
+[connection signal="pressed" from="LoadArchive" to="LoadArchive" method="_on_ReadSaveButton_pressed"]
+[connection signal="mouse_entered" from="SaveSelectPanel/CloseButton" to="SaveSelectPanel/CloseButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="SaveSelectPanel/CloseButton" to="SaveSelectPanel/CloseButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="SaveSelectPanel/CloseButton" to="SaveSelectPanel/CloseButton" method="_on_archive_pressed"]
+[connection signal="mouse_entered" from="LoginPanel/LoginButton" to="LoginPanel/LoginButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="LoginPanel/LoginButton" to="LoginPanel/LoginButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="LoginPanel/LoginButton" to="LoginPanel/LoginButton" method="_on_pressed"]
+[connection signal="request_completed" from="LoginPanel/LoginRequest" to="LoginPanel/LoginButton" method="_on_request_completed"]
+[connection signal="mouse_entered" from="LoginPanel/RegisterButton" to="LoginPanel/RegisterButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="LoginPanel/RegisterButton" to="LoginPanel/RegisterButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="LoginPanel/RegisterButton" to="LoginPanel/RegisterButton" method="_on_pressed"]
+[connection signal="request_completed" from="LoginPanel/RegisterRequest" to="LoginPanel/RegisterButton" method="_on_request_completed"]
+[connection signal="pressed" from="LoginPanel/SwitchModeButton" to="LoginPanel" method="_on_switch_mode_pressed"]
+[connection signal="meta_clicked" from="LoginPanel/UserAgree/AgreementLabel" to="LoginPanel" method="_on_agreement_label_meta_clicked"]
+[connection signal="mouse_entered" from="LoginPanel/CloseButton" to="LoginPanel/CloseButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="LoginPanel/CloseButton" to="LoginPanel/CloseButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="LoginPanel/CloseButton" to="LoginPanel/CloseButton" method="_on_pressed"]
+[connection signal="confirmed" from="LoginPanel/SuccessDialog" to="LoginPanel/SuccessDialog" method="_on_login_success_confirmed"]
+[connection signal="request_completed" from="LoadArchiveRequest" to="LoadArchive" method="_on_LoadArchiveRequest_request_completed"]
