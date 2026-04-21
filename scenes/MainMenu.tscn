@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ccnxgi7h3q1by" path="res://assets/button/button04.png" id="11_kg113"]
 [ext_resource type="Script" uid="uid://ielyvvdvxtvt" path="res://scripts/ui/LoadArchive.gd" id="12_ruhar"]
 [ext_resource type="Texture2D" uid="uid://daxu5ioiv13tt" path="res://assets/enter/loadArchive.png" id="13_ss1rh"]
+[ext_resource type="AudioStream" path="res://assets/audio/bgm_enter.mp3" id="14_bgm"]
 [ext_resource type="Texture2D" uid="uid://dinu4udc0bbs4" path="res://assets/button/close_button_press.png" id="14_1lsru"]
 [ext_resource type="Texture2D" uid="uid://1tw2ay406lnb" path="res://assets/numbers/numbers-1.png" id="14_pl0ud"]
 [ext_resource type="Texture2D" uid="uid://bbapo0igstqpk" path="res://assets/button/close_button.png" id="15_d7r6v"]
@@ -291,6 +292,10 @@ expand_margin_bottom = 2.0
 
 [node name="MainMenu" type="Node2D" unique_id=1897503096]
 script = ExtResource("1_0tp18")
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_bgm")
+autoplay = true
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1893791155]
 position = Vector2(640, 360)
@@ -1036,40 +1041,6 @@ text = "音效音量: 80%"
 [node name="SFXVolumeSlider" type="HSlider" parent="SettingsPanel/VBoxContainer/AudioSettings" unique_id=440010772]
 layout_mode = 2
 value = 80.0
-
-[node name="VideoSettings" type="VBoxContainer" parent="SettingsPanel/VBoxContainer" unique_id=1042208880]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="VideoTitleLabel" type="Label" parent="SettingsPanel/VBoxContainer/VideoSettings" unique_id=1990917826]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_7ovgv")
-theme_override_font_sizes/font_size = 24
-text = "视频设置"
-
-[node name="FullscreenCheckBox" type="CheckBox" parent="SettingsPanel/VBoxContainer/VideoSettings" unique_id=1084249258]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_7ovgv")
-theme_override_font_sizes/font_size = 20
-text = "全屏模式"
-
-[node name="VSyncCheckBox" type="CheckBox" parent="SettingsPanel/VBoxContainer/VideoSettings" unique_id=631984876]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_7ovgv")
-theme_override_font_sizes/font_size = 20
-button_pressed = true
-text = "垂直同步"
-
-[node name="ResolutionLabel" type="Label" parent="SettingsPanel/VBoxContainer/VideoSettings" unique_id=1010272835]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_7ovgv")
-theme_override_font_sizes/font_size = 20
-text = "分辨率"
-
-[node name="ResolutionOption" type="OptionButton" parent="SettingsPanel/VBoxContainer/VideoSettings" unique_id=549886687]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_7ovgv")
-theme_override_font_sizes/font_size = 18
 
 [node name="CloseButton" type="Button" parent="SettingsPanel" unique_id=1534152084]
 layout_mode = 0

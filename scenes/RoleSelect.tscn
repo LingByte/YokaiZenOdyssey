@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://bxqc7udltpvax"]
+
+[ext_resource type="Script" uid="uid://b55ipuvx04hca" path="res://scripts/RoleSelect.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://cd2kebowgdi7c" path="res://assets/level/role_select.png" id="2_bg"]
+[ext_resource type="Texture2D" uid="uid://dh2tuuapjh4sw" path="res://assets/button/select_role_1.png" id="3_normal"]
+[ext_resource type="Texture2D" uid="uid://di3w6hsi2vu5b" path="res://assets/button/select_role_2.png" id="4_hover"]
+[ext_resource type="Texture2D" uid="uid://dxy3uyn6mxtkj" path="res://assets/sprites/players/kongkonng/first_frame.png" id="5_soul_idle"]
+[ext_resource type="Texture2D" uid="uid://dq5hcnyhi1wxq" path="res://assets/sprites/players/bajie/first_frame.png" id="6_bajie_idle"]
+[ext_resource type="Texture2D" uid="uid://dqsrn4ukryd51" path="res://assets/button/button01.png" id="7_char_btn"]
+[ext_resource type="Texture2D" uid="uid://bfwtwtriq2sys" path="res://assets/button/select_role_return.png" id="8_return"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_char_btn"]
+texture = ExtResource("7_char_btn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_normal"]
+texture = ExtResource("3_normal")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hover"]
+texture = ExtResource("4_hover")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_return"]
+texture = ExtResource("8_return")
+
+[node name="RoleSelect" type="Control" unique_id=1561938879]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1438647525]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SoulButton" type="Button" parent="." unique_id=1301795684]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 443.0
+offset_right = 404.0
+offset_bottom = 493.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_char_btn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_char_btn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_char_btn")
+text = "灵魂行者"
+
+[node name="SoulIdle" type="TextureButton" parent="." unique_id=1301795685]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 125.0
+offset_right = 457.0
+offset_bottom = 446.0
+focus_mode = 0
+texture_normal = ExtResource("5_soul_idle")
+stretch_mode = 5
+
+[node name="BajieButton" type="Button" parent="." unique_id=2036372167]
+layout_mode = 0
+offset_left = 851.0
+offset_top = 440.0
+offset_right = 1014.0
+offset_bottom = 490.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_char_btn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_char_btn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_char_btn")
+text = "八戒"
+
+[node name="BajieIdle" type="TextureButton" parent="." unique_id=2036372168]
+layout_mode = 0
+offset_left = 803.0
+offset_top = 141.0
+offset_right = 1046.0
+offset_bottom = 434.0
+focus_mode = 0
+texture_normal = ExtResource("6_bajie_idle")
+stretch_mode = 5
+
+[node name="ConfirmButton" type="Button" parent="." unique_id=1540392002]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 558.0
+offset_right = 686.0
+offset_bottom = 699.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_normal")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_normal")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hover")
+
+[node name="SelectedCharacterLabel" type="Label" parent="." unique_id=837587189]
+layout_mode = 0
+offset_left = 453.0
+offset_top = 610.0
+offset_right = 753.0
+offset_bottom = 644.0
+theme_override_font_sizes/font_size = 24
+text = "请选择角色"
+horizontal_alignment = 1
+
+[node name="ReturnButton" type="Button" parent="." unique_id=1540392003]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 624.0
+offset_right = 111.0
+offset_bottom = 684.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_return")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_return")
+theme_override_styles/hover = SubResource("StyleBoxTexture_return")
