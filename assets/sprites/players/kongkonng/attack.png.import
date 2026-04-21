@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daxu5ioiv13tt"
-path="res://.godot/imported/loadArchive.png-55acd277f7f69cbed8df1b11e6733ac1.ctex"
+uid="uid://226h3rf14bvr"
+path="res://.godot/imported/attack.png-4046e3d6151c35a757590d14a0b3904f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/loadArchive.png"
-dest_files=["res://.godot/imported/loadArchive.png-55acd277f7f69cbed8df1b11e6733ac1.ctex"]
+source_file="res://assets/sprites/players/kongkonng/attack.png"
+dest_files=["res://.godot/imported/attack.png-4046e3d6151c35a757590d14a0b3904f.ctex"]
 
 [params]
 

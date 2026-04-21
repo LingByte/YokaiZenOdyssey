@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://b8kwk4vxf3vcl"]
+
+[ext_resource type="PackedScene" uid="uid://dyrnibge16pp6" path="res://characters/player/base/BasePlayer.tscn" id="1_3umdx"]
+[ext_resource type="Texture2D" uid="uid://cnk13wxcqffya" path="res://assets/sprites/players/bajie/idle.png" id="2_idle"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bajie"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_idle")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bajie"]
+size = Vector2(71.7393, 144.73613)
+
+[node name="BasePlayer" unique_id=1356237915 instance=ExtResource("1_3umdx")]
+position = Vector2(201, 164)
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(-205.99998, -135)
+scale = Vector2(0.36000773, 0.35153058)
+sprite_frames = SubResource("SpriteFrames_bajie")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-201.5, -137.99995)
+scale = Vector2(1.10121, 1.18837)
+shape = SubResource("RectangleShape2D_bajie")
+
+[node name="Camera2D" parent="." index="2"]
+limit_left = 0
+limit_top = 0
+limit_right = 10141
+limit_bottom = 728
+limit_smoothed = true
+drag_left_margin = 0.5
+drag_top_margin = 0.5

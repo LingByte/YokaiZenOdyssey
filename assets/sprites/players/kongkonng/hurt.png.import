@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs0b0pv3p8wqw"
-path="res://.godot/imported/character_right_leg.png-9095283d0bd089ef18dbb6753b0a3893.ctex"
+uid="uid://fbfu83sv3yax"
+path="res://.godot/imported/hurt.png-3e79aa090258b218a4c3a7c38abbf124.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/character_right_leg.png"
-dest_files=["res://.godot/imported/character_right_leg.png-9095283d0bd089ef18dbb6753b0a3893.ctex"]
+source_file="res://assets/sprites/players/kongkonng/hurt.png"
+dest_files=["res://.godot/imported/hurt.png-3e79aa090258b218a4c3a7c38abbf124.ctex"]
 
 [params]
 

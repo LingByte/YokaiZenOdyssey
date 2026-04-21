@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqfieuwyuu6te"
-path="res://.godot/imported/character_left_arm.png-46c4c98cd0b7a621edb37015079e23ff.ctex"
+uid="uid://ckroudsflbgem"
+path="res://.godot/imported/hit.png-1301a6f98c800a36a9b5ae88b9b99c01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/character_left_arm.png"
-dest_files=["res://.godot/imported/character_left_arm.png-46c4c98cd0b7a621edb37015079e23ff.ctex"]
+source_file="res://assets/sprites/players/kongkonng/hit.png"
+dest_files=["res://.godot/imported/hit.png-1301a6f98c800a36a9b5ae88b9b99c01.ctex"]
 
 [params]
 

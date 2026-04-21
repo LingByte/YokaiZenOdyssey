@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk4nolehga6fb"
-path="res://.godot/imported/character_right_arm.png-7de3e111de736a119aea0483538c0bf6.ctex"
+uid="uid://gg6dxog7kakh"
+path="res://.godot/imported/att.png-dd1be312bb64350f1beea53ca27835d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/character_right_arm.png"
-dest_files=["res://.godot/imported/character_right_arm.png-7de3e111de736a119aea0483538c0bf6.ctex"]
+source_file="res://assets/sprites/players/bajie/att.png"
+dest_files=["res://.godot/imported/att.png-dd1be312bb64350f1beea53ca27835d0.ctex"]
 
 [params]
 

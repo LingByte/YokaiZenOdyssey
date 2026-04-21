@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drs1h3vwapwy3"
-path="res://.godot/imported/character_left_leg.png-be67613bf41a018a1938408cbcab5ad3.ctex"
+uid="uid://bh4owa0k0acuk"
+path="res://.godot/imported/loginPanel.png-e4f5c763acd790f518afd6e8b7c7b674.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/character_left_leg.png"
-dest_files=["res://.godot/imported/character_left_leg.png-be67613bf41a018a1938408cbcab5ad3.ctex"]
+source_file="res://assets/enter/loginPanel.png"
+dest_files=["res://.godot/imported/loginPanel.png-e4f5c763acd790f518afd6e8b7c7b674.ctex"]
 
 [params]
 

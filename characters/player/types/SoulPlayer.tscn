@@ -1,10 +1,10 @@
-[gd_scene load_steps=40 format=3 uid="uid://cwbq8natgsca"]
+[gd_scene format=3 uid="uid://cwbq8natgsca"]
 
 [ext_resource type="PackedScene" uid="uid://dyrnibge16pp6" path="res://characters/player/base/BasePlayer.tscn" id="1_3umdx"]
-[ext_resource type="Texture2D" uid="uid://birjhpy26qgjo" path="res://assets/sprites/players/idle.png" id="2_vc8x6"]
-[ext_resource type="Texture2D" uid="uid://226h3rf14bvr" path="res://assets/sprites/players/attack.png" id="3_bjqdv"]
-[ext_resource type="Texture2D" uid="uid://fbfu83sv3yax" path="res://assets/sprites/players/hurt.png" id="3_u3m33"]
-[ext_resource type="Texture2D" uid="uid://wguux84dv2cd" path="res://assets/sprites/players/jump.png" id="4_cw882"]
+[ext_resource type="Texture2D" uid="uid://birjhpy26qgjo" path="res://assets/sprites/players/kongkonng/idle.png" id="2_vc8x6"]
+[ext_resource type="Texture2D" uid="uid://226h3rf14bvr" path="res://assets/sprites/players/kongkonng/attack.png" id="3_bjqdv"]
+[ext_resource type="Texture2D" uid="uid://fbfu83sv3yax" path="res://assets/sprites/players/kongkonng/hurt.png" id="3_u3m33"]
+[ext_resource type="Texture2D" uid="uid://wguux84dv2cd" path="res://assets/sprites/players/kongkonng/jump.png" id="4_cw882"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_75rh7"]
 atlas = ExtResource("3_bjqdv")
@@ -271,7 +271,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nen6x"]
 size = Vector2(71.7393, 159.883)
 
-[node name="BasePlayer" instance=ExtResource("1_3umdx")]
+[node name="BasePlayer" unique_id=1356237914 instance=ExtResource("1_3umdx")]
 position = Vector2(201, 164)
 
 [node name="AnimatedSprite2D" parent="." index="0"]

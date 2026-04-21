@@ -1,41 +1,39 @@
-[gd_scene load_steps=95 format=3 uid="uid://c4rvfp2r37yuf"]
+[gd_scene format=3 uid="uid://c4rvfp2r37yuf"]
 
 [ext_resource type="Texture2D" uid="uid://chdedn23dj4kg" path="res://assets/level/shenxiao/map_background.png" id="1_6yk1v"]
-[ext_resource type="Script" path="res://scripts/levels/shenxiao/shenxiao.gd" id="1_iac8a"]
-[ext_resource type="Script" path="res://scripts/levels/shenxiao/TianmenLevel.gd" id="2_ofirc"]
+[ext_resource type="Script" uid="uid://8dtrvh64208r" path="res://scripts/levels/shenxiao/shenxiao.gd" id="1_iac8a"]
+[ext_resource type="Script" uid="uid://g4a0fg47o06" path="res://scripts/levels/shenxiao/TianmenLevel.gd" id="2_ofirc"]
 [ext_resource type="Texture2D" uid="uid://bkm0p8rkb4tvo" path="res://assets/level/shenxiao/shenxiao_level01.png" id="2_pnp0r"]
 [ext_resource type="FontFile" uid="uid://cjwrhhp33sbrk" path="res://assets/ttf/FZSTK.TTF" id="3_88tyd"]
 [ext_resource type="Texture2D" uid="uid://cxqmf60p1l221" path="res://assets/button/return_button_press.png" id="7_2ute2"]
 [ext_resource type="Texture2D" uid="uid://db7r5yk7tt62q" path="res://assets/level/shenxiao/shenxiao_level01_grow.png" id="8_ldoll"]
 [ext_resource type="Texture2D" uid="uid://c8lqygxnwo14l" path="res://assets/button/return_button.png" id="8_v2eqs"]
-[ext_resource type="Script" path="res://scripts/systems/ReturnButton.gd" id="9_ns513"]
-[ext_resource type="Script" path="res://scripts/levels/shenxiao/YuntaiLevel.gd" id="10_k6iob"]
+[ext_resource type="Script" uid="uid://drmspcrcr1vh2" path="res://scripts/systems/ReturnButton.gd" id="9_ns513"]
+[ext_resource type="Script" uid="uid://cxkuxc0hth8l6" path="res://scripts/levels/shenxiao/YuntaiLevel.gd" id="10_k6iob"]
 [ext_resource type="Texture2D" uid="uid://cr0gqdb1f0r2s" path="res://assets/level/shenxiao/shenxiao_level02.png" id="10_s2qi7"]
-[ext_resource type="Texture2D" uid="uid://ds2qrspdu84u6" path="res://assets/level/shenxiao/grow.png" id="12_4bhcr"]
 [ext_resource type="Texture2D" uid="uid://74qcjagv3xyo" path="res://assets/level/shenxiao/shenxiao_level03.png" id="12_4roje"]
-[ext_resource type="Script" path="res://scripts/levels/shenxiao/YuqueLvel.gd" id="13_yaart"]
+[ext_resource type="Script" uid="uid://c4y8xt7n3k8vw" path="res://scripts/levels/shenxiao/YuqueLvel.gd" id="13_yaart"]
 [ext_resource type="Texture2D" uid="uid://bvjwo80ps3urt" path="res://assets/level/shenxiao/shenxiao_level03_grow.png" id="14_t1ld4"]
 [ext_resource type="Texture2D" uid="uid://dqasf4atyeowd" path="res://assets/level/shenxiao/shenxiao_level04.png" id="16_8whgy"]
-[ext_resource type="Script" path="res://scripts/levels/shenxiao/Lingquan.gd" id="16_o00st"]
+[ext_resource type="Script" uid="uid://p05oabnqq80n" path="res://scripts/levels/shenxiao/Lingquan.gd" id="16_o00st"]
 [ext_resource type="Texture2D" uid="uid://d2f46grcisr0h" path="res://assets/level/shenxiao/shenxiao_level04_grow.png" id="17_r26l6"]
-[ext_resource type="Script" path="res://scripts/levels/shenxiao/TianhengLevel.gd" id="19_h6qs7"]
+[ext_resource type="Script" uid="uid://b2h0ij8kvycxc" path="res://scripts/levels/shenxiao/TianhengLevel.gd" id="19_h6qs7"]
 [ext_resource type="Texture2D" uid="uid://dfd26p7r6fpj1" path="res://assets/level/shenxiao/shenxiao_level05.png" id="19_hx5vo"]
 [ext_resource type="Texture2D" uid="uid://bk35chinsysst" path="res://assets/level/shenxiao/shenxiao_level05_grow.png" id="20_tj7t7"]
 [ext_resource type="Texture2D" uid="uid://b21xvpd7eq1ee" path="res://assets/level/shenxiao/shenxiao_level06.png" id="22_7prki"]
-[ext_resource type="Script" path="res://scripts/levels/shenxiao/TianxingtaiLevel.gd" id="22_pwtek"]
+[ext_resource type="Script" uid="uid://c5yuwe35df63c" path="res://scripts/levels/shenxiao/TianxingtaiLevel.gd" id="22_pwtek"]
 [ext_resource type="Texture2D" uid="uid://d4ajmyv7qyydn" path="res://assets/level/shenxiao/shenxiao_level06_grow.png" id="23_h3xyk"]
-[ext_resource type="Script" path="res://scripts/levels/shenxiao/ShenyuhexinLevel.gd" id="25_61dk4"]
+[ext_resource type="Script" uid="uid://dfkcu042qsy7y" path="res://scripts/levels/shenxiao/ShenyuhexinLevel.gd" id="25_61dk4"]
 [ext_resource type="Texture2D" uid="uid://cot4b4hbunmqu" path="res://assets/level/shenxiao/shenxiao_level07.png" id="25_t04qn"]
 [ext_resource type="Texture2D" uid="uid://c6q6xl1npsnqv" path="res://assets/level/shenxiao/shenxiao_level07_grow.png" id="26_efh3l"]
 [ext_resource type="Texture2D" uid="uid://w7epn4mokxfl" path="res://assets/avatarframes/default_frames.png" id="28_fo420"]
 [ext_resource type="Texture2D" uid="uid://c3m4fsi52553w" path="res://assets/common/backpack_open.png" id="28_ivi0i"]
 [ext_resource type="Texture2D" uid="uid://dd6rrhx5gstc6" path="res://assets/common/backpack.png" id="28_p5vn1"]
-[ext_resource type="Script" path="res://scripts/ui/Backpack.gd" id="29_gw7md"]
+[ext_resource type="Script" uid="uid://dqjn628c4wvkl" path="res://scripts/ui/Backpack.gd" id="29_gw7md"]
 [ext_resource type="Texture2D" uid="uid://cjbo1exfceoga" path="res://assets/common/pack_panel.png" id="32_daowl"]
 [ext_resource type="Texture2D" uid="uid://dinu4udc0bbs4" path="res://assets/button/close_button_press.png" id="33_a8yqr"]
-[ext_resource type="Texture2D" uid="uid://dbu3bedsb3rpf" path="res://assets/sprites/first_frame.png" id="33_b4ahg"]
 [ext_resource type="Texture2D" uid="uid://bbapo0igstqpk" path="res://assets/button/close_button.png" id="34_ae1wy"]
-[ext_resource type="Script" path="res://scripts/levels/shenxiao/pack_close_button.gd" id="35_3qmri"]
+[ext_resource type="Script" uid="uid://di74oilrwihjw" path="res://scripts/levels/shenxiao/pack_close_button.gd" id="35_3qmri"]
 [ext_resource type="Texture2D" uid="uid://dwl4rx0j2ym47" path="res://assets/common/Level_Banner.png" id="37_m8qlp"]
 [ext_resource type="Texture2D" uid="uid://5xs74r345x1g" path="res://assets/numbers/font_number_1.png" id="38_oil6w"]
 [ext_resource type="Texture2D" uid="uid://cs72utj7iglcg" path="res://assets/items/1300.png" id="39_rd6sh"]
@@ -45,38 +43,38 @@
 [ext_resource type="Texture2D" uid="uid://bolxybde4xssv" path="res://assets/items/1307.png" id="43_oemmg"]
 [ext_resource type="Texture2D" uid="uid://csd7sl8e5rjfd" path="res://assets/items/1311.png" id="44_2eg3m"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r0373"]
-texture = ExtResource("7_2ute2")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_18hoy"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ut24"]
 texture = ExtResource("8_v2eqs")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x4hiv"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ikscr"]
 texture = ExtResource("8_v2eqs")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_agu3u"]
-texture = ExtResource("7_2ute2")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qlvol"]
-texture = ExtResource("7_2ute2")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uxvho"]
-texture = ExtResource("7_2ute2")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u1fi1"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_djkti"]
 texture = ExtResource("7_2ute2")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ss21"]
 texture = ExtResource("7_2ute2")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_djkti"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u1fi1"]
 texture = ExtResource("7_2ute2")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ikscr"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uxvho"]
+texture = ExtResource("7_2ute2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qlvol"]
+texture = ExtResource("7_2ute2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_agu3u"]
+texture = ExtResource("7_2ute2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x4hiv"]
 texture = ExtResource("8_v2eqs")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ut24"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_18hoy"]
 texture = ExtResource("8_v2eqs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r0373"]
+texture = ExtResource("7_2ute2")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k2ppb"]
 radius = 26.0
@@ -115,60 +113,60 @@ texture = ExtResource("28_fo420")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_077nu"]
 texture = ExtResource("32_daowl")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2kn5r"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h68ly"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_raqxr"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_onjra"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8120l"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_37gjr"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j680e"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g1use"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_56etu"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x4mvb"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_43ck7"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x4mvb"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_56etu"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yvl4u"]
-texture = ExtResource("33_a8yqr")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g1use"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ny00b"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j680e"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_37gjr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8120l"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_onjra"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_raqxr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h68ly"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2kn5r"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kf5y8"]
 texture = ExtResource("34_ae1wy")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3xllv"]
-texture = ExtResource("34_ae1wy")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ftv7h"]
-texture = ExtResource("33_a8yqr")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a6drg"]
-texture = ExtResource("33_a8yqr")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n0wxe"]
-texture = ExtResource("33_a8yqr")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_io6gv"]
-texture = ExtResource("33_a8yqr")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ueao"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_si5ki"]
 texture = ExtResource("33_a8yqr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lxxf4"]
 texture = ExtResource("33_a8yqr")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_si5ki"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ueao"]
 texture = ExtResource("33_a8yqr")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kf5y8"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_io6gv"]
+texture = ExtResource("33_a8yqr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n0wxe"]
+texture = ExtResource("33_a8yqr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a6drg"]
+texture = ExtResource("33_a8yqr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ftv7h"]
+texture = ExtResource("33_a8yqr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3xllv"]
 texture = ExtResource("34_ae1wy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ny00b"]
+texture = ExtResource("34_ae1wy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yvl4u"]
+texture = ExtResource("33_a8yqr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7gxdb"]
 
@@ -190,54 +188,54 @@ texture = ExtResource("43_oemmg")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ro7xl"]
 texture = ExtResource("44_2eg3m")
 
-[node name="Shenxiao" type="Node2D"]
+[node name="Shenxiao" type="Node2D" unique_id=1479545725]
 script = ExtResource("1_iac8a")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=11944871]
 position = Vector2(640, 360)
 scale = Vector2(0.833333, 0.703125)
 texture = ExtResource("1_6yk1v")
 metadata/_edit_lock_ = true
 
-[node name="HeartbeatRequest" type="HTTPRequest" parent="."]
+[node name="HeartbeatRequest" type="HTTPRequest" parent="." unique_id=1713565424]
 
-[node name="HeartbeatTimer" type="Timer" parent="."]
+[node name="HeartbeatTimer" type="Timer" parent="." unique_id=310797253]
 wait_time = 60.0
 autostart = true
 
-[node name="ReturnButton" type="Button" parent="."]
+[node name="ReturnButton" type="Button" parent="." unique_id=1803101325]
 offset_left = 1176.0
 offset_top = 649.0
 offset_right = 1253.0
 offset_bottom = 700.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_r0373")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_18hoy")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_x4hiv")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_agu3u")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_qlvol")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_uxvho")
-theme_override_styles/hover = SubResource("StyleBoxTexture_u1fi1")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_8ss21")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_djkti")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ikscr")
 theme_override_styles/normal = SubResource("StyleBoxTexture_8ut24")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ikscr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_djkti")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_8ss21")
+theme_override_styles/hover = SubResource("StyleBoxTexture_u1fi1")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_uxvho")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_qlvol")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_agu3u")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_x4hiv")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_18hoy")
+theme_override_styles/focus = SubResource("StyleBoxTexture_r0373")
 script = ExtResource("9_ns513")
 
-[node name="Tianmen" type="Node2D" parent="."]
+[node name="Tianmen" type="Node2D" parent="." unique_id=2055608031]
 script = ExtResource("2_ofirc")
 
-[node name="Icon" type="Sprite2D" parent="Tianmen"]
+[node name="Icon" type="Sprite2D" parent="Tianmen" unique_id=1196861046]
 position = Vector2(824, 627.75)
 scale = Vector2(0.827383, 0.768182)
 texture = ExtResource("2_pnp0r")
 metadata/_edit_lock_ = true
 
-[node name="Glow" type="Sprite2D" parent="Tianmen"]
+[node name="Glow" type="Sprite2D" parent="Tianmen" unique_id=535125545]
 position = Vector2(825, 627)
 scale = Vector2(0.208, 0.156591)
 texture = ExtResource("8_ldoll")
 
-[node name="Label" type="Label" parent="Tianmen"]
+[node name="Label" type="Label" parent="Tianmen" unique_id=899269733]
 offset_left = 792.0
 offset_top = 646.0
 offset_right = 856.0
@@ -245,26 +243,25 @@ offset_bottom = 669.0
 theme_override_fonts/font = ExtResource("3_88tyd")
 text = "天门试炼"
 
-[node name="Area2D" type="Area2D" parent="Tianmen"]
+[node name="Area2D" type="Area2D" parent="Tianmen" unique_id=36033755]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tianmen/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tianmen/Area2D" unique_id=1389129014]
 position = Vector2(823, 627)
 shape = SubResource("CapsuleShape2D_k2ppb")
 
-[node name="Yuntai" type="Node2D" parent="."]
+[node name="Yuntai" type="Node2D" parent="." unique_id=2033654230]
 script = ExtResource("10_k6iob")
 
-[node name="Icon" type="Sprite2D" parent="Yuntai"]
+[node name="Icon" type="Sprite2D" parent="Yuntai" unique_id=808650459]
 position = Vector2(286.5, 527)
 scale = Vector2(0.850467, 0.797945)
 texture = ExtResource("10_s2qi7")
 
-[node name="Glow" type="Sprite2D" parent="Yuntai"]
+[node name="Glow" type="Sprite2D" parent="Yuntai" unique_id=1337971983]
 position = Vector2(286, 533)
 scale = Vector2(0.128906, 0.126302)
-texture = ExtResource("12_4bhcr")
 
-[node name="Label" type="Label" parent="Yuntai"]
+[node name="Label" type="Label" parent="Yuntai" unique_id=1139974145]
 offset_left = 257.0
 offset_top = 586.0
 offset_right = 321.0
@@ -272,26 +269,26 @@ offset_bottom = 609.0
 theme_override_fonts/font = ExtResource("3_88tyd")
 text = "云台灵阵"
 
-[node name="Area2D" type="Area2D" parent="Yuntai"]
+[node name="Area2D" type="Area2D" parent="Yuntai" unique_id=2004158986]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Yuntai/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Yuntai/Area2D" unique_id=643982915]
 position = Vector2(288, 523)
 shape = SubResource("CapsuleShape2D_im17n")
 
-[node name="Yuque" type="Node2D" parent="."]
+[node name="Yuque" type="Node2D" parent="." unique_id=49729402]
 script = ExtResource("13_yaart")
 
-[node name="Icon" type="Sprite2D" parent="Yuque"]
+[node name="Icon" type="Sprite2D" parent="Yuque" unique_id=9293112]
 position = Vector2(174, 365)
 scale = Vector2(0.816327, 0.690083)
 texture = ExtResource("12_4roje")
 
-[node name="Glow" type="Sprite2D" parent="Yuque"]
+[node name="Glow" type="Sprite2D" parent="Yuque" unique_id=618380772]
 position = Vector2(175.5, 374.875)
 scale = Vector2(0.502, 0.3805)
 texture = ExtResource("14_t1ld4")
 
-[node name="Label" type="Label" parent="Yuque"]
+[node name="Label" type="Label" parent="Yuque" unique_id=1633615678]
 offset_left = 114.0
 offset_top = 421.0
 offset_right = 219.0
@@ -300,28 +297,28 @@ theme_override_fonts/font = ExtResource("3_88tyd")
 theme_override_font_sizes/font_size = 23
 text = "玉阙擎天台"
 
-[node name="Area2D" type="Area2D" parent="Yuque"]
+[node name="Area2D" type="Area2D" parent="Yuque" unique_id=1928485507]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Yuque/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Yuque/Area2D" unique_id=695323496]
 position = Vector2(168, 384)
 rotation = -1.60595
 shape = SubResource("CapsuleShape2D_fvdje")
 metadata/_edit_lock_ = true
 
-[node name="Lingquan" type="Node2D" parent="."]
+[node name="Lingquan" type="Node2D" parent="." unique_id=1033413378]
 script = ExtResource("16_o00st")
 
-[node name="Icon" type="Sprite2D" parent="Lingquan"]
+[node name="Icon" type="Sprite2D" parent="Lingquan" unique_id=188371976]
 position = Vector2(381, 305)
 scale = Vector2(0.843182, 0.738095)
 texture = ExtResource("16_8whgy")
 
-[node name="Glow" type="Sprite2D" parent="Lingquan"]
+[node name="Glow" type="Sprite2D" parent="Lingquan" unique_id=108221671]
 position = Vector2(360, 311)
 scale = Vector2(0.272, 0.224)
 texture = ExtResource("17_r26l6")
 
-[node name="Label" type="Label" parent="Lingquan"]
+[node name="Label" type="Label" parent="Lingquan" unique_id=1329206543]
 offset_left = 325.0
 offset_top = 336.0
 offset_right = 393.0
@@ -330,26 +327,26 @@ theme_override_fonts/font = ExtResource("3_88tyd")
 theme_override_font_sizes/font_size = 17
 text = "灵泉幻境"
 
-[node name="Area2D" type="Area2D" parent="Lingquan"]
+[node name="Area2D" type="Area2D" parent="Lingquan" unique_id=1562822390]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lingquan/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lingquan/Area2D" unique_id=1058988900]
 position = Vector2(358, 312)
 shape = SubResource("CapsuleShape2D_uq6ah")
 
-[node name="Tianheng" type="Node2D" parent="."]
+[node name="Tianheng" type="Node2D" parent="." unique_id=651979683]
 script = ExtResource("19_h6qs7")
 
-[node name="Icon" type="Sprite2D" parent="Tianheng"]
+[node name="Icon" type="Sprite2D" parent="Tianheng" unique_id=617823668]
 position = Vector2(632.563, 313)
 scale = Vector2(0.838005, 0.698113)
 texture = ExtResource("19_hx5vo")
 
-[node name="Glow" type="Sprite2D" parent="Tianheng"]
+[node name="Glow" type="Sprite2D" parent="Tianheng" unique_id=1655787062]
 position = Vector2(631, 321)
 scale = Vector2(0.4, 0.344)
 texture = ExtResource("20_tj7t7")
 
-[node name="Label" type="Label" parent="Tianheng"]
+[node name="Label" type="Label" parent="Tianheng" unique_id=1257173633]
 offset_left = 576.0
 offset_top = 367.0
 offset_right = 665.0
@@ -358,27 +355,27 @@ theme_override_fonts/font = ExtResource("3_88tyd")
 theme_override_font_sizes/font_size = 19
 text = "天衡宫殿"
 
-[node name="Area2D" type="Area2D" parent="Tianheng"]
+[node name="Area2D" type="Area2D" parent="Tianheng" unique_id=404330015]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tianheng/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tianheng/Area2D" unique_id=573377844]
 position = Vector2(632, 320)
 rotation = -1.57079
 shape = SubResource("CapsuleShape2D_u4xft")
 
-[node name="Tianxingtai" type="Node2D" parent="."]
+[node name="Tianxingtai" type="Node2D" parent="." unique_id=1469755]
 script = ExtResource("22_pwtek")
 
-[node name="Icon" type="Sprite2D" parent="Tianxingtai"]
+[node name="Icon" type="Sprite2D" parent="Tianxingtai" unique_id=1766188492]
 position = Vector2(949.25, 128.938)
 scale = Vector2(0.84593, 0.725962)
 texture = ExtResource("22_7prki")
 
-[node name="Glow" type="Sprite2D" parent="Tianxingtai"]
+[node name="Glow" type="Sprite2D" parent="Tianxingtai" unique_id=1097570103]
 position = Vector2(951.5, 134)
 scale = Vector2(0.466, 0.366)
 texture = ExtResource("23_h3xyk")
 
-[node name="Label" type="Label" parent="Tianxingtai"]
+[node name="Label" type="Label" parent="Tianxingtai" unique_id=1887420555]
 offset_left = 900.0
 offset_top = 189.0
 offset_right = 987.0
@@ -387,26 +384,26 @@ theme_override_fonts/font = ExtResource("3_88tyd")
 theme_override_font_sizes/font_size = 29
 text = "天刑台"
 
-[node name="Area2D" type="Area2D" parent="Tianxingtai"]
+[node name="Area2D" type="Area2D" parent="Tianxingtai" unique_id=691982810]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tianxingtai/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tianxingtai/Area2D" unique_id=1492955324]
 position = Vector2(951, 138)
 shape = SubResource("CapsuleShape2D_rdclg")
 
-[node name="Shenyuhexin" type="Node2D" parent="."]
+[node name="Shenyuhexin" type="Node2D" parent="." unique_id=739667299]
 script = ExtResource("25_61dk4")
 
-[node name="Icon" type="Sprite2D" parent="Shenyuhexin"]
+[node name="Icon" type="Sprite2D" parent="Shenyuhexin" unique_id=334659414]
 position = Vector2(640.625, 117.75)
 scale = Vector2(0.861889, 0.708333)
 texture = ExtResource("25_t04qn")
 
-[node name="Glow" type="Sprite2D" parent="Shenyuhexin"]
+[node name="Glow" type="Sprite2D" parent="Shenyuhexin" unique_id=1908736337]
 position = Vector2(640.5, 127)
 scale = Vector2(0.314, 0.216)
 texture = ExtResource("26_efh3l")
 
-[node name="Label" type="Label" parent="Shenyuhexin"]
+[node name="Label" type="Label" parent="Shenyuhexin" unique_id=1245616760]
 offset_left = 604.0
 offset_top = 154.0
 offset_right = 668.0
@@ -414,28 +411,28 @@ offset_bottom = 177.0
 theme_override_fonts/font = ExtResource("3_88tyd")
 text = "神域核心"
 
-[node name="Area2D" type="Area2D" parent="Shenyuhexin"]
+[node name="Area2D" type="Area2D" parent="Shenyuhexin" unique_id=437668769]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shenyuhexin/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shenyuhexin/Area2D" unique_id=768906752]
 position = Vector2(640, 131)
 shape = SubResource("CircleShape2D_x1jf8")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="." unique_id=894133361]
 position = Vector2(11, 0)
 script = ExtResource("29_gw7md")
 
-[node name="ClosePack" type="Sprite2D" parent="Node2D"]
+[node name="ClosePack" type="Sprite2D" parent="Node2D" unique_id=1905613952]
 position = Vector2(38, 672)
 scale = Vector2(0.1395, 0.1315)
 texture = ExtResource("28_p5vn1")
 
-[node name="OpenPack" type="Sprite2D" parent="Node2D"]
+[node name="OpenPack" type="Sprite2D" parent="Node2D" unique_id=54122421]
 visible = false
 position = Vector2(38, 670)
 scale = Vector2(0.138, 0.14275)
 texture = ExtResource("28_ivi0i")
 
-[node name="Label" type="Label" parent="Node2D"]
+[node name="Label" type="Label" parent="Node2D" unique_id=623786667]
 offset_left = 12.0
 offset_top = 681.0
 offset_right = 56.0
@@ -444,35 +441,35 @@ theme_override_fonts/font = ExtResource("3_88tyd")
 theme_override_font_sizes/font_size = 22
 text = "背包"
 
-[node name="Area2D" type="Area2D" parent="Node2D"]
+[node name="Area2D" type="Area2D" parent="Node2D" unique_id=597986902]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D" unique_id=466335149]
 position = Vector2(37, 675)
 shape = SubResource("CapsuleShape2D_kbk38")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1711275247]
 offset_left = 19.0
 offset_top = 11.0
 offset_right = 128.0
 offset_bottom = 115.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_dt5ea")
 
-[node name="TextureRect" type="TextureRect" parent="Panel"]
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=254088707]
 layout_mode = 0
 offset_left = 19.0
 offset_top = 22.0
 offset_right = 90.0
 offset_bottom = 88.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1816180640]
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=745716725]
 visible = false
 offset_right = 1280.0
 offset_bottom = 720.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_077nu")
 
-[node name="Equipment" type="Button" parent="CanvasLayer/Panel"]
+[node name="Equipment" type="Button" parent="CanvasLayer/Panel" unique_id=1745573591]
 layout_mode = 0
 offset_left = 602.0
 offset_top = 74.0
@@ -480,20 +477,20 @@ offset_right = 730.0
 offset_bottom = 107.0
 theme_override_fonts/font = ExtResource("3_88tyd")
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxTexture_2kn5r")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_h68ly")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_raqxr")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_onjra")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_8120l")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_37gjr")
-theme_override_styles/hover = SubResource("StyleBoxTexture_j680e")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_g1use")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_56etu")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_43ck7")
 theme_override_styles/normal = SubResource("StyleBoxTexture_x4mvb")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_43ck7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_56etu")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_g1use")
+theme_override_styles/hover = SubResource("StyleBoxTexture_j680e")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_37gjr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_8120l")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_onjra")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_raqxr")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_h68ly")
+theme_override_styles/focus = SubResource("StyleBoxTexture_2kn5r")
 text = "装备"
 
-[node name="Property" type="Button" parent="CanvasLayer/Panel"]
+[node name="Property" type="Button" parent="CanvasLayer/Panel" unique_id=281533290]
 layout_mode = 0
 offset_left = 752.0
 offset_top = 73.0
@@ -501,40 +498,40 @@ offset_right = 880.0
 offset_bottom = 106.0
 theme_override_fonts/font = ExtResource("3_88tyd")
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxTexture_2kn5r")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_h68ly")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_raqxr")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_onjra")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_8120l")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_37gjr")
-theme_override_styles/hover = SubResource("StyleBoxTexture_j680e")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_g1use")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_56etu")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_43ck7")
 theme_override_styles/normal = SubResource("StyleBoxTexture_x4mvb")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_43ck7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_56etu")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_g1use")
+theme_override_styles/hover = SubResource("StyleBoxTexture_j680e")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_37gjr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_8120l")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_onjra")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_raqxr")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_h68ly")
+theme_override_styles/focus = SubResource("StyleBoxTexture_2kn5r")
 text = "道具"
 
-[node name="CloseButton" type="Button" parent="CanvasLayer/Panel"]
+[node name="CloseButton" type="Button" parent="CanvasLayer/Panel" unique_id=1088983208]
 layout_mode = 0
 offset_left = 1225.0
 offset_top = 6.99997
 offset_right = 1275.0
 offset_bottom = 56.0
 rotation = -0.261799
-theme_override_styles/focus = SubResource("StyleBoxTexture_yvl4u")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_ny00b")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_3xllv")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_ftv7h")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_a6drg")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_n0wxe")
-theme_override_styles/hover = SubResource("StyleBoxTexture_io6gv")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_8ueao")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_lxxf4")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_si5ki")
 theme_override_styles/normal = SubResource("StyleBoxTexture_kf5y8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_si5ki")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lxxf4")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_8ueao")
+theme_override_styles/hover = SubResource("StyleBoxTexture_io6gv")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_n0wxe")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_a6drg")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_ftv7h")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_3xllv")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_ny00b")
+theme_override_styles/focus = SubResource("StyleBoxTexture_yvl4u")
 script = ExtResource("35_3qmri")
 
-[node name="Fashionable" type="Button" parent="CanvasLayer/Panel"]
+[node name="Fashionable" type="Button" parent="CanvasLayer/Panel" unique_id=1106287124]
 layout_mode = 0
 offset_left = 899.0
 offset_top = 74.0
@@ -542,20 +539,20 @@ offset_right = 1027.0
 offset_bottom = 107.0
 theme_override_fonts/font = ExtResource("3_88tyd")
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxTexture_2kn5r")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_h68ly")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_raqxr")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_onjra")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_8120l")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_37gjr")
-theme_override_styles/hover = SubResource("StyleBoxTexture_j680e")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_g1use")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_56etu")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_43ck7")
 theme_override_styles/normal = SubResource("StyleBoxTexture_x4mvb")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_43ck7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_56etu")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_g1use")
+theme_override_styles/hover = SubResource("StyleBoxTexture_j680e")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_37gjr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_8120l")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_onjra")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_raqxr")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_h68ly")
+theme_override_styles/focus = SubResource("StyleBoxTexture_2kn5r")
 text = "时装"
 
-[node name="Scripture" type="Button" parent="CanvasLayer/Panel"]
+[node name="Scripture" type="Button" parent="CanvasLayer/Panel" unique_id=1505052736]
 layout_mode = 0
 offset_left = 1046.0
 offset_top = 73.0
@@ -563,20 +560,20 @@ offset_right = 1174.0
 offset_bottom = 106.0
 theme_override_fonts/font = ExtResource("3_88tyd")
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxTexture_2kn5r")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_h68ly")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_raqxr")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_onjra")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_8120l")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_37gjr")
-theme_override_styles/hover = SubResource("StyleBoxTexture_j680e")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_g1use")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_56etu")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_43ck7")
 theme_override_styles/normal = SubResource("StyleBoxTexture_x4mvb")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_43ck7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_56etu")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_g1use")
+theme_override_styles/hover = SubResource("StyleBoxTexture_j680e")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_37gjr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_8120l")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_onjra")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_raqxr")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_h68ly")
+theme_override_styles/focus = SubResource("StyleBoxTexture_2kn5r")
 text = "经文"
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Panel"]
+[node name="Panel" type="Panel" parent="CanvasLayer/Panel" unique_id=1102178293]
 layout_mode = 0
 offset_left = 70.0
 offset_top = 97.0
@@ -584,14 +581,13 @@ offset_right = 541.0
 offset_bottom = 637.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_7gxdb")
 
-[node name="Role" type="Sprite2D" parent="CanvasLayer/Panel/Panel"]
+[node name="Role" type="Sprite2D" parent="CanvasLayer/Panel/Panel" unique_id=326155607]
 position = Vector2(123, 121)
 scale = Vector2(1.268, 1.092)
-texture = ExtResource("33_b4ahg")
 
-[node name="Node2D" type="Node2D" parent="CanvasLayer/Panel/Panel"]
+[node name="Node2D" type="Node2D" parent="CanvasLayer/Panel/Panel" unique_id=368925028]
 
-[node name="Heath" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+[node name="Heath" type="Label" parent="CanvasLayer/Panel/Panel/Node2D" unique_id=1195977375]
 offset_left = 33.0
 offset_top = 288.0
 offset_right = 167.0
@@ -599,7 +595,7 @@ offset_bottom = 319.0
 theme_override_font_sizes/font_size = 22
 text = "HP:     70"
 
-[node name="Mana" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+[node name="Mana" type="Label" parent="CanvasLayer/Panel/Panel/Node2D" unique_id=1161401291]
 offset_left = 285.0
 offset_top = 288.0
 offset_right = 419.0
@@ -607,7 +603,7 @@ offset_bottom = 319.0
 theme_override_font_sizes/font_size = 22
 text = "MP:     100"
 
-[node name="Attack" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+[node name="Attack" type="Label" parent="CanvasLayer/Panel/Panel/Node2D" unique_id=873108133]
 offset_left = 33.0
 offset_top = 334.0
 offset_right = 167.0
@@ -615,7 +611,7 @@ offset_bottom = 365.0
 theme_override_font_sizes/font_size = 22
 text = "攻击:     10"
 
-[node name="Luck" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+[node name="Luck" type="Label" parent="CanvasLayer/Panel/Panel/Node2D" unique_id=415072318]
 offset_left = 33.0
 offset_top = 368.0
 offset_right = 167.0
@@ -623,7 +619,7 @@ offset_bottom = 399.0
 theme_override_font_sizes/font_size = 22
 text = "幸运:     70"
 
-[node name="Defend" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+[node name="Defend" type="Label" parent="CanvasLayer/Panel/Panel/Node2D" unique_id=1022355353]
 offset_left = 285.0
 offset_top = 332.0
 offset_right = 419.0
@@ -631,7 +627,7 @@ offset_bottom = 363.0
 theme_override_font_sizes/font_size = 22
 text = "防御:     0"
 
-[node name="Sidestep" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+[node name="Sidestep" type="Label" parent="CanvasLayer/Panel/Panel/Node2D" unique_id=662807266]
 offset_left = 285.0
 offset_top = 367.0
 offset_right = 419.0
@@ -639,7 +635,7 @@ offset_bottom = 398.0
 theme_override_font_sizes/font_size = 22
 text = "闪避:     0%"
 
-[node name="Mana2" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+[node name="Mana2" type="Label" parent="CanvasLayer/Panel/Panel/Node2D" unique_id=1568183223]
 offset_left = 285.0
 offset_top = 288.0
 offset_right = 419.0
@@ -647,7 +643,7 @@ offset_bottom = 319.0
 theme_override_font_sizes/font_size = 22
 text = "MP:     100"
 
-[node name="ReBlood" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+[node name="ReBlood" type="Label" parent="CanvasLayer/Panel/Panel/Node2D" unique_id=1994501122]
 offset_left = 33.0
 offset_top = 412.0
 offset_right = 167.0
@@ -655,7 +651,7 @@ offset_bottom = 443.0
 theme_override_font_sizes/font_size = 22
 text = "回血:     0"
 
-[node name="ReMana" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+[node name="ReMana" type="Label" parent="CanvasLayer/Panel/Panel/Node2D" unique_id=1296134960]
 offset_left = 33.0
 offset_top = 446.0
 offset_right = 167.0
@@ -663,7 +659,7 @@ offset_bottom = 477.0
 theme_override_font_sizes/font_size = 22
 text = "回蓝:     0"
 
-[node name="Crit" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+[node name="Crit" type="Label" parent="CanvasLayer/Panel/Panel/Node2D" unique_id=1355888759]
 offset_left = 285.0
 offset_top = 410.0
 offset_right = 419.0
@@ -671,7 +667,7 @@ offset_bottom = 441.0
 theme_override_font_sizes/font_size = 22
 text = "暴击:     0%"
 
-[node name="ReMagic" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+[node name="ReMagic" type="Label" parent="CanvasLayer/Panel/Panel/Node2D" unique_id=1523195110]
 offset_left = 285.0
 offset_top = 445.0
 offset_right = 419.0
@@ -679,7 +675,7 @@ offset_bottom = 476.0
 theme_override_font_sizes/font_size = 22
 text = "魔抗:     0%"
 
-[node name="EXP" type="Label" parent="CanvasLayer/Panel/Panel/Node2D"]
+[node name="EXP" type="Label" parent="CanvasLayer/Panel/Panel/Node2D" unique_id=1004092615]
 offset_left = 6.0
 offset_top = 500.0
 offset_right = 460.0
@@ -687,55 +683,55 @@ offset_bottom = 531.0
 theme_override_font_sizes/font_size = 22
 text = "EXP:                           0/135"
 
-[node name="Equipment" type="Node2D" parent="CanvasLayer/Panel/Panel"]
+[node name="Equipment" type="Node2D" parent="CanvasLayer/Panel/Panel" unique_id=1509232035]
 
-[node name="Button" type="Button" parent="CanvasLayer/Panel/Panel/Equipment"]
+[node name="Button" type="Button" parent="CanvasLayer/Panel/Panel/Equipment" unique_id=1238208545]
 offset_left = 304.0
 offset_top = 73.0
 offset_right = 369.0
 offset_bottom = 138.0
 text = "武器"
 
-[node name="Button2" type="Button" parent="CanvasLayer/Panel/Panel/Equipment"]
+[node name="Button2" type="Button" parent="CanvasLayer/Panel/Panel/Equipment" unique_id=1738536536]
 offset_left = 384.0
 offset_top = 73.0
 offset_right = 449.0
 offset_bottom = 138.0
 text = "饰品"
 
-[node name="Button3" type="Button" parent="CanvasLayer/Panel/Panel/Equipment"]
+[node name="Button3" type="Button" parent="CanvasLayer/Panel/Panel/Equipment" unique_id=1547913305]
 offset_left = 304.0
 offset_top = 181.0
 offset_right = 369.0
 offset_bottom = 246.0
 text = "装备"
 
-[node name="Button4" type="Button" parent="CanvasLayer/Panel/Panel/Equipment"]
+[node name="Button4" type="Button" parent="CanvasLayer/Panel/Panel/Equipment" unique_id=1127526221]
 offset_left = 384.0
 offset_top = 181.0
 offset_right = 449.0
 offset_bottom = 246.0
 text = "法宝"
 
-[node name="LevelBanner" type="Sprite2D" parent="CanvasLayer/Panel/Panel"]
+[node name="LevelBanner" type="Sprite2D" parent="CanvasLayer/Panel/Panel" unique_id=1823571695]
 position = Vector2(377, 26.75)
 scale = Vector2(0.304, 0.201)
 texture = ExtResource("37_m8qlp")
 
-[node name="Numbers-1" type="Sprite2D" parent="CanvasLayer/Panel/Panel"]
+[node name="Numbers-1" type="Sprite2D" parent="CanvasLayer/Panel/Panel" unique_id=705978545]
 position = Vector2(376.25, 26.25)
 scale = Vector2(0.944444, 0.950704)
 texture = ExtResource("38_oil6w")
 
-[node name="Button" type="Button" parent="CanvasLayer/Panel"]
-layout_mode = 2
+[node name="Button" type="Button" parent="CanvasLayer/Panel" unique_id=205377848]
+layout_mode = 0
 offset_left = 609.0
 offset_top = 131.0
 offset_right = 695.0
 offset_bottom = 204.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_j1itj")
 
-[node name="Button2" type="Button" parent="CanvasLayer/Panel"]
+[node name="Button2" type="Button" parent="CanvasLayer/Panel" unique_id=790055447]
 layout_mode = 0
 offset_left = 900.0
 offset_top = 131.0
@@ -743,7 +739,7 @@ offset_right = 986.0
 offset_bottom = 204.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_u0bku")
 
-[node name="Button3" type="Button" parent="CanvasLayer/Panel"]
+[node name="Button3" type="Button" parent="CanvasLayer/Panel" unique_id=1405225541]
 layout_mode = 0
 offset_left = 804.0
 offset_top = 131.0
@@ -751,7 +747,7 @@ offset_right = 890.0
 offset_bottom = 204.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_xv7io")
 
-[node name="Button4" type="Button" parent="CanvasLayer/Panel"]
+[node name="Button4" type="Button" parent="CanvasLayer/Panel" unique_id=431819467]
 layout_mode = 0
 offset_left = 707.0
 offset_top = 130.0
@@ -759,7 +755,7 @@ offset_right = 793.0
 offset_bottom = 203.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_tq5gj")
 
-[node name="Button5" type="Button" parent="CanvasLayer/Panel"]
+[node name="Button5" type="Button" parent="CanvasLayer/Panel" unique_id=1561836397]
 layout_mode = 0
 offset_left = 997.0
 offset_top = 131.0
@@ -767,7 +763,7 @@ offset_right = 1083.0
 offset_bottom = 204.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_mijma")
 
-[node name="Button6" type="Button" parent="CanvasLayer/Panel"]
+[node name="Button6" type="Button" parent="CanvasLayer/Panel" unique_id=1803042172]
 layout_mode = 0
 offset_left = 1094.0
 offset_top = 131.0
@@ -775,7 +771,7 @@ offset_right = 1180.0
 offset_bottom = 204.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_ro7xl")
 
-[node name="Button7" type="Button" parent="CanvasLayer/Panel"]
+[node name="Button7" type="Button" parent="CanvasLayer/Panel" unique_id=1306352591]
 layout_mode = 0
 offset_left = 609.0
 offset_top = 215.0
@@ -783,7 +779,7 @@ offset_right = 695.0
 offset_bottom = 288.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_j1itj")
 
-[node name="Button8" type="Button" parent="CanvasLayer/Panel"]
+[node name="Button8" type="Button" parent="CanvasLayer/Panel" unique_id=46608890]
 layout_mode = 0
 offset_left = 900.0
 offset_top = 215.0
@@ -791,7 +787,7 @@ offset_right = 986.0
 offset_bottom = 288.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_u0bku")
 
-[node name="Button9" type="Button" parent="CanvasLayer/Panel"]
+[node name="Button9" type="Button" parent="CanvasLayer/Panel" unique_id=255846812]
 layout_mode = 0
 offset_left = 804.0
 offset_top = 215.0
@@ -799,7 +795,7 @@ offset_right = 890.0
 offset_bottom = 288.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_xv7io")
 
-[node name="Button10" type="Button" parent="CanvasLayer/Panel"]
+[node name="Button10" type="Button" parent="CanvasLayer/Panel" unique_id=291396453]
 layout_mode = 0
 offset_left = 707.0
 offset_top = 214.0
@@ -807,7 +803,7 @@ offset_right = 793.0
 offset_bottom = 287.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_tq5gj")
 
-[node name="Button11" type="Button" parent="CanvasLayer/Panel"]
+[node name="Button11" type="Button" parent="CanvasLayer/Panel" unique_id=1807357234]
 layout_mode = 0
 offset_left = 997.0
 offset_top = 215.0
@@ -815,7 +811,7 @@ offset_right = 1083.0
 offset_bottom = 288.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_mijma")
 
-[node name="Button12" type="Button" parent="CanvasLayer/Panel"]
+[node name="Button12" type="Button" parent="CanvasLayer/Panel" unique_id=1950337983]
 layout_mode = 0
 offset_left = 1094.0
 offset_top = 215.0
@@ -823,7 +819,7 @@ offset_right = 1180.0
 offset_bottom = 288.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_ro7xl")
 
-[node name="Button13" type="Button" parent="CanvasLayer/Panel"]
+[node name="Button13" type="Button" parent="CanvasLayer/Panel" unique_id=1962162128]
 layout_mode = 0
 offset_left = 609.0
 offset_top = 300.0
@@ -831,7 +827,7 @@ offset_right = 695.0
 offset_bottom = 373.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_j1itj")
 
-[node name="Button14" type="Button" parent="CanvasLayer/Panel"]
+[node name="Button14" type="Button" parent="CanvasLayer/Panel" unique_id=764298528]
 layout_mode = 0
 offset_left = 900.0
 offset_top = 300.0
@@ -839,7 +835,7 @@ offset_right = 986.0
 offset_bottom = 373.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_u0bku")
 
-[node name="Button15" type="Button" parent="CanvasLayer/Panel"]
+[node name="Button15" type="Button" parent="CanvasLayer/Panel" unique_id=1148243589]
 layout_mode = 0
 offset_left = 804.0
 offset_top = 300.0
@@ -847,7 +843,7 @@ offset_right = 890.0
 offset_bottom = 373.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_xv7io")
 
-[node name="Button16" type="Button" parent="CanvasLayer/Panel"]
+[node name="Button16" type="Button" parent="CanvasLayer/Panel" unique_id=744654171]
 layout_mode = 0
 offset_left = 707.0
 offset_top = 299.0
@@ -855,7 +851,7 @@ offset_right = 793.0
 offset_bottom = 372.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_tq5gj")
 
-[node name="Button17" type="Button" parent="CanvasLayer/Panel"]
+[node name="Button17" type="Button" parent="CanvasLayer/Panel" unique_id=1245539256]
 layout_mode = 0
 offset_left = 997.0
 offset_top = 300.0
@@ -863,7 +859,7 @@ offset_right = 1083.0
 offset_bottom = 373.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_mijma")
 
-[node name="Button18" type="Button" parent="CanvasLayer/Panel"]
+[node name="Button18" type="Button" parent="CanvasLayer/Panel" unique_id=1221409007]
 layout_mode = 0
 offset_left = 1094.0
 offset_top = 300.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://egvtfo6crewx"
-path="res://.godot/imported/q_role.png-0f4833c4b3f71cd6caee1626919cc84c.ctex"
+uid="uid://cghqbbytsgnlk"
+path="res://.godot/imported/loading_thing.png-436bacd7e7177532acf0a41875d7e706.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/q_role.png"
-dest_files=["res://.godot/imported/q_role.png-0f4833c4b3f71cd6caee1626919cc84c.ctex"]
+source_file="res://assets/enter/loading_thing.png"
+dest_files=["res://.godot/imported/loading_thing.png-436bacd7e7177532acf0a41875d7e706.ctex"]
 
 [params]
 
