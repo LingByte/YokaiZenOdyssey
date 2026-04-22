@@ -4,6 +4,14 @@ extends Node
 var token: String = ""
 var is_logged_in: bool = false
 var current_character_id: int = -1
+var user_info: Dictionary = {}
+var current_save_slot: int = -1
+var current_save_data: Dictionary = {}
+var selected_character: String = ""
+var just_entered_shenxiao: bool = false  # 标记是否刚进入神霄场景
+
+func _ready():
+	_load_saved_data()
 
 func load_scene(path: String):
 	var loader = preload("res://scenes/system/GlobalLoading.tscn").instantiate()
@@ -15,10 +23,47 @@ func load_scene(path: String):
 func set_token(t):
 	token = t
 	is_logged_in = true
+	_save_token_to_disk()
+
+func set_user_info(info: Dictionary):
+	user_info = info
+	_save_user_info_to_disk()
+
+func get_user_info() -> Dictionary:
+	return user_info
 
 func clear_login():
 	token = ""
 	is_logged_in = false
+	user_info = {}
+	_delete_saved_data()
+
+func _save_token_to_disk():
+	var config = ConfigFile.new()
+	config.set_value("user", "token", token)
+	config.save("user://user_data.cfg")
+
+func _save_user_info_to_disk():
+	var config = ConfigFile.new()
+	for key in user_info:
+		config.set_value("user", key, user_info[key])
+	config.save("user://user_data.cfg")
+
+func _load_saved_data():
+	var config = ConfigFile.new()
+	var err = config.load("user://user_data.cfg")
+	if err == OK:
+		token = config.get_value("user", "token", "")
+		is_logged_in = not token.is_empty()
+		user_info = {}
+		for key in config.get_section_keys("user"):
+			user_info[key] = config.get_value("user", key)
+
+func _delete_saved_data():
+	var file = FileAccess.open("user://user_data.cfg", FileAccess.WRITE)
+	if file:
+		file.close()
+		DirAccess.remove_absolute("user://user_data.cfg")
 
 func load_avatar_texture_to(target: TextureRect, url: String):
 	var http := HTTPRequest.new()

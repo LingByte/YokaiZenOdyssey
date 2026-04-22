@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://bmu55x7syfjqi" path="res://assets/level/shenxiao/云台灵阵/brick.png" id="1_1po5k"]
 [ext_resource type="Texture2D" uid="uid://bobwg1syhm3qa" path="res://assets/level/shenxiao/云台灵阵/background.png" id="2_t3ray"]
-[ext_resource type="PackedScene" uid="uid://rsufltkmxhx3" path="res://characters/player/types/TangSengPlayer.tscn" id="3_gwedx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f8wo4"]
 texture = ExtResource("1_1po5k")
@@ -186,6 +185,3 @@ stretch_mode = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(5069.75, 693)
 shape = SubResource("RectangleShape2D_01o5n")
-
-[node name="BasePlayer" parent="." instance=ExtResource("3_gwedx")]
-position = Vector2(80, -17)

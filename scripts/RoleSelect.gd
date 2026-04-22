@@ -7,6 +7,7 @@ extends Control
 @onready var confirm_button = $ConfirmButton
 @onready var return_button = $ReturnButton
 @onready var selected_character_label = $SelectedCharacterLabel
+@onready var http_request = $HTTPRequest
 
 var selected_character: String = ""
 
@@ -20,6 +21,9 @@ func _ready():
 	return_button.mouse_entered.connect(_on_return_mouse_entered)
 	return_button.mouse_exited.connect(_on_return_mouse_exited)
 	
+	if http_request:
+		http_request.request_completed.connect(_on_request_completed)
+	
 	# 初始设置为灰色
 	soul_idle.modulate = Color(0.5, 0.5, 0.5, 1)
 	bajie_idle.modulate = Color(0.5, 0.5, 0.5, 1)
@@ -27,14 +31,14 @@ func _ready():
 	selected_character_label.text = "请选择角色"
 
 func _on_soul_selected():
-	selected_character = "SoulPlayer"
-	selected_character_label.text = "已选择: 灵魂行者"
+	selected_character = "悟空"
+	selected_character_label.text = "已选择: 悟空"
 	soul_idle.modulate = Color.WHITE
 	bajie_idle.modulate = Color(0.5, 0.5, 0.5, 1)
 	_play_scale_animation(soul_idle)
 
 func _on_bajie_selected():
-	selected_character = "BajiePlayer"
+	selected_character = "八戒"
 	selected_character_label.text = "已选择: 八戒"
 	bajie_idle.modulate = Color.WHITE
 	soul_idle.modulate = Color(0.5, 0.5, 0.5, 1)
@@ -48,9 +52,59 @@ func _play_scale_animation(node: TextureButton):
 func _on_confirm_selected():
 	if selected_character.is_empty():
 		return
-	# TODO: 保存选择的角色并进入游戏
-	print("Selected character: ", selected_character)
-	# 这里可以切换到游戏场景，并实例化对应角色
+	
+	if Global.current_save_slot == -1:
+		print("[RoleSelect] 错误：未选择存档槽位")
+		return
+	
+	# 创建存档请求
+	var body = {
+		"slot": Global.current_save_slot,
+		"character": selected_character,
+		"data": "",
+		"level": "神霄",
+		"play_time": 0
+	}
+	var json = JSON.stringify(body)
+	var headers = ["Content-Type: application/json", "Authorization: Bearer " + Global.token]
+	var url = "http://localhost:8080/api/saves"
+	
+	print("[RoleSelect] 创建存档请求: ", json)
+	
+	if http_request:
+		var error = http_request.request(url, headers, HTTPClient.METHOD_POST, json)
+		if error != OK:
+			print("[RoleSelect] 请求发送失败: ", error)
+
+func _on_request_completed(result, response_code, headers, body):
+	if result != HTTPRequest.RESULT_SUCCESS:
+		print("[RoleSelect] 请求失败，result: ", result)
+		return
+	
+	if response_code != 200 and response_code != 201:
+		print("[RoleSelect] HTTP 状态码错误: ", response_code)
+		var body_text = body.get_string_from_utf8()
+		print("[RoleSelect] 响应体: ", body_text)
+		return
+	
+	var body_text = body.get_string_from_utf8()
+	print("[RoleSelect] 响应体: ", body_text)
+	
+	var response = JSON.parse_string(body_text)
+	if response == null:
+		print("[RoleSelect] 解析 JSON 失败")
+		return
+	
+	print("[RoleSelect] 存档创建成功")
+	
+	# 保存角色选择到全局变量
+	Global.selected_character = selected_character
+	
+	# 设置刚进入神霄场景的标志
+	Global.just_entered_shenxiao = true
+	
+	# 进入神霄关卡
+	Global.load_scene("res://scenes/levels/Shenxiao.tscn")
 
 func _on_return_pressed():
 	# 点击旋转效果

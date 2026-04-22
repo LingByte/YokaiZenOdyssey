@@ -11,7 +11,7 @@ var tween: Tween
 
 # 角色职业选项
 const JOBS = [
-	{"name": "灵魂行者", "value": "SoulPlayer"},
+	{"name": "悟空", "value": "悟空"},
 	{"name": "唐僧", "value": "TangSengPlayer"},
 ]
 

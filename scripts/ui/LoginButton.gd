@@ -98,12 +98,12 @@ func _on_pressed():
 	print("[LoginButton] 密码长度: ", pwd_input.text.length())
 	
 	var body := {
-		"uid": uid_input.text,
-		"pwd": pwd_input.text
+		"username": uid_input.text,
+		"password": pwd_input.text
 	}
 	var json = JSON.stringify(body)
 	var headers = ["Content-Type: application/json"]
-	var url = "http://localhost:7070/api/v1/users/login"
+	var url = "http://localhost:8080/api/auth/login"
 	
 	print("[LoginButton] 发送登录请求...")
 	print("[LoginButton] URL: ", url)
@@ -167,8 +167,8 @@ func _on_request_completed(result, response_code, headers, body):
 			
 			# 尝试解析错误消息
 			var response = JSON.parse_string(body_text)
-			if response and response.has("msg"):
-				error_msg = response["msg"]
+			if response and response.has("error"):
+				error_msg = response["error"]
 			elif response_code == 401:
 				error_msg = "账号或密码错误"
 			elif response_code == 500:
@@ -188,20 +188,22 @@ func _on_request_completed(result, response_code, headers, body):
 
 	print("[LoginButton] 解析后的响应: ", response)
 
-	if response.has("code") and response["code"] == 200:
-		if response.has("data") and response["data"].has("token"):
-			var token = response["data"]["token"]
-			Global.set_token(token)
-			print("[LoginButton] 登录成功，token: ", token)
-			
-			# 弹出成功提示
-			if success_dialog:
-				success_dialog.dialog_text = "登录成功！"
-				success_dialog.popup_centered()
-		else:
-			print("[LoginButton] 响应格式错误，缺少 token")
-			show_error_dialog("登录响应格式错误")
+	if response.has("token"):
+		var token = response["token"]
+		Global.set_token(token)
+		print("[LoginButton] 登录成功，token: ", token)
+		
+		# 保存用户信息
+		if response.has("user"):
+			var user_info = response["user"]
+			Global.set_user_info(user_info)
+			print("[LoginButton] 用户信息: ", user_info)
+		
+		# 弹出成功提示
+		if success_dialog:
+			success_dialog.dialog_text = "登录成功！"
+			success_dialog.popup_centered()
 	else:
-		var msg = response.get("msg", "未知错误")
-		print("[LoginButton] 登录失败，原因: ", msg)
-		show_error_dialog(msg)
+		var error_msg = response.get("error", "未知错误")
+		print("[LoginButton] 登录失败，原因: ", error_msg)
+		show_error_dialog(error_msg)

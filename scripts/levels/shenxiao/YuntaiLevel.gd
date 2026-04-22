@@ -41,6 +41,11 @@ func start_glow_animation():
 	tween.tween_property(glow, "modulate:a", 0.4, 1.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 
 func _on_area_input_event(viewport, event, shape_idx):
+	# 如果刚进入神霄场景，不自动加载
+	if Global.just_entered_shenxiao:
+		Global.just_entered_shenxiao = false
+		return
+	
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		print("进入关卡：", level_name)
 		get_tree().change_scene_to_file(target_scene_path)

@@ -37,6 +37,26 @@ func _ready():
 func _on_game_exit_pressed() -> void:
 	get_tree().quit()
 
+func _on_start_game_pressed():
+	# 检查是否登录
+	if not Global.is_logged_in:
+		show_login_panel()
+		return
+	
+	# 新游戏模式
+	$InputBlocker.visible = true
+	$SaveSelectPanel.show_panel(true)
+
+func _on_read_save_button_pressed():
+	# 检查是否登录
+	if not Global.is_logged_in:
+		show_login_panel()
+		return
+	
+	# 读取存档模式
+	$InputBlocker.visible = true
+	$SaveSelectPanel.show_panel(false)
+
 func show_login_panel():
 	$InputBlocker.visible = true
 	$LoginPanel.visible = true
@@ -47,7 +67,7 @@ func hide_login_panel():
 	
 func show_archive_panel():
 	$InputBlocker.visible = true
-	$SaveSelectPanel.visible = true
+	$SaveSelectPanel.show_panel(false)
 	
 func hide_archive_panel():
 	$SaveSelectPanel.visible = false

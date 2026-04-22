@@ -34,6 +34,7 @@
 [ext_resource type="Script" uid="uid://ihn1kb1k8vkx" path="res://scripts/ui/RegisterButton.gd" id="23_register"]
 [ext_resource type="Script" uid="uid://c28bnmkqs8m1k" path="res://scripts/ui/SettingsPanel.gd" id="24_settings"]
 [ext_resource type="Script" uid="uid://8l1oke17h8k" path="res://scripts/ui/CharacterSelectPanel.gd" id="25_character"]
+[ext_resource type="Script" path="res://scripts/ui/SaveSelectPanel.gd" id="26_save_panel"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kcvos"]
 texture = ExtResource("5_wjfkx")
@@ -408,6 +409,7 @@ offset_top = 83.0
 offset_right = 1043.0
 offset_bottom = 652.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_uo2xn")
+script = ExtResource("26_save_panel")
 
 [node name="SaveSlot1" type="Button" parent="SaveSelectPanel" unique_id=760716654]
 layout_mode = 0
@@ -796,13 +798,8 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_qtoja")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_wtx68")
 theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_xs4vk")
 theme_override_styles/hover = SubResource("StyleBoxTexture_rcgd1")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_krfga")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_s5op4")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_8mo1f")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_v3lh3")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_8kemq")
-theme_override_styles/focus = SubResource("StyleBoxTexture_j201f")
-script = ExtResource("16_b2sbe")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="SaveSelectPanel"]
 
 [node name="LoginPanel" type="Panel" parent="." unique_id=1476469003]
 visible = false
@@ -1174,7 +1171,7 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_ig0hn")
 
 [connection signal="mouse_entered" from="StartGame" to="StartGame" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="StartGame" to="StartGame" method="_on_mouse_exited"]
-[connection signal="pressed" from="StartGame" to="StartGame" method="_on_pressed"]
+[connection signal="pressed" from="StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="mouse_entered" from="SystemSet" to="SystemSet" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="SystemSet" to="SystemSet" method="_on_mouse_exited"]
 [connection signal="pressed" from="SystemSet" to="SystemSet" method="_on_pressed"]
@@ -1183,7 +1180,7 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_ig0hn")
 [connection signal="pressed" from="GameExit" to="." method="_on_game_exit_pressed"]
 [connection signal="mouse_entered" from="LoadArchive" to="LoadArchive" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="LoadArchive" to="LoadArchive" method="_on_mouse_exited"]
-[connection signal="pressed" from="LoadArchive" to="LoadArchive" method="_on_ReadSaveButton_pressed"]
+[connection signal="pressed" from="LoadArchive" to="." method="_on_read_save_button_pressed"]
 [connection signal="mouse_entered" from="SaveSelectPanel/CloseButton" to="SaveSelectPanel/CloseButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="SaveSelectPanel/CloseButton" to="SaveSelectPanel/CloseButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="SaveSelectPanel/CloseButton" to="SaveSelectPanel/CloseButton" method="_on_archive_pressed"]

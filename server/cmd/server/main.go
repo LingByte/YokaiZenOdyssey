@@ -3,6 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/LingByte/YokaiZenOdyssey/internal/handlers"
+	"github.com/LingByte/YokaiZenOdyssey/internal/models"
 	"github.com/LingByte/YokaiZenOdyssey/pkg/logger"
 	"github.com/LingByte/YokaiZenOdyssey/pkg/middleware"
 	"github.com/gin-gonic/gin"
@@ -26,6 +28,17 @@ func NewYokaiZenOdysseyApp(db *gorm.DB) *YokaiZenOdysseyApp {
 }
 
 func (app *YokaiZenOdysseyApp) RegisterRoutes(r *gin.Engine) {
+	// 创建用户处理器
+	userHandler := handlers.NewUserHandler(app.db)
+	
+	// 注册用户路由
+	userHandler.RegisterRoutes(r)
+
+	// 创建存档处理器
+	saveHandler := handlers.NewSaveHandler(app.db)
+	
+	// 注册存档路由
+	saveHandler.RegisterRoutes(r)
 }
 
 func main() {
@@ -46,15 +59,23 @@ func main() {
 		panic(err)
 	}
 
-	err = utils.MakeMigrates(db, []any{})
+	err = utils.MakeMigrates(db, []any{&models.User{}, &models.SaveGame{}})
 	if err != nil {
 		logger.Error("migration failed: ", zap.Error(err))
 	} else {
 		logger.Info("migration success", zap.String("database", cfg.Database.Type))
 	}
 
+	// 执行种子用户数据初始化
+	err = utils.SeedUsers(db)
+	if err != nil {
+		logger.Error("seed users failed: ", zap.Error(err))
+	} else {
+		logger.Info("seed users success")
+	}
+
 	app := NewYokaiZenOdysseyApp(db)
-	gin.SetMode(gin.ReleaseMode)
+	gin.SetMode(gin.DebugMode)
 	r := gin.Default()
 
 	// Cors Handle Middleware

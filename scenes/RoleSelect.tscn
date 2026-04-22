@@ -114,5 +114,7 @@ offset_right = 111.0
 offset_bottom = 684.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_return")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_return")
 theme_override_styles/hover = SubResource("StyleBoxTexture_return")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_return")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
