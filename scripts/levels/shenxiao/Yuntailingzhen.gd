@@ -21,7 +21,7 @@ func _ready():
 		# 默认使用悟空
 		character_scene = "res://characters/player/types/SoulPlayer.tscn"
 	
-	print("[YuQueQinTianTai] 生成角色: ", Global.selected_character, " 场景: ", character_scene)
+	print("[Yuntailingzhen] 生成角色: ", Global.selected_character, " 场景: ", character_scene)
 	
 	if character_scene != "":
 		var player_scene = load(character_scene)
@@ -31,7 +31,7 @@ func _ready():
 			player.add_to_group("player")
 			add_child(player)
 			player.visible = true
-			print("[YuQueQinTianTai] 角色生成成功，位置: ", player.global_position)
+			print("[Yuntailingzhen] 角色生成成功，位置: ", player.global_position)
 	
 	# 获取背包面板
 	pack_panel = get_node_or_null("CanvasLayer/Panel")

@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://df02v7mtdd03i"]
+[gd_scene load_steps=10 format=3 uid="uid://df02v7mtdd03i"]
 
 [ext_resource type="Texture2D" uid="uid://bmu55x7syfjqi" path="res://assets/level/shenxiao/云台灵阵/brick.png" id="1_1po5k"]
 [ext_resource type="Texture2D" uid="uid://bobwg1syhm3qa" path="res://assets/level/shenxiao/云台灵阵/background.png" id="2_t3ray"]
+[ext_resource type="Script" path="res://scripts/levels/shenxiao/Yuntailingzhen.gd" id="3_x8v2k"]
+[ext_resource type="PackedScene" uid="uid://cwbq8natgsca" path="res://characters/player/types/SoulPlayer.tscn" id="4_abc12"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f8wo4"]
 texture = ExtResource("1_1po5k")
@@ -162,6 +164,14 @@ sources/1 = SubResource("TileSetAtlasSource_3wt24")
 size = Vector2(10140.5, 54)
 
 [node name="Yuntailingzhen" type="Node2D"]
+script = ExtResource("3_x8v2k")
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(234, 175)
+
+[node name="BasePlayer" parent="." groups=["player"] instance=ExtResource("4_abc12")]
+visible = false
+position = Vector2(173, 191)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_obbi2")

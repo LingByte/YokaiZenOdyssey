@@ -7,7 +7,7 @@ extends Node2D
 @onready var area = $Area2D
 
 # 要跳转的目标场景路径（可在实例化时赋值）
-var target_scene_path: String = "res://scenes/levels/shenxiaoTianmen.tscn"
+var target_scene_path: String = "res://scenes/levels/Yuntailingzhen.tscn"
 
 # 关卡名，可在实例化时设置
 var level_name: String = "云台灵阵"
@@ -18,10 +18,7 @@ func _ready():
 	label.visible = false
 	start_glow_animation()
 
-	# 绑定 Area2D 的 hover 信号
-	area.mouse_entered.connect(_on_mouse_entered)
-	area.mouse_exited.connect(_on_mouse_exited)
-	area.input_event.connect(_on_area_input_event)
+	# 信号已在场景文件中连接，无需重复连接
 
 func _on_mouse_entered():
 	label.visible = true

@@ -7,6 +7,7 @@ extends Node2D
 
 func _ready() -> void:
 	packPanel.visible = false
+	
 	var id = Global.current_character_id
 	if id != -1:
 		print("当前选中角色 ID：", id)

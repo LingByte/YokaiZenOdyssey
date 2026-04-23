@@ -18,10 +18,7 @@ func _ready():
 	label.visible = false
 	start_glow_animation()
 
-	# 绑定 Area2D 的 hover 信号
-	area.mouse_entered.connect(_on_mouse_entered)
-	area.mouse_exited.connect(_on_mouse_exited)
-	area.input_event.connect(_on_area_input_event)
+	# 信号已在场景文件中连接，无需重复连接
 
 func _on_mouse_entered():
 	label.visible = true
