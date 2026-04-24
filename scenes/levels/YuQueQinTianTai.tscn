@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cnprwa6q248mj"]
+[gd_scene load_steps=34 format=3 uid="uid://cnprwa6q248mj"]
 
 [ext_resource type="Texture2D" uid="uid://d0xaiuwil4dpw" path="res://assets/level/shenxiao/玉阙擎天台/brick.png" id="1_6hghf"]
 [ext_resource type="Script" path="res://scripts/levels/shenxiao/YuQueQinTianTai.gd" id="1_mj4fm"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bbapo0igstqpk" path="res://assets/button/close_button.png" id="8_ae1wy"]
 [ext_resource type="Script" path="res://scripts/levels/shenxiao/pack_close_button.gd" id="8_3qmri"]
 [ext_resource type="FontFile" uid="uid://cjwrhhp33sbrk" path="res://assets/ttf/FZSTK.TTF" id="8_88tyd"]
+[ext_resource type="PackedScene" uid="uid://player_hud" path="res://scenes/ui/PlayerHUD.tscn" id="9_hud"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ucucl"]
 texture = ExtResource("1_6hghf")
@@ -369,6 +370,8 @@ position = Vector2(37, 675)
 shape = SubResource("CapsuleShape2D_backpack")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlayerHUD" parent="CanvasLayer" instance=ExtResource("9_hud")]
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 visible = false
