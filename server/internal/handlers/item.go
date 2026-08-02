@@ -6,6 +6,7 @@ import (
 
 	"github.com/LingByte/YokaiZenOdyssey/internal/models"
 	"github.com/LingByte/YokaiZenOdyssey/pkg/middleware"
+	"github.com/LingByte/YokaiZenOdyssey/pkg/utils"
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 )
@@ -574,8 +575,7 @@ func (h *ItemHandler) RegisterRoutes(r *gin.Engine) {
 	}
 }
 
-// GrantStarterKit 创建存档时仅初始化空穿戴，不塞默认装备
-func GrantStarterKit(db *gorm.DB, userID uint, slot int, _character string) error {
-	_, err := models.GetOrCreateLoadout(db, userID, slot)
-	return err
+// GrantStarterKit 创建存档时初始化穿戴栏，并按角色发放开局物品
+func GrantStarterKit(db *gorm.DB, userID uint, slot int, character string) error {
+	return utils.GrantStarterInventory(db, userID, slot, character)
 }

@@ -35,6 +35,12 @@ var _detail_label: Label
 var _action_button: Button
 var _font: Font
 var _detail_anchor: Control
+var _role_sprite: Sprite2D
+var _role_name_label: Label
+
+const ROLE_TEX_WUKONG := "res://assets/sprites/players/kongkong/first_frame.png"
+const ROLE_TEX_BAJIE := "res://assets/sprites/players/bajie/first_frame.png"
+const ROLE_TARGET_HEIGHT := 200.0
 
 func _ready() -> void:
 	_font = load(FONT_PATH) as Font if ResourceLoader.exists(FONT_PATH) else null
@@ -52,6 +58,7 @@ func _ready() -> void:
 	if _action_button and not _action_button.pressed.is_connected(_on_action_pressed):
 		_action_button.pressed.connect(_on_action_pressed)
 	_highlight_tab()
+	_refresh_role_portrait()
 
 func _resolve_or_build_ui() -> void:
 	http = get_node_or_null("HTTPRequest") as HTTPRequest
@@ -87,6 +94,7 @@ func _resolve_or_build_ui() -> void:
 		_collect_bag_buttons()
 		_ensure_detail_ui()
 		_ensure_close_button()
+		_ensure_role_portrait()
 
 func _build_runtime_ui() -> void:
 	# 关卡空壳：按神霄布局自建可交互控件
@@ -104,6 +112,8 @@ func _build_runtime_ui() -> void:
 	side_style.set_corner_radius_all(6)
 	side.add_theme_stylebox_override("panel", side_style)
 	add_child(side)
+
+	_ensure_role_portrait()
 
 	var stats_host := Node2D.new()
 	stats_host.name = "Node2D"
@@ -275,6 +285,64 @@ func _ensure_close_button() -> void:
 	if not close_btn.pressed.is_connected(_on_close_pressed):
 		close_btn.pressed.connect(_on_close_pressed)
 
+func _ensure_role_portrait() -> void:
+	var side := get_node_or_null("Panel") as Control
+	if side == null:
+		return
+
+	_role_sprite = side.get_node_or_null("Role") as Sprite2D
+	if _role_sprite == null:
+		_role_sprite = Sprite2D.new()
+		_role_sprite.name = "Role"
+		_role_sprite.centered = true
+		_role_sprite.position = Vector2(168, 150)
+		side.add_child(_role_sprite)
+		side.move_child(_role_sprite, 0)
+
+	_role_name_label = side.get_node_or_null("RoleName") as Label
+	if _role_name_label == null:
+		_role_name_label = Label.new()
+		_role_name_label.name = "RoleName"
+		_role_name_label.position = Vector2(88, 248)
+		_role_name_label.size = Vector2(160, 32)
+		_role_name_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		if _font:
+			_role_name_label.add_theme_font_override("font", _font)
+		_role_name_label.add_theme_font_size_override("font_size", 24)
+		_role_name_label.add_theme_color_override("font_color", Color(0.95, 0.9, 0.7))
+		side.add_child(_role_name_label)
+
+func _current_character_name() -> String:
+	if not Global.selected_character.is_empty():
+		return Global.selected_character
+	var save_char := str(Global.current_save_data.get("character", ""))
+	if not save_char.is_empty():
+		return save_char
+	return "悟空"
+
+func _role_texture_for(character: String) -> Texture2D:
+	var path := ROLE_TEX_BAJIE if character == "八戒" else ROLE_TEX_WUKONG
+	if ResourceLoader.exists(path):
+		return load(path) as Texture2D
+	return null
+
+func _refresh_role_portrait() -> void:
+	_ensure_role_portrait()
+	if _role_sprite == null:
+		return
+	var character := _current_character_name()
+	var tex := _role_texture_for(character)
+	if tex == null:
+		return
+	_role_sprite.texture = tex
+	var h := float(tex.get_height())
+	if h > 1.0:
+		var s := ROLE_TARGET_HEIGHT / h
+		_role_sprite.scale = Vector2(s, s)
+	_role_sprite.visible = true
+	if _role_name_label:
+		_role_name_label.text = character
+
 func _on_close_pressed() -> void:
 	visible = false
 
@@ -302,6 +370,7 @@ func refresh_if_needed() -> void:
 	refresh()
 
 func refresh() -> void:
+	_refresh_role_portrait()
 	if Global.token.is_empty() or Global.current_save_slot < 1:
 		_show_status_tip("未登录或未选择存档，无法加载背包")
 		return

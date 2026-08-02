@@ -91,6 +91,14 @@ func main() {
 		logger.Info("seed items success")
 	}
 
+	// 为尚无背包物品的旧存档补发开局礼包
+	err = utils.SeedEmptySaveInventories(db)
+	if err != nil {
+		logger.Error("seed save inventories failed: ", zap.Error(err))
+	} else {
+		logger.Info("seed save inventories success")
+	}
+
 	app := NewYokaiZenOdysseyApp(db)
 	gin.SetMode(gin.DebugMode)
 	r := gin.Default()

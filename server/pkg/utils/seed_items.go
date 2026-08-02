@@ -51,7 +51,7 @@ func SeedItems(db *gorm.DB) error {
 		}
 		err := db.Clauses(clause.OnConflict{
 			Columns:   []clause.Column{{Name: "id"}},
-			DoNothing: true,
+			UpdateAll: true,
 		}).Create(&item).Error
 		if err != nil {
 			return fmt.Errorf("seed item %d: %w", item.ID, err)
