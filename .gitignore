@@ -30,3 +30,10 @@ build/
 
 # Plugin install scratch
 .plugin_install_tmp/
+
+# Local SQLite database
+server/yok.db
+server/yok.db-*
+*.db-journal
+*.db-wal
+*.db-shm

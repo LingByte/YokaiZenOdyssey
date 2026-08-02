@@ -30,9 +30,11 @@ var _slots: Array = []
 var _equipment: Array = []
 var _selected_inv_id: int = -1
 var _selected_equip_slot: String = ""
+var _detail_panel: Panel
 var _detail_label: Label
 var _action_button: Button
 var _font: Font
+var _detail_anchor: Control
 
 func _ready() -> void:
 	_font = load(FONT_PATH) as Font if ResourceLoader.exists(FONT_PATH) else null
@@ -206,31 +208,59 @@ func _collect_bag_buttons() -> void:
 		_bag_buttons = _bag_buttons.slice(0, BAG_CAPACITY)
 
 func _ensure_detail_ui() -> void:
-	_detail_label = get_node_or_null("DetailLabel") as Label
+	_detail_panel = get_node_or_null("DetailPanel") as Panel
+	if _detail_panel == null:
+		_detail_panel = Panel.new()
+		_detail_panel.name = "DetailPanel"
+		_detail_panel.visible = false
+		_detail_panel.z_index = 30
+		_detail_panel.custom_minimum_size = Vector2(240, 170)
+		_detail_panel.size = Vector2(240, 170)
+		var style := StyleBoxFlat.new()
+		style.bg_color = Color(0.08, 0.07, 0.05, 0.94)
+		style.border_color = Color(0.78, 0.62, 0.32, 0.95)
+		style.set_border_width_all(2)
+		style.set_corner_radius_all(8)
+		style.content_margin_left = 12
+		style.content_margin_right = 12
+		style.content_margin_top = 10
+		style.content_margin_bottom = 10
+		_detail_panel.add_theme_stylebox_override("panel", style)
+		add_child(_detail_panel)
+
+	_detail_label = _detail_panel.get_node_or_null("DetailLabel") as Label
 	if _detail_label == null:
 		_detail_label = Label.new()
 		_detail_label.name = "DetailLabel"
-		_detail_label.position = Vector2(609, 400)
-		_detail_label.size = Vector2(560, 120)
+		_detail_label.position = Vector2(12, 10)
+		_detail_label.size = Vector2(216, 110)
 		_detail_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		if _font:
 			_detail_label.add_theme_font_override("font", _font)
-		_detail_label.add_theme_font_size_override("font_size", 20)
+		_detail_label.add_theme_font_size_override("font_size", 18)
 		_detail_label.add_theme_color_override("font_color", Color(0.95, 0.92, 0.8))
-		_detail_label.text = "选择一件物品查看详情"
-		add_child(_detail_label)
+		_detail_label.text = ""
+		_detail_panel.add_child(_detail_label)
 
-	_action_button = get_node_or_null("ActionButton") as Button
+	_action_button = _detail_panel.get_node_or_null("ActionButton") as Button
 	if _action_button == null:
 		_action_button = Button.new()
 		_action_button.name = "ActionButton"
-		_action_button.position = Vector2(609, 530)
-		_action_button.size = Vector2(160, 44)
+		_action_button.position = Vector2(60, 122)
+		_action_button.size = Vector2(120, 36)
 		_action_button.text = "装备"
 		_action_button.visible = false
 		if _font:
 			_action_button.add_theme_font_override("font", _font)
-		add_child(_action_button)
+		_detail_panel.add_child(_action_button)
+
+	# 清理旧版固定详情（如仍存在）
+	var legacy := get_node_or_null("DetailLabel")
+	if legacy and legacy != _detail_label:
+		legacy.queue_free()
+	var legacy_btn := get_node_or_null("ActionButton")
+	if legacy_btn and legacy_btn != _action_button:
+		legacy_btn.queue_free()
 
 func _ensure_close_button() -> void:
 	var close_btn := get_node_or_null("CloseButton") as Button
@@ -272,25 +302,48 @@ func refresh_if_needed() -> void:
 	refresh()
 
 func refresh() -> void:
-	if _detail_label == null:
-		return
 	if Global.token.is_empty() or Global.current_save_slot < 1:
-		_detail_label.text = "未登录或未选择存档，无法加载背包"
+		_show_status_tip("未登录或未选择存档，无法加载背包")
 		return
 	var headers = Global.auth_headers()
 	var url = Global.api_url("/api/saves/%d/inventory" % Global.current_save_slot)
 	var err = http.request(url, headers, HTTPClient.METHOD_GET)
 	if err != OK:
-		_detail_label.text = "请求背包失败"
+		_show_status_tip("请求背包失败")
 
 func _set_tab(category: String) -> void:
 	_current_category = category
 	_selected_inv_id = -1
 	_selected_equip_slot = ""
-	if _action_button:
-		_action_button.visible = false
+	_hide_detail()
 	_highlight_tab()
 	_render_bag()
+
+func _hide_detail() -> void:
+	if _detail_panel:
+		_detail_panel.visible = false
+	if _action_button:
+		_action_button.visible = false
+	_detail_anchor = null
+
+func _place_detail_beside(anchor: Control) -> void:
+	if _detail_panel == null or anchor == null:
+		return
+	_detail_anchor = anchor
+	var panel_size := _detail_panel.size
+	if panel_size.x < 10:
+		panel_size = Vector2(240, 170)
+	var local_pos := anchor.get_global_rect().position - global_position
+	var pos := Vector2(local_pos.x + anchor.size.x + 12, local_pos.y)
+	# 右侧放不下则放到左侧
+	if pos.x + panel_size.x > size.x - 8:
+		pos.x = local_pos.x - panel_size.x - 12
+	# 上下夹紧
+	pos.y = clampf(pos.y, 8.0, maxf(8.0, size.y - panel_size.y - 8.0))
+	pos.x = clampf(pos.x, 8.0, maxf(8.0, size.x - panel_size.x - 8.0))
+	_detail_panel.position = pos
+	_detail_panel.visible = true
+	_detail_panel.move_to_front()
 
 func _highlight_tab() -> void:
 	var tabs := {
@@ -306,15 +359,15 @@ func _highlight_tab() -> void:
 
 func _on_http_completed(result: int, response_code: int, _headers: PackedStringArray, body: PackedByteArray) -> void:
 	if result != HTTPRequest.RESULT_SUCCESS:
-		_detail_label.text = "网络错误"
+		_show_status_tip("网络错误")
 		return
 	var text := body.get_string_from_utf8()
 	var data = JSON.parse_string(text)
 	if typeof(data) != TYPE_DICTIONARY:
-		_detail_label.text = "解析背包数据失败"
+		_show_status_tip("解析背包数据失败")
 		return
 	if response_code >= 400:
-		_detail_label.text = str(data.get("error", "请求失败"))
+		_show_status_tip(str(data.get("error", "请求失败")))
 		return
 
 	var inv = data
@@ -322,14 +375,31 @@ func _on_http_completed(result: int, response_code: int, _headers: PackedStringA
 		inv = data["inventory"]
 	_apply_inventory(inv)
 
+func _show_status_tip(msg: String) -> void:
+	if _detail_label == null or _detail_panel == null:
+		return
+	_detail_label.text = msg
+	_action_button.visible = false
+	_detail_panel.position = Vector2(size.x * 0.5 - 120, size.y * 0.5 - 60)
+	_detail_panel.visible = true
+
 func _apply_inventory(inv: Dictionary) -> void:
 	_slots = inv.get("slots", [])
 	_equipment = inv.get("equipment", [])
 	_update_stats(inv.get("stats", {}))
 	_render_equipment()
 	_render_bag()
-	if _detail_label and _detail_label.text.begins_with("未登录"):
-		_detail_label.text = "选择一件物品查看详情"
+	if _selected_inv_id >= 0:
+		var still_in_bag := false
+		for s in _slots:
+			if int(s.get("inventory_id", -1)) == _selected_inv_id:
+				still_in_bag = true
+				break
+		if not still_in_bag:
+			_selected_inv_id = -1
+			_hide_detail()
+	elif _selected_equip_slot.is_empty():
+		_hide_detail()
 
 func _update_stats(stats: Dictionary) -> void:
 	if label_hp: label_hp.text = "HP:     %d" % int(stats.get("hp", 70))
@@ -423,40 +493,49 @@ func _on_bag_slot_pressed(index: int) -> void:
 	if not btn.has_meta("slot_data"):
 		_selected_inv_id = -1
 		_selected_equip_slot = ""
-		_detail_label.text = "空格子"
-		_action_button.visible = false
+		_hide_detail()
 		_render_bag()
 		return
 	var slot_data: Dictionary = btn.get_meta("slot_data")
 	var item: Dictionary = slot_data.get("item", {})
 	_selected_inv_id = int(slot_data.get("inventory_id", -1))
 	_selected_equip_slot = ""
-	_show_item_detail(item, true)
+	_show_item_detail(item, btn, false)
 	_render_bag()
 
 func _on_equip_slot_pressed(slot: String) -> void:
 	_selected_equip_slot = slot
 	_selected_inv_id = -1
+	var anchor: Control = null
+	match slot:
+		"weapon": anchor = equip_weapon
+		"accessory": anchor = equip_accessory
+		"armor": anchor = equip_armor
+		"artifact": anchor = equip_artifact
 	var entry = null
 	for e in _equipment:
 		if str(e.get("slot", "")) == slot:
 			entry = e
 			break
 	if entry == null or entry.get("item", null) == null:
-		_detail_label.text = "该槽位为空"
-		_action_button.visible = false
+		_hide_detail()
 		return
-	_show_item_detail(entry["item"], false, true)
+	_show_item_detail(entry["item"], anchor, true)
 
-func _show_item_detail(item: Dictionary, _from_bag: bool = false, from_equip: bool = false) -> void:
+func _show_item_detail(item: Dictionary, anchor: Control = null, from_equip: bool = false) -> void:
 	var item_name := str(item.get("name", "未知"))
 	var desc := str(item.get("description", ""))
 	var parts: PackedStringArray = []
+	var name_map := {
+		"atk": "攻击", "def": "防御", "hp": "生命", "mp": "法力",
+		"luck": "幸运", "dodge": "闪避", "crit": "暴击",
+		"re_hp": "回血", "re_mp": "回蓝", "magic_res": "魔抗",
+	}
 	for key in ["atk", "def", "hp", "mp", "luck", "dodge", "crit", "re_hp", "re_mp", "magic_res"]:
 		var v := int(item.get(key, 0))
 		if v != 0:
-			parts.append("%s+%d" % [key.to_upper(), v])
-	var stats_line := "  ".join(parts) if parts.size() > 0 else "无额外属性"
+			parts.append("%s +%d" % [name_map[key], v])
+	var stats_line := "\n".join(parts) if parts.size() > 0 else "无额外属性"
 	_detail_label.text = "%s\n%s\n%s" % [item_name, desc, stats_line]
 
 	var cat := str(item.get("category", ""))
@@ -471,6 +550,11 @@ func _show_item_detail(item: Dictionary, _from_bag: bool = false, from_equip: bo
 		_action_button.visible = true
 	else:
 		_action_button.visible = false
+
+	if anchor:
+		_place_detail_beside(anchor)
+	elif _detail_panel:
+		_detail_panel.visible = true
 
 func _on_action_pressed() -> void:
 	if Global.token.is_empty() or Global.current_save_slot < 1:

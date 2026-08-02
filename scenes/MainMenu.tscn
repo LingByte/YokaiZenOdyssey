@@ -189,9 +189,6 @@ texture = ExtResource("14_1lsru")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_53p47"]
 texture = ExtResource("17_vwdl8")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_setting_panel"]
-texture = ExtResource("18_setting_panel")
-
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_qdlbp"]
 color = Color(0.341176, 0.341176, 0.341176, 1)
 
@@ -276,6 +273,9 @@ texture_margin_right = 10.0
 texture_margin_bottom = 4.0
 expand_margin_right = 5.0
 expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_setting_panel"]
+texture = ExtResource("18_setting_panel")
 
 [node name="MainMenu" type="Node2D" unique_id=1897503096]
 script = ExtResource("1_0tp18")
@@ -951,13 +951,13 @@ script = ExtResource("16_b2sbe")
 
 [node name="SuccessDialog" type="AcceptDialog" parent="LoginPanel" unique_id=1482923427]
 transparent_bg = true
-size = Vector2i(165, 126)
+size = Vector2i(420, 260)
 borderless = true
 transparent = true
+min_size = Vector2i(420, 260)
 theme_override_styles/panel = SubResource("StyleBoxTexture_30jol")
 ok_button_text = "确定"
-dialog_text = "           
- 登录成功!"
+dialog_text = "登录成功！"
 dialog_autowrap = true
 script = ExtResource("22_sr5ea")
 
@@ -994,16 +994,16 @@ theme_override_constants/separation = 12
 
 [node name="AudioTitleLabel" type="Label" parent="SettingsPanel/VBoxContainer/AudioSettings" unique_id=202557469]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_colors/font_color = Color(0.92, 0.86, 0.62, 1)
+theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 26
 text = "音频设置"
 horizontal_alignment = 1
 
 [node name="MasterVolumeLabel" type="Label" parent="SettingsPanel/VBoxContainer/AudioSettings" unique_id=40424867]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_colors/font_color = Color(0.9, 0.88, 0.78, 1)
+theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 20
 text = "主音量: 100%"
 horizontal_alignment = 1
@@ -1016,8 +1016,8 @@ value = 100.0
 
 [node name="MusicVolumeLabel" type="Label" parent="SettingsPanel/VBoxContainer/AudioSettings" unique_id=1524713245]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_colors/font_color = Color(0.9, 0.88, 0.78, 1)
+theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 20
 text = "音乐音量: 80%"
 horizontal_alignment = 1
@@ -1030,8 +1030,8 @@ value = 80.0
 
 [node name="SFXVolumeLabel" type="Label" parent="SettingsPanel/VBoxContainer/AudioSettings" unique_id=1431497029]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_colors/font_color = Color(0.9, 0.88, 0.78, 1)
+theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 20
 text = "音效音量: 80%"
 horizontal_alignment = 1

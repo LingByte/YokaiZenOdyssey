@@ -3,7 +3,7 @@ port: 8080
 
 database:
   type: sqlite
-  dsn: "file::memory:"
+  dsn: "yok.db"
 
 project:
   name: 禅妖山海行

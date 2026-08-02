@@ -427,7 +427,7 @@ func _create_policy_popup(node_name: String, title: String, text_path: String) -
 	popup.name = node_name
 	popup.visible = false
 	popup.z_index = 20
-	popup.size = Vector2(420, 460)
+	popup.size = Vector2(480, 540)
 	popup.position = Vector2((size.x - popup.size.x) * 0.5, (size.y - popup.size.y) * 0.5)
 
 	var bg := StyleBoxFlat.new()
@@ -446,7 +446,7 @@ func _create_policy_popup(node_name: String, title: String, text_path: String) -
 	title_label.text = title
 	title_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	title_label.position = Vector2(20, 12)
-	title_label.size = Vector2(340, 36)
+	title_label.size = Vector2(400, 36)
 	title_label.add_theme_font_size_override("font_size", 24)
 	title_label.add_theme_color_override("font_color", Color(0.95, 0.85, 0.55))
 	popup.add_child(title_label)
@@ -455,7 +455,7 @@ func _create_policy_popup(node_name: String, title: String, text_path: String) -
 	close_btn.name = "CloseButton"
 	close_btn.text = "×"
 	close_btn.flat = true
-	close_btn.position = Vector2(372, 8)
+	close_btn.position = Vector2(430, 8)
 	close_btn.size = Vector2(36, 36)
 	close_btn.add_theme_font_size_override("font_size", 28)
 	close_btn.add_theme_color_override("font_color", Color(0.95, 0.85, 0.55))
@@ -465,7 +465,7 @@ func _create_policy_popup(node_name: String, title: String, text_path: String) -
 	var scroll := ScrollContainer.new()
 	scroll.name = "ScrollContainer"
 	scroll.position = Vector2(18, 56)
-	scroll.size = Vector2(384, 340)
+	scroll.size = Vector2(444, 420)
 	popup.add_child(scroll)
 
 	var rich := RichTextLabel.new()
@@ -473,7 +473,7 @@ func _create_policy_popup(node_name: String, title: String, text_path: String) -
 	rich.bbcode_enabled = true
 	rich.fit_content = true
 	rich.scroll_active = false
-	rich.custom_minimum_size = Vector2(360, 0)
+	rich.custom_minimum_size = Vector2(420, 0)
 	rich.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	rich.add_theme_font_size_override("normal_font_size", 16)
 	rich.add_theme_color_override("default_color", Color(0.92, 0.9, 0.85))
@@ -483,7 +483,7 @@ func _create_policy_popup(node_name: String, title: String, text_path: String) -
 	var ok_btn := Button.new()
 	ok_btn.name = "OkButton"
 	ok_btn.text = "我知道了"
-	ok_btn.position = Vector2(140, 408)
+	ok_btn.position = Vector2(170, 488)
 	ok_btn.size = Vector2(140, 36)
 	ok_btn.pressed.connect(func(): popup.visible = false)
 	popup.add_child(ok_btn)
@@ -511,7 +511,7 @@ func show_privacy_policy_popup():
 		_show_policy_popup(popup)
 
 func _show_policy_popup(popup: Control) -> void:
-	popup.size = Vector2(420, 460)
+	popup.size = Vector2(480, 540)
 	popup.position = Vector2((size.x - popup.size.x) * 0.5, (size.y - popup.size.y) * 0.5)
 	popup.visible = true
 	popup.move_to_front()

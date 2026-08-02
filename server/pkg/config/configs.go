@@ -2,10 +2,11 @@ package config
 
 import (
 	"fmt"
-	"github.com/LingByte/YokaiZenOdyssey/pkg/logger"
 	"os"
 	"path/filepath"
+	"strings"
 
+	"github.com/LingByte/YokaiZenOdyssey/pkg/logger"
 	"github.com/LingByte/YokaiZenOdyssey/pkg/utils"
 )
 
@@ -93,6 +94,12 @@ func applyDefaults(cfg *Config, mode string) {
 	}
 	if cfg.Port == 0 {
 		cfg.Port = 8080
+	}
+	if cfg.Database.Type == "" {
+		cfg.Database.Type = "sqlite"
+	}
+	if cfg.Database.DSN == "" && strings.EqualFold(cfg.Database.Type, "sqlite") {
+		cfg.Database.DSN = "yok.db"
 	}
 }
 

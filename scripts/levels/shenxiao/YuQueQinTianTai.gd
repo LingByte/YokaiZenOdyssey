@@ -34,7 +34,10 @@ func _ready():
 	pack_panel = BackpackLevelHelper.install(self)
 
 	if player_hud:
-		player_hud.update_ui()
+		if player and player_hud.has_method("bind_player_stats"):
+			player_hud.bind_player_stats(player)
+		else:
+			player_hud.update_ui()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("open_backpack"):

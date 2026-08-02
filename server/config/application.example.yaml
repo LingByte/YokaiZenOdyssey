@@ -1,0 +1,32 @@
+# 示例配置：复制为 application-development.yaml 或 application.yaml 后按需修改
+# cp config/application.example.yaml config/application-development.yaml
+
+mode: development
+port: 8080
+
+database:
+  # 可选: sqlite | mysql | postgres
+  type: sqlite
+  # SQLite 文件库（推荐开发默认）。不要用 file::memory:，进程退出数据会丢。
+  dsn: "yok.db"
+  # MySQL 示例:
+  # type: mysql
+  # dsn: "user:password@tcp(127.0.0.1:3306)/yokai_zen?charset=utf8mb4&parseTime=True&loc=Local"
+  # Postgres 示例:
+  # type: postgres
+  # dsn: "host=127.0.0.1 user=postgres password=postgres dbname=yokai_zen port=5432 sslmode=disable TimeZone=Asia/Shanghai"
+
+project:
+  name: 禅妖山海行
+  team:
+    name: LingByte
+    org: LingByte Studio
+    members:
+      - developer
+
+log:
+  level: debug
+  filename: logs/app.log
+  max_size: 200
+  max_age: 30
+  max_backups: 5

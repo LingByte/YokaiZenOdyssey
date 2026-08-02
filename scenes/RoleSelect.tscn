@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cd2kebowgdi7c" path="res://assets/level/role_select.png" id="2_bg"]
 [ext_resource type="Texture2D" uid="uid://dh2tuuapjh4sw" path="res://assets/button/select_role_1.png" id="3_normal"]
 [ext_resource type="Texture2D" uid="uid://di3w6hsi2vu5b" path="res://assets/button/select_role_2.png" id="4_hover"]
-[ext_resource type="Texture2D" uid="uid://dxy3uyn6mxtkj" path="res://assets/sprites/players/kongkonng/first_frame.png" id="5_soul_idle"]
+[ext_resource type="Texture2D" uid="uid://dxy3uyn6mxtkj" path="res://assets/sprites/players/kongkong/first_frame.png" id="5_soul_idle"]
 [ext_resource type="Texture2D" uid="uid://dq5hcnyhi1wxq" path="res://assets/sprites/players/bajie/first_frame.png" id="6_bajie_idle"]
 [ext_resource type="Texture2D" uid="uid://dqsrn4ukryd51" path="res://assets/button/button01.png" id="7_char_btn"]
 [ext_resource type="Texture2D" uid="uid://bfwtwtriq2sys" path="res://assets/button/select_role_return.png" id="8_return"]
@@ -114,7 +114,7 @@ offset_right = 111.0
 offset_bottom = 684.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_return")
-theme_override_styles/hover = SubResource("StyleBoxTexture_return")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_return")
+theme_override_styles/hover = SubResource("StyleBoxTexture_return")
 
-[node name="HTTPRequest" type="HTTPRequest" parent="."]
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=1194607466]
