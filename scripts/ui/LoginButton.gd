@@ -22,21 +22,20 @@ func _ready():
 	
 	print("[LoginButton] 初始化完成，按钮禁用状态: ", disabled)
 
-# 显示错误对话框
+# 显示错误/提示对话框（不会关闭登录面板）
 func show_error_dialog(message: String):
-	# 确保对话框节点存在
 	var dialog = get_node_or_null("../SuccessDialog")
 	if not dialog:
 		dialog = success_dialog
-	
-	if dialog:
+
+	if dialog and dialog.has_method("show_tip"):
+		dialog.show_tip(message, false)
+		print("[LoginButton] 显示提示: ", message)
+	elif dialog:
 		dialog.dialog_text = message
 		dialog.popup_centered()
-		print("[LoginButton] 显示错误对话框: ", message)
 	else:
-		# 如果对话框不存在，使用 print 作为后备
 		print("[LoginButton] 错误提示: ", message)
-		# 尝试使用 OS.alert 作为后备
 		OS.alert(message, "提示")
 
 func _on_mouse_entered():
@@ -61,18 +60,10 @@ func _on_pressed():
 	
 	# 检查用户协议是否勾选
 	var agree_checkbox = get_node_or_null("../UserAgree/AgreeCheckBox")
-	if agree_checkbox and not agree_checkbox.button_pressed:
-		print("[LoginButton] 警告: 请先勾选用户协议")
-		# 显示提示对话框
-		show_error_dialog("请先勾选用户协议")
+	if agree_checkbox == null or not agree_checkbox.button_pressed:
+		show_error_dialog("请先勾选并同意《用户协议》和《隐私政策》")
 		return
-	
-	# 如果按钮被禁用，不应该执行
-	if disabled:
-		print("[LoginButton] 警告: 按钮被禁用")
-		show_error_dialog("请先勾选用户协议")
-		return
-	
+
 	# 检查输入框是否存在
 	if not uid_input:
 		print("[LoginButton] 错误: UsernameInput 节点不存在")
@@ -128,7 +119,7 @@ func _on_request_completed(result, response_code, headers, body):
 			HTTPRequest.RESULT_CHUNKED_BODY_SIZE_MISMATCH:
 				error_msg = "分块响应体大小不匹配"
 			HTTPRequest.RESULT_CANT_CONNECT:
-				error_msg = "无法连接到服务器，请检查服务器是否运行在 %s" % Global.API_BASE
+				error_msg = "无法连接到服务器，请检查服务器是否运行在 %s" % Global.api_base
 			HTTPRequest.RESULT_CANT_RESOLVE:
 				error_msg = "无法解析主机名"
 			HTTPRequest.RESULT_CONNECTION_ERROR:
@@ -199,8 +190,10 @@ func _on_request_completed(result, response_code, headers, body):
 			Global.set_user_info(user_info)
 			print("[LoginButton] 用户信息: ", user_info)
 		
-		# 弹出成功提示
-		if success_dialog:
+		# 弹出成功提示（确定后关闭登录面板）
+		if success_dialog and success_dialog.has_method("show_tip"):
+			success_dialog.show_tip("登录成功！", true)
+		elif success_dialog:
 			success_dialog.dialog_text = "登录成功！"
 			success_dialog.popup_centered()
 	else:

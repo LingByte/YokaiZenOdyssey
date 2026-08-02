@@ -6,6 +6,10 @@ extends Node2D
 	$SystemSet,
 	$GameExit,
 ]
+@onready var input_blocker: ColorRect = $InputBlocker
+@onready var login_panel: Panel = $LoginPanel
+
+var _panel_tween: Tween
 
 func _ready():
 	DisplayServer.window_set_title("禅妖山海行")
@@ -44,7 +48,7 @@ func _on_start_game_pressed():
 		return
 	
 	# 新游戏模式
-	$InputBlocker.visible = true
+	input_blocker.visible = true
 	$SaveSelectPanel.show_panel(true)
 
 func _on_read_save_button_pressed():
@@ -54,30 +58,42 @@ func _on_read_save_button_pressed():
 		return
 	
 	# 读取存档模式
-	$InputBlocker.visible = true
+	input_blocker.visible = true
 	$SaveSelectPanel.show_panel(false)
 
 func show_login_panel():
-	$InputBlocker.visible = true
-	$LoginPanel.visible = true
+	input_blocker.visible = true
+	input_blocker.modulate.a = 0.0
+	if _panel_tween:
+		_panel_tween.kill()
+	_panel_tween = create_tween()
+	_panel_tween.tween_property(input_blocker, "modulate:a", 1.0, 0.22)\
+		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	login_panel.play_show_animation()
 
 func hide_login_panel():
-	$LoginPanel.visible = false
-	$InputBlocker.visible = false
+	await login_panel.play_hide_animation()
+	if _panel_tween:
+		_panel_tween.kill()
+	_panel_tween = create_tween()
+	_panel_tween.tween_property(input_blocker, "modulate:a", 0.0, 0.18)\
+		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	await _panel_tween.finished
+	input_blocker.visible = false
+	input_blocker.modulate.a = 1.0
 	
 func show_archive_panel():
-	$InputBlocker.visible = true
+	input_blocker.visible = true
 	$SaveSelectPanel.show_panel(false)
 	
 func hide_archive_panel():
 	$SaveSelectPanel.visible = false
-	$InputBlocker.visible = false
+	input_blocker.visible = false
 
 func show_settings_panel():
-	$InputBlocker.visible = true
+	input_blocker.visible = true
 	$SettingsPanel.visible = true
 
 func hide_settings_panel():
 	$SettingsPanel.visible = false
-	$InputBlocker.visible = false
-	
+	input_blocker.visible = false

@@ -60,10 +60,9 @@ func _on_LoadArchiveRequest_request_completed(result, response_code, headers, bo
 			button.get_node("NameLabel").text = "存档 %d" % slot_num
 			button.get_node("JobLabel").text = save.character
 			button.get_node("LoginTimeLabel").text = smart_time_display(str(save.updated_at))
-			if save.character == "悟空":
-				button.get_node("Avatar").texture = preload("res://assets/avatars/default_avatar01.png")
-			elif save.character == "八戒":
-				button.get_node("Avatar").texture = preload("res://assets/avatars/default_avatar02.png")
+			var avatar := button.get_node_or_null("Avatar") as TextureRect
+			if avatar:
+				Global.apply_character_avatar(avatar, str(save.character))
 			button.disabled = false
 
 			if not button.has_meta("signal_connected"):
@@ -81,7 +80,9 @@ func _on_LoadArchiveRequest_request_completed(result, response_code, headers, bo
 			button.get_node("NameLabel").text = "空存档"
 			button.get_node("JobLabel").text = ""
 			button.get_node("LoginTimeLabel").text = ""
-			button.get_node("Avatar").texture = null
+			var avatar := button.get_node_or_null("Avatar") as TextureRect
+			if avatar:
+				avatar.texture = null
 			button.disabled = false
 
 			if not button.has_meta("signal_connected"):

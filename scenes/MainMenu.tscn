@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bh4owa0k0acuk" path="res://assets/enter/loginPanel.png" id="17_vwdl8"]
 [ext_resource type="Texture2D" uid="uid://cij3xglcmhtcy" path="res://assets/numbers/numbers-5.png" id="18_a3l8e"]
 [ext_resource type="Script" uid="uid://dhn8m6hhei6p" path="res://scripts/ui/LoginPanel.gd" id="18_lknoo"]
+[ext_resource type="Texture2D" uid="uid://1fr4heungms5" path="res://assets/enter/settingPanel.png" id="18_setting_panel"]
 [ext_resource type="Texture2D" uid="uid://ckp3o4vnu3cqu" path="res://assets/button/loginButton.png" id="19_2m507"]
 [ext_resource type="Texture2D" uid="uid://dt1pkkxq4op41" path="res://assets/numbers/numbers-6.png" id="19_ad4u8"]
 [ext_resource type="Texture2D" uid="uid://dnnk4pbedinvs" path="res://assets/numbers/numbers-7.png" id="20_n3cy3"]
@@ -187,6 +188,9 @@ texture = ExtResource("14_1lsru")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_53p47"]
 texture = ExtResource("17_vwdl8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_setting_panel"]
+texture = ExtResource("18_setting_panel")
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_qdlbp"]
 color = Color(0.341176, 0.341176, 0.341176, 1)
@@ -892,7 +896,6 @@ theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_rcrc
 theme_override_styles/disabled = SubResource("StyleBoxTexture_5gxup")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_bdvkk")
 theme_override_styles/focus = SubResource("StyleBoxTexture_pxkio")
-text = "注册"
 script = ExtResource("23_register")
 
 [node name="RegisterRequest" type="HTTPRequest" parent="LoginPanel" unique_id=1170188831]
@@ -960,21 +963,24 @@ script = ExtResource("22_sr5ea")
 
 [node name="SettingsPanel" type="Panel" parent="." unique_id=776203971]
 visible = false
-offset_left = 340.0
-offset_top = 100.0
-offset_right = 940.0
-offset_bottom = 620.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_53p47")
+offset_left = 406.0
+offset_top = 50.0
+offset_right = 874.0
+offset_bottom = 670.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_setting_panel")
 script = ExtResource("24_settings")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsPanel" unique_id=2082616161]
-layout_mode = 1
-offset_left = 50.0
-offset_top = 80.0
-offset_right = 550.0
-offset_bottom = 480.0
+layout_mode = 0
+offset_left = 58.0
+offset_top = 128.0
+offset_right = 410.0
+offset_bottom = 540.0
+theme_override_constants/separation = 14
+alignment = 1
 
 [node name="TitleLabel" type="Label" parent="SettingsPanel/VBoxContainer" unique_id=1811339736]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7ovgv")
 theme_override_font_sizes/font_size = 36
@@ -983,50 +989,65 @@ horizontal_alignment = 1
 
 [node name="AudioSettings" type="VBoxContainer" parent="SettingsPanel/VBoxContainer" unique_id=1464725545]
 layout_mode = 2
-theme_override_constants/separation = 10
+size_flags_horizontal = 4
+theme_override_constants/separation = 12
 
 [node name="AudioTitleLabel" type="Label" parent="SettingsPanel/VBoxContainer/AudioSettings" unique_id=202557469]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7ovgv")
-theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(0.92, 0.86, 0.62, 1)
+theme_override_font_sizes/font_size = 26
 text = "音频设置"
+horizontal_alignment = 1
 
 [node name="MasterVolumeLabel" type="Label" parent="SettingsPanel/VBoxContainer/AudioSettings" unique_id=40424867]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_colors/font_color = Color(0.9, 0.88, 0.78, 1)
 theme_override_font_sizes/font_size = 20
 text = "主音量: 100%"
+horizontal_alignment = 1
 
 [node name="MasterVolumeSlider" type="HSlider" parent="SettingsPanel/VBoxContainer/AudioSettings" unique_id=1916214580]
+custom_minimum_size = Vector2(300, 28)
 layout_mode = 2
+size_flags_horizontal = 4
 value = 100.0
 
 [node name="MusicVolumeLabel" type="Label" parent="SettingsPanel/VBoxContainer/AudioSettings" unique_id=1524713245]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_colors/font_color = Color(0.9, 0.88, 0.78, 1)
 theme_override_font_sizes/font_size = 20
 text = "音乐音量: 80%"
+horizontal_alignment = 1
 
 [node name="MusicVolumeSlider" type="HSlider" parent="SettingsPanel/VBoxContainer/AudioSettings" unique_id=1990999969]
+custom_minimum_size = Vector2(300, 28)
 layout_mode = 2
+size_flags_horizontal = 4
 value = 80.0
 
 [node name="SFXVolumeLabel" type="Label" parent="SettingsPanel/VBoxContainer/AudioSettings" unique_id=1431497029]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7ovgv")
+theme_override_colors/font_color = Color(0.9, 0.88, 0.78, 1)
 theme_override_font_sizes/font_size = 20
 text = "音效音量: 80%"
+horizontal_alignment = 1
 
 [node name="SFXVolumeSlider" type="HSlider" parent="SettingsPanel/VBoxContainer/AudioSettings" unique_id=440010772]
+custom_minimum_size = Vector2(300, 28)
 layout_mode = 2
+size_flags_horizontal = 4
 value = 80.0
 
 [node name="CloseButton" type="Button" parent="SettingsPanel" unique_id=1534152084]
 layout_mode = 0
-offset_left = 489.0
-offset_top = 18.0
-offset_right = 541.0
-offset_bottom = 71.0
+offset_left = 398.0
+offset_top = 14.0
+offset_right = 450.0
+offset_bottom = 67.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_pw1f4")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_di0ve")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_4ttex")

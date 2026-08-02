@@ -23,7 +23,7 @@ func _on_mouse_exited():
 		.set_ease(Tween.EASE_OUT)
 
 func _on_pressed():
-	get_tree().root.get_node("MainMenu").hide_login_panel()
+	await get_tree().root.get_node("MainMenu").hide_login_panel()
 
 func _on_archive_pressed():
 	get_tree().root.get_node("MainMenu").hide_archive_panel()

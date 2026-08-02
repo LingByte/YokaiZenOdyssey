@@ -41,37 +41,31 @@ func _on_mouse_exited():
 		.set_trans(Tween.TRANS_SINE)\
 		.set_ease(Tween.EASE_OUT)
 
-# 显示错误对话框
+# 显示错误/提示对话框（不会关闭登录面板）
 func show_error_dialog(message: String):
 	var dialog = get_node_or_null("../SuccessDialog")
 	if not dialog:
 		dialog = success_dialog
-	
-	if dialog:
+
+	if dialog and dialog.has_method("show_tip"):
+		dialog.show_tip(message, false)
+		print("[RegisterButton] 显示提示: ", message)
+	elif dialog:
 		dialog.dialog_text = message
 		dialog.popup_centered()
-		print("[RegisterButton] 显示错误对话框: ", message)
 	else:
 		print("[RegisterButton] 错误提示: ", message)
 		OS.alert(message, "提示")
 
 func _on_pressed():
 	print("[RegisterButton] ========== 按钮被点击 ==========")
-	print("[RegisterButton] 按钮禁用状态: ", disabled)
-	
+
 	# 检查用户协议是否勾选
 	var agree_checkbox = get_node_or_null("../UserAgree/AgreeCheckBox")
-	if agree_checkbox and not agree_checkbox.button_pressed:
-		print("[RegisterButton] 警告: 请先勾选用户协议")
-		show_error_dialog("请先勾选用户协议")
+	if agree_checkbox == null or not agree_checkbox.button_pressed:
+		show_error_dialog("请先勾选并同意《用户协议》和《隐私政策》")
 		return
-	
-	# 如果按钮被禁用，不应该执行
-	if disabled:
-		print("[RegisterButton] 警告: 按钮被禁用")
-		show_error_dialog("请先勾选用户协议")
-		return
-	
+
 	# 检查输入框是否存在
 	if not uid_input:
 		print("[RegisterButton] 错误: UsernameInput 节点不存在")
@@ -138,7 +132,7 @@ func _on_request_completed(result, response_code, headers, body):
 		var error_msg = ""
 		match result:
 			HTTPRequest.RESULT_CANT_CONNECT:
-				error_msg = "无法连接到服务器，请检查服务器是否运行在 %s" % Global.API_BASE
+				error_msg = "无法连接到服务器，请检查服务器是否运行在 %s" % Global.api_base
 			HTTPRequest.RESULT_CANT_RESOLVE:
 				error_msg = "无法解析主机名"
 			HTTPRequest.RESULT_CONNECTION_ERROR:
@@ -184,9 +178,17 @@ func _on_request_completed(result, response_code, headers, body):
 	var dialog = get_node_or_null("../SuccessDialog")
 	if not dialog:
 		dialog = success_dialog
-	if dialog:
-		dialog.dialog_text = response.get("message", "注册成功！请登录")
+	var msg := "注册成功！请登录"
+	if response is Dictionary:
+		msg = str(response.get("message", msg))
+	if dialog and dialog.has_method("show_tip"):
+		dialog.show_tip(msg, false)
+	elif dialog:
+		dialog.dialog_text = msg
 		dialog.popup_centered()
-		await dialog.confirmed
-	get_tree().root.get_node("MainMenu").hide_login_panel()
+
+	# 注册成功后切回登录表单，方便直接登录
+	var panel = get_parent()
+	if panel and panel.has_method("_rerender_form") and panel.get("is_register_mode"):
+		await panel._rerender_form(false)
 

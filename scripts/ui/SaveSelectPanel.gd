@@ -114,11 +114,7 @@ func _update_save_slots(saves):
 				if datetime:
 					time_label.text = datetime.substr(5, 11)  # 只显示日期时间部分
 			if avatar:
-				# 根据角色显示不同的头像
-				if save.character == "悟空":
-					avatar.texture = preload("res://assets/avatars/default_avatar01.png")
-				elif save.character == "八戒":
-					avatar.texture = preload("res://assets/avatars/default_avatar02.png")
+				Global.apply_character_avatar(avatar, str(save.character))
 
 func _on_save_slot_pressed(slot: int):
 	print("[SaveSelectPanel] 点击存档槽位: ", slot)
