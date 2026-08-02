@@ -36,9 +36,13 @@ func (app *YokaiZenOdysseyApp) RegisterRoutes(r *gin.Engine) {
 
 	// 创建存档处理器
 	saveHandler := handlers.NewSaveHandler(app.db)
-	
+
 	// 注册存档路由
 	saveHandler.RegisterRoutes(r)
+
+	// 物品 / 背包 / 装备
+	itemHandler := handlers.NewItemHandler(app.db)
+	itemHandler.RegisterRoutes(r)
 }
 
 func main() {
@@ -59,7 +63,13 @@ func main() {
 		panic(err)
 	}
 
-	err = utils.MakeMigrates(db, []any{&models.User{}, &models.SaveGame{}})
+	err = utils.MakeMigrates(db, []any{
+		&models.User{},
+		&models.SaveGame{},
+		&models.ItemDefinition{},
+		&models.InventoryItem{},
+		&models.EquipmentLoadout{},
+	})
 	if err != nil {
 		logger.Error("migration failed: ", zap.Error(err))
 	} else {
@@ -72,6 +82,13 @@ func main() {
 		logger.Error("seed users failed: ", zap.Error(err))
 	} else {
 		logger.Info("seed users success")
+	}
+
+	err = utils.SeedItems(db)
+	if err != nil {
+		logger.Error("seed items failed: ", zap.Error(err))
+	} else {
+		logger.Info("seed items success")
 	}
 
 	app := NewYokaiZenOdysseyApp(db)

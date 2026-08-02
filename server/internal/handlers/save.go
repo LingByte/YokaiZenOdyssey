@@ -100,6 +100,11 @@ func (h *SaveHandler) CreateSave(c *gin.Context) {
 		return
 	}
 
+	if err := GrantStarterKit(h.db, userID.(uint), req.Slot, req.Character); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "初始化背包失败"})
+		return
+	}
+
 	c.JSON(http.StatusCreated, gin.H{
 		"message": "创建存档成功",
 		"save": SaveResponse{
