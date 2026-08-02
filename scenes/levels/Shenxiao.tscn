@@ -34,15 +34,9 @@
 [ext_resource type="Texture2D" uid="uid://dinu4udc0bbs4" path="res://assets/button/close_button_press.png" id="33_a8yqr"]
 [ext_resource type="Texture2D" uid="uid://bbapo0igstqpk" path="res://assets/button/close_button.png" id="34_ae1wy"]
 [ext_resource type="Script" uid="uid://di74oilrwihjw" path="res://scripts/levels/shenxiao/pack_close_button.gd" id="35_3qmri"]
+[ext_resource type="Script" path="res://scripts/ui/BackpackPanel.gd" id="36_backpack"]
 [ext_resource type="Texture2D" uid="uid://dwl4rx0j2ym47" path="res://assets/common/Level_Banner.png" id="37_m8qlp"]
 [ext_resource type="Texture2D" uid="uid://5xs74r345x1g" path="res://assets/numbers/font_number_1.png" id="38_oil6w"]
-[ext_resource type="Texture2D" uid="uid://cs72utj7iglcg" path="res://assets/items/1300.png" id="39_rd6sh"]
-[ext_resource type="Texture2D" uid="uid://jevbgkhumjdr" path="res://assets/items/1303.png" id="40_s1mjb"]
-[ext_resource type="Texture2D" uid="uid://bxft2br6ixae0" path="res://assets/items/1302.png" id="41_4rhmy"]
-[ext_resource type="Texture2D" uid="uid://chwj7t8qjcbbw" path="res://assets/items/1301.png" id="42_thrqp"]
-[ext_resource type="Texture2D" uid="uid://bolxybde4xssv" path="res://assets/items/1307.png" id="43_oemmg"]
-[ext_resource type="Texture2D" uid="uid://csd7sl8e5rjfd" path="res://assets/items/1311.png" id="44_2eg3m"]
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ut24"]
 texture = ExtResource("8_v2eqs")
 
@@ -170,23 +164,17 @@ texture = ExtResource("33_a8yqr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7gxdb"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j1itj"]
-texture = ExtResource("39_rd6sh")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u0bku"]
-texture = ExtResource("40_s1mjb")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xv7io"]
-texture = ExtResource("41_4rhmy")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tq5gj"]
-texture = ExtResource("42_thrqp")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mijma"]
-texture = ExtResource("43_oemmg")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ro7xl"]
-texture = ExtResource("44_2eg3m")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bag_slot"]
+bg_color = Color(0.12, 0.1, 0.08, 0.35)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.55, 0.45, 0.28, 0.55)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="Shenxiao" type="Node2D" unique_id=1479545725]
 script = ExtResource("1_iac8a")
@@ -468,6 +456,9 @@ visible = false
 offset_right = 1280.0
 offset_bottom = 720.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_077nu")
+script = ExtResource("36_backpack")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="CanvasLayer/Panel"]
 
 [node name="Equipment" type="Button" parent="CanvasLayer/Panel" unique_id=1745573591]
 layout_mode = 0
@@ -729,7 +720,7 @@ offset_left = 609.0
 offset_top = 131.0
 offset_right = 695.0
 offset_bottom = 204.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_j1itj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bag_slot")
 
 [node name="Button2" type="Button" parent="CanvasLayer/Panel" unique_id=790055447]
 layout_mode = 0
@@ -737,7 +728,7 @@ offset_left = 900.0
 offset_top = 131.0
 offset_right = 986.0
 offset_bottom = 204.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_u0bku")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bag_slot")
 
 [node name="Button3" type="Button" parent="CanvasLayer/Panel" unique_id=1405225541]
 layout_mode = 0
@@ -745,7 +736,7 @@ offset_left = 804.0
 offset_top = 131.0
 offset_right = 890.0
 offset_bottom = 204.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_xv7io")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bag_slot")
 
 [node name="Button4" type="Button" parent="CanvasLayer/Panel" unique_id=431819467]
 layout_mode = 0
@@ -753,7 +744,7 @@ offset_left = 707.0
 offset_top = 130.0
 offset_right = 793.0
 offset_bottom = 203.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_tq5gj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bag_slot")
 
 [node name="Button5" type="Button" parent="CanvasLayer/Panel" unique_id=1561836397]
 layout_mode = 0
@@ -761,7 +752,7 @@ offset_left = 997.0
 offset_top = 131.0
 offset_right = 1083.0
 offset_bottom = 204.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_mijma")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bag_slot")
 
 [node name="Button6" type="Button" parent="CanvasLayer/Panel" unique_id=1803042172]
 layout_mode = 0
@@ -769,7 +760,7 @@ offset_left = 1094.0
 offset_top = 131.0
 offset_right = 1180.0
 offset_bottom = 204.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_ro7xl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bag_slot")
 
 [node name="Button7" type="Button" parent="CanvasLayer/Panel" unique_id=1306352591]
 layout_mode = 0
@@ -777,7 +768,7 @@ offset_left = 609.0
 offset_top = 215.0
 offset_right = 695.0
 offset_bottom = 288.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_j1itj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bag_slot")
 
 [node name="Button8" type="Button" parent="CanvasLayer/Panel" unique_id=46608890]
 layout_mode = 0
@@ -785,7 +776,7 @@ offset_left = 900.0
 offset_top = 215.0
 offset_right = 986.0
 offset_bottom = 288.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_u0bku")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bag_slot")
 
 [node name="Button9" type="Button" parent="CanvasLayer/Panel" unique_id=255846812]
 layout_mode = 0
@@ -793,7 +784,7 @@ offset_left = 804.0
 offset_top = 215.0
 offset_right = 890.0
 offset_bottom = 288.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_xv7io")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bag_slot")
 
 [node name="Button10" type="Button" parent="CanvasLayer/Panel" unique_id=291396453]
 layout_mode = 0
@@ -801,7 +792,7 @@ offset_left = 707.0
 offset_top = 214.0
 offset_right = 793.0
 offset_bottom = 287.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_tq5gj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bag_slot")
 
 [node name="Button11" type="Button" parent="CanvasLayer/Panel" unique_id=1807357234]
 layout_mode = 0
@@ -809,7 +800,7 @@ offset_left = 997.0
 offset_top = 215.0
 offset_right = 1083.0
 offset_bottom = 288.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_mijma")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bag_slot")
 
 [node name="Button12" type="Button" parent="CanvasLayer/Panel" unique_id=1950337983]
 layout_mode = 0
@@ -817,7 +808,7 @@ offset_left = 1094.0
 offset_top = 215.0
 offset_right = 1180.0
 offset_bottom = 288.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_ro7xl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bag_slot")
 
 [node name="Button13" type="Button" parent="CanvasLayer/Panel" unique_id=1962162128]
 layout_mode = 0
@@ -825,7 +816,7 @@ offset_left = 609.0
 offset_top = 300.0
 offset_right = 695.0
 offset_bottom = 373.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_j1itj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bag_slot")
 
 [node name="Button14" type="Button" parent="CanvasLayer/Panel" unique_id=764298528]
 layout_mode = 0
@@ -833,7 +824,7 @@ offset_left = 900.0
 offset_top = 300.0
 offset_right = 986.0
 offset_bottom = 373.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_u0bku")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bag_slot")
 
 [node name="Button15" type="Button" parent="CanvasLayer/Panel" unique_id=1148243589]
 layout_mode = 0
@@ -841,7 +832,7 @@ offset_left = 804.0
 offset_top = 300.0
 offset_right = 890.0
 offset_bottom = 373.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_xv7io")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bag_slot")
 
 [node name="Button16" type="Button" parent="CanvasLayer/Panel" unique_id=744654171]
 layout_mode = 0
@@ -849,7 +840,7 @@ offset_left = 707.0
 offset_top = 299.0
 offset_right = 793.0
 offset_bottom = 372.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_tq5gj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bag_slot")
 
 [node name="Button17" type="Button" parent="CanvasLayer/Panel" unique_id=1245539256]
 layout_mode = 0
@@ -857,7 +848,7 @@ offset_left = 997.0
 offset_top = 300.0
 offset_right = 1083.0
 offset_bottom = 373.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_mijma")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bag_slot")
 
 [node name="Button18" type="Button" parent="CanvasLayer/Panel" unique_id=1221409007]
 layout_mode = 0
@@ -865,7 +856,7 @@ offset_left = 1094.0
 offset_top = 300.0
 offset_right = 1180.0
 offset_bottom = 373.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_ro7xl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bag_slot")
 
 [connection signal="mouse_entered" from="ReturnButton" to="ReturnButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ReturnButton" to="ReturnButton" method="_on_mouse_exited"]

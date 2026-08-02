@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/BackpackPanel.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://cjbo1exfceoga" path="res://assets/common/pack_panel.png" id="2_pack"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pack"]
+texture = ExtResource("2_pack")
+
+[node name="BackpackPanel" type="Panel"]
+visible = false
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_pack")
+script = ExtResource("1_script")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]

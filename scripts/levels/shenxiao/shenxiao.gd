@@ -12,10 +12,18 @@ func _ready() -> void:
 	if id != -1:
 		print("当前选中角色 ID：", id)
 		# load_character_data(id)
-	Global.load_avatar_texture_to(userAvatar, 'https://cetide-1325039295.cos.ap-chengdu.myqcloud.com/west/default_avatar01.png')
+
+	# 先立刻显示本地头像，再异步拉远程（回调内会校验节点是否仍有效）
+	Global.apply_character_avatar(userAvatar)
+	var remote_avatar := ""
+	if Global.user_info.has("avatar"):
+		remote_avatar = str(Global.user_info["avatar"])
+	if not remote_avatar.is_empty():
+		Global.load_avatar_texture_to(userAvatar, remote_avatar)
 
 	# 连接计时器超时信号
-	heartbeat_timer.timeout.connect(send_heartbeat)
+	if heartbeat_timer and not heartbeat_timer.timeout.is_connected(send_heartbeat):
+		heartbeat_timer.timeout.connect(send_heartbeat)
 
 func _process(delta: float) -> void:
 	# 监听 C 键打开/关闭背包
@@ -24,6 +32,8 @@ func _process(delta: float) -> void:
 
 func toggle_backpack():
 	packPanel.visible = not packPanel.visible
+	if packPanel.visible and packPanel.has_method("refresh_if_needed"):
+		packPanel.refresh_if_needed()
 
 func send_heartbeat():
 	if Global.token.is_empty():
@@ -34,6 +44,8 @@ func send_heartbeat():
 
 func show_pack_panel():
 	packPanel.visible = true
+	if packPanel.has_method("refresh_if_needed"):
+		packPanel.refresh_if_needed()
 
 func hide_pack_panel():
 	packPanel.visible = false
