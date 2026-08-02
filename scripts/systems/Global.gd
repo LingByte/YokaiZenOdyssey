@@ -1,7 +1,8 @@
 # Global.gd
 extends Node
 
-const API_BASE := "http://localhost:8080"
+## 默认 API 地址；可被 res://.env / user://.env 中的 API_BASE 覆盖
+var api_base: String = "http://localhost:8080"
 
 var token: String = ""
 var is_logged_in: bool = false
@@ -13,12 +14,28 @@ var selected_character: String = ""
 var just_entered_shenxiao: bool = false  # 标记是否刚进入神霄场景
 
 func _ready():
+	_load_env_config()
 	_load_saved_data()
+
+func _load_env_config() -> void:
+	# 优先项目根 .env；若编辑器对点文件受限，可用 config.env
+	var env := EnvLoader.load_files(PackedStringArray([
+		"res://.env",
+		"res://.env.local",
+		"res://config.env",
+		"user://.env",
+	]))
+	var base := str(env.get("API_BASE", env.get("API_URL", api_base))).strip_edges()
+	if base.ends_with("/"):
+		base = base.left(base.length() - 1)
+	if not base.is_empty():
+		api_base = base
+	print("[Global] API_BASE = ", api_base)
 
 func api_url(path: String) -> String:
 	if path.begins_with("/"):
-		return API_BASE + path
-	return API_BASE + "/" + path
+		return api_base + path
+	return api_base + "/" + path
 
 func auth_headers(extra: Array = []) -> PackedStringArray:
 	var headers: PackedStringArray = ["Content-Type: application/json"]
@@ -80,46 +97,74 @@ func _delete_saved_data():
 		file.close()
 		DirAccess.remove_absolute("user://user_data.cfg")
 
+func apply_character_avatar(target: TextureRect, character: String = "") -> void:
+	if target == null or not is_instance_valid(target):
+		return
+	var char_name := character if not character.is_empty() else selected_character
+	if char_name == "八戒":
+		target.texture = preload("res://assets/avatars/default_avatar02.png")
+	else:
+		target.texture = preload("res://assets/avatars/default_avatar01.png")
+
 func load_avatar_texture_to(target: TextureRect, url: String):
+	if target == null or not is_instance_valid(target):
+		return
+
+	# 无 URL 时直接用本地角色头像，避免无效请求
+	if url.is_empty():
+		apply_character_avatar(target)
+		return
+
 	var http := HTTPRequest.new()
 	add_child(http)
+	var target_ref: WeakRef = weakref(target)
 
-	http.request_completed.connect(func(result, response_code, headers, body):
+	http.request_completed.connect(func(_result, response_code, _headers, body):
+		# HTTPRequest 用完即销毁，避免泄漏
+		if is_instance_valid(http):
+			http.queue_free()
+
+		var node = target_ref.get_ref()
+		if node == null or not is_instance_valid(node):
+			# 场景已切换，目标 TextureRect 已释放
+			return
+
 		if response_code != 200:
-			target.texture = preload("res://assets/avatars/default_avatar_64x64.png")
+			apply_character_avatar(node)
 			return
 
 		var image = Image.new()
 		if image.load_png_from_buffer(body) != OK:
-			target.texture = preload("res://assets/avatars/default_avatar_64x64.png")
+			# 也可能是 jpg/webp，回退本地头像
+			apply_character_avatar(node)
 			return
 
-		var texture = ImageTexture.create_from_image(image)
-		target.texture = texture
-		http.queue_free()
+		node.texture = ImageTexture.create_from_image(image)
 	)
 
-	http.request(url)
+	var err := http.request(url)
+	if err != OK:
+		apply_character_avatar(target)
+		if is_instance_valid(http):
+			http.queue_free()
 
 # 全局背包管理函数
 func toggle_backpack():
-	var root = get_tree().root
-	# 先尝试在 Shenxiao 场景中查找背包面板
-	var shenxiao = root.get_node_or_null("Shenxiao")
-	if shenxiao:
-		var pack_panel = shenxiao.get_node_or_null("CanvasLayer/Panel")
-		if pack_panel:
-			# 切换显示/隐藏
-			pack_panel.visible = not pack_panel.visible
-			return
-	
-	# 如果不在 Shenxiao 场景，尝试在当前场景中查找
 	var current_scene = get_tree().current_scene
-	if current_scene:
-		# 尝试查找背包面板（可能在 CanvasLayer/Panel 路径下）
-		var pack_panel = current_scene.get_node_or_null("CanvasLayer/Panel")
-		if pack_panel:
-			pack_panel.visible = not pack_panel.visible
-			return
-	
-	print("警告: 未找到背包面板")
+	if current_scene and current_scene.has_method("toggle_backpack"):
+		current_scene.toggle_backpack()
+		return
+
+	var pack_panel = null
+	var shenxiao = get_tree().root.get_node_or_null("Shenxiao")
+	if shenxiao:
+		pack_panel = shenxiao.get_node_or_null("CanvasLayer/Panel")
+	if pack_panel == null and current_scene:
+		pack_panel = current_scene.get_node_or_null("CanvasLayer/Panel")
+	if pack_panel == null:
+		print("警告: 未找到背包面板")
+		return
+
+	pack_panel.visible = not pack_panel.visible
+	if pack_panel.visible and pack_panel.has_method("refresh_if_needed"):
+		pack_panel.refresh_if_needed()

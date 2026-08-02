@@ -23,3 +23,10 @@ Thumbs.db
 # Build artifacts
 bin/
 build/
+
+# Local env (keep .env.example tracked)
+.env
+.env.local
+
+# Plugin install scratch
+.plugin_install_tmp/
