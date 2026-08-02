@@ -13,8 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://ccnxgi7h3q1by" path="res://assets/button/button04.png" id="11_kg113"]
 [ext_resource type="Script" uid="uid://ielyvvdvxtvt" path="res://scripts/ui/LoadArchive.gd" id="12_ruhar"]
 [ext_resource type="Texture2D" uid="uid://daxu5ioiv13tt" path="res://assets/enter/loadArchive.png" id="13_ss1rh"]
-[ext_resource type="AudioStream" path="res://assets/audio/bgm_enter.mp3" id="14_bgm"]
 [ext_resource type="Texture2D" uid="uid://dinu4udc0bbs4" path="res://assets/button/close_button_press.png" id="14_1lsru"]
+[ext_resource type="AudioStream" uid="uid://b3o70bq3r1vfo" path="res://assets/audio/bgm_enter.mp3" id="14_bgm"]
 [ext_resource type="Texture2D" uid="uid://1tw2ay406lnb" path="res://assets/numbers/numbers-1.png" id="14_pl0ud"]
 [ext_resource type="Texture2D" uid="uid://bbapo0igstqpk" path="res://assets/button/close_button.png" id="15_d7r6v"]
 [ext_resource type="Texture2D" uid="uid://c1yqyr6eunfqg" path="res://assets/numbers/numbers-2.png" id="15_updjh"]
@@ -34,7 +34,7 @@
 [ext_resource type="Script" uid="uid://ihn1kb1k8vkx" path="res://scripts/ui/RegisterButton.gd" id="23_register"]
 [ext_resource type="Script" uid="uid://c28bnmkqs8m1k" path="res://scripts/ui/SettingsPanel.gd" id="24_settings"]
 [ext_resource type="Script" uid="uid://8l1oke17h8k" path="res://scripts/ui/CharacterSelectPanel.gd" id="25_character"]
-[ext_resource type="Script" path="res://scripts/ui/SaveSelectPanel.gd" id="26_save_panel"]
+[ext_resource type="Script" uid="uid://dctxj7yb5m025" path="res://scripts/ui/SaveSelectPanel.gd" id="26_save_panel"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kcvos"]
 texture = ExtResource("5_wjfkx")
@@ -185,24 +185,6 @@ texture = ExtResource("14_1lsru")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcgd1"]
 texture = ExtResource("14_1lsru")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_krfga"]
-texture = ExtResource("14_1lsru")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s5op4"]
-texture = ExtResource("14_1lsru")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8mo1f"]
-texture = ExtResource("14_1lsru")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v3lh3"]
-texture = ExtResource("15_d7r6v")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8kemq"]
-texture = ExtResource("15_d7r6v")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j201f"]
-texture = ExtResource("14_1lsru")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_53p47"]
 texture = ExtResource("17_vwdl8")
 
@@ -294,7 +276,7 @@ expand_margin_bottom = 2.0
 [node name="MainMenu" type="Node2D" unique_id=1897503096]
 script = ExtResource("1_0tp18")
 
-[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="." unique_id=1618785839]
 stream = ExtResource("14_bgm")
 autoplay = true
 
@@ -799,7 +781,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_wtx68")
 theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_xs4vk")
 theme_override_styles/hover = SubResource("StyleBoxTexture_rcgd1")
 
-[node name="HTTPRequest" type="HTTPRequest" parent="SaveSelectPanel"]
+[node name="HTTPRequest" type="HTTPRequest" parent="SaveSelectPanel" unique_id=1918628700]
 
 [node name="LoginPanel" type="Panel" parent="." unique_id=1476469003]
 visible = false

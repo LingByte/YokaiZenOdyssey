@@ -110,14 +110,13 @@ func _on_pressed():
 	print("[RegisterButton] 昵称: ", name)
 	
 	var body := {
-		"uid": uid_input.text,
-		"pwd": pwd_input.text,
-		"name": name,
-		"avatar": ""
+		"username": uid_input.text,
+		"password": pwd_input.text,
+		"nickname": name
 	}
 	var json = JSON.stringify(body)
-	var headers = ["Content-Type: application/json"]
-	var url = "http://localhost:7070/api/v1/users/register"
+	var headers = Global.auth_headers()
+	var url = Global.api_url("/api/auth/register")
 	
 	print("[RegisterButton] 发送注册请求...")
 	print("[RegisterButton] URL: ", url)
@@ -139,7 +138,7 @@ func _on_request_completed(result, response_code, headers, body):
 		var error_msg = ""
 		match result:
 			HTTPRequest.RESULT_CANT_CONNECT:
-				error_msg = "无法连接到服务器，请检查服务器是否运行在 http://localhost:7070"
+				error_msg = "无法连接到服务器，请检查服务器是否运行在 %s" % Global.API_BASE
 			HTTPRequest.RESULT_CANT_RESOLVE:
 				error_msg = "无法解析主机名"
 			HTTPRequest.RESULT_CONNECTION_ERROR:
@@ -151,7 +150,7 @@ func _on_request_completed(result, response_code, headers, body):
 		show_error_dialog(error_msg)
 		return
 	
-	if response_code != 200:
+	if response_code != 200 and response_code != 201:
 		print("[RegisterButton] HTTP 状态码错误: ", response_code)
 		var error_msg = "注册失败"
 		if body and body.size() > 0:
@@ -159,8 +158,8 @@ func _on_request_completed(result, response_code, headers, body):
 			print("[RegisterButton] 响应体: ", body_text)
 			
 			var response = JSON.parse_string(body_text)
-			if response and response.has("msg"):
-				error_msg = response["msg"]
+			if response and response.has("error"):
+				error_msg = response["error"]
 			elif response_code == 409:
 				error_msg = "用户名已存在"
 			elif response_code == 400:
@@ -180,30 +179,14 @@ func _on_request_completed(result, response_code, headers, body):
 		return
 
 	print("[RegisterButton] 解析后的响应: ", response)
+	print("[RegisterButton] 注册成功，请登录")
 
-	if response.has("code") and response["code"] == 200:
-		if response.has("data") and response["data"].has("token"):
-			var token = response["data"]["token"]
-			Global.set_token(token)
-			print("[RegisterButton] 注册成功，token: ", token)
-			
-			# 弹出成功提示
-			var dialog = get_node_or_null("../SuccessDialog")
-			if not dialog:
-				dialog = success_dialog
-			if dialog:
-				dialog.dialog_text = "注册成功！"
-				dialog.popup_centered()
-			
-			# 注册成功后自动登录，可以关闭面板
-			if dialog:
-				await dialog.confirmed
-			get_tree().root.get_node("MainMenu").hide_login_panel()
-		else:
-			print("[RegisterButton] 响应格式错误，缺少 token")
-			show_error_dialog("注册响应格式错误")
-	else:
-		var msg = response.get("msg", "未知错误")
-		print("[RegisterButton] 注册失败，原因: ", msg)
-		show_error_dialog(msg)
+	var dialog = get_node_or_null("../SuccessDialog")
+	if not dialog:
+		dialog = success_dialog
+	if dialog:
+		dialog.dialog_text = response.get("message", "注册成功！请登录")
+		dialog.popup_centered()
+		await dialog.confirmed
+	get_tree().root.get_node("MainMenu").hide_login_panel()
 

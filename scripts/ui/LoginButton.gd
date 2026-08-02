@@ -102,8 +102,8 @@ func _on_pressed():
 		"password": pwd_input.text
 	}
 	var json = JSON.stringify(body)
-	var headers = ["Content-Type: application/json"]
-	var url = "http://localhost:8080/api/auth/login"
+	var headers = Global.auth_headers()
+	var url = Global.api_url("/api/auth/login")
 	
 	print("[LoginButton] 发送登录请求...")
 	print("[LoginButton] URL: ", url)
@@ -128,7 +128,7 @@ func _on_request_completed(result, response_code, headers, body):
 			HTTPRequest.RESULT_CHUNKED_BODY_SIZE_MISMATCH:
 				error_msg = "分块响应体大小不匹配"
 			HTTPRequest.RESULT_CANT_CONNECT:
-				error_msg = "无法连接到服务器，请检查服务器是否运行在 http://localhost:7070"
+				error_msg = "无法连接到服务器，请检查服务器是否运行在 %s" % Global.API_BASE
 			HTTPRequest.RESULT_CANT_RESOLVE:
 				error_msg = "无法解析主机名"
 			HTTPRequest.RESULT_CONNECTION_ERROR:

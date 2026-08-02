@@ -9,10 +9,10 @@ extends Panel
 
 var tween: Tween
 
-# 角色职业选项
+# 角色职业选项（需与后端 CreateSaveRequest 一致）
 const JOBS = [
 	{"name": "悟空", "value": "悟空"},
-	{"name": "唐僧", "value": "TangSengPlayer"},
+	{"name": "八戒", "value": "八戒"},
 ]
 
 func _ready():
@@ -68,42 +68,45 @@ func _on_create_button_pressed():
 	create_archive(name, job)
 
 func create_archive(name: String, job: String):
-	var headers = [
-		"Content-Type: application/json",
-		"Authorization: Bearer %s" % Global.token
-	]
-	
+	if Global.current_save_slot < 1:
+		print("未选择存档槽位")
+		return
+
+	var headers = Global.auth_headers()
 	var body = JSON.stringify({
-		"name": name,
-		"job": job
+		"slot": Global.current_save_slot,
+		"character": job,
+		"data": JSON.stringify({"name": name}),
+		"level": "神霄",
+		"play_time": 0
 	})
-	
-	var url = "http://localhost:7070/api/v1/users/archive"
+
+	var url = Global.api_url("/api/saves")
 	create_request.request(url, headers, HTTPClient.METHOD_POST, body)
 
 func _on_create_request_request_completed(result, response_code, headers, body):
-	if response_code != 200:
+	if response_code != 200 and response_code != 201:
 		print("创建存档失败，状态码:", response_code)
 		var json = JSON.parse_string(body.get_string_from_utf8())
-		if json and json.has("msg"):
-			print("错误信息:", json.msg)
+		if json and json.has("error"):
+			print("错误信息:", json.error)
 		return
-	
+
 	var json = JSON.parse_string(body.get_string_from_utf8())
 	if json == null:
 		print("解析 JSON 失败")
 		return
-	
-	if json.code != 200:
-		print("创建存档失败:", json.msg)
+
+	if not json.has("save"):
+		print("创建存档失败: 响应缺少 save 字段")
 		return
-	
-	# 创建成功
-	var archive = json.data
-	Global.current_character_id = archive.id
-	print("存档创建成功，ID:", archive.id)
-	
-	# 关闭面板并进入游戏
+
+	var save = json.save
+	Global.current_character_id = int(save.id)
+	Global.selected_character = save.character
+	Global.just_entered_shenxiao = true
+	print("存档创建成功，ID:", save.id)
+
 	hide_panel()
 	Global.load_scene("res://scenes/levels/Shenxiao.tscn")
 

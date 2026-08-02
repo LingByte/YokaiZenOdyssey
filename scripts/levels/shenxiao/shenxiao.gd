@@ -26,11 +26,10 @@ func toggle_backpack():
 	packPanel.visible = not packPanel.visible
 
 func send_heartbeat():
-	var headers = [
-		"Content-Type: application/json",
-		"Authorization: Bearer %s" % Global.token
-	]
-	var url = "http://localhost:7070/api/v1/users/ping"
+	if Global.token.is_empty():
+		return
+	var headers = Global.auth_headers()
+	var url = Global.api_url("/api/users/ping")
 	heartbeat_request.request(url, headers, HTTPClient.METHOD_POST)
 
 func show_pack_panel():

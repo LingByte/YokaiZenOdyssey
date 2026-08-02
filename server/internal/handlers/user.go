@@ -251,6 +251,20 @@ func (h *UserHandler) DeleteUser(c *gin.Context) {
 	})
 }
 
+// Ping 心跳检测（验证 token 是否有效）
+func (h *UserHandler) Ping(c *gin.Context) {
+	userID, exists := c.Get("user_id")
+	if !exists {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "未授权"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"ok":      true,
+		"user_id": userID,
+	})
+}
+
 // ListUsers 获取用户列表
 func (h *UserHandler) ListUsers(c *gin.Context) {
 	page, _ := strconv.Atoi(c.DefaultQuery("page", "1"))
@@ -307,6 +321,7 @@ func (h *UserHandler) RegisterRoutes(r *gin.Engine) {
 		users := api.Group("/users")
 		users.Use(middleware.JWTMiddleware())
 		{
+			users.POST("/ping", h.Ping)
 			users.GET("", h.ListUsers)
 			users.GET("/:id", h.GetUserByID)
 			users.PUT("/:id", h.UpdateUser)

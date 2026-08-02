@@ -1,6 +1,8 @@
 # Global.gd
 extends Node
 
+const API_BASE := "http://localhost:8080"
+
 var token: String = ""
 var is_logged_in: bool = false
 var current_character_id: int = -1
@@ -12,6 +14,19 @@ var just_entered_shenxiao: bool = false  # 标记是否刚进入神霄场景
 
 func _ready():
 	_load_saved_data()
+
+func api_url(path: String) -> String:
+	if path.begins_with("/"):
+		return API_BASE + path
+	return API_BASE + "/" + path
+
+func auth_headers(extra: Array = []) -> PackedStringArray:
+	var headers: PackedStringArray = ["Content-Type: application/json"]
+	if not token.is_empty():
+		headers.append("Authorization: Bearer %s" % token)
+	for h in extra:
+		headers.append(h)
+	return headers
 
 func load_scene(path: String):
 	var loader = preload("res://scenes/system/GlobalLoading.tscn").instantiate()

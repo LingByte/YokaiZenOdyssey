@@ -14,7 +14,6 @@ Thumbs.db
 
 # Godot-generated binaries
 *.translation
-*.godot
 
 # Cache and log
 *.log

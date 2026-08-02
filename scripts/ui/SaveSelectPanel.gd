@@ -54,8 +54,8 @@ func _fetch_save_games():
 		print("[SaveSelectPanel] 未登录，无法获取存档")
 		return
 	
-	var headers = ["Content-Type: application/json", "Authorization: Bearer " + Global.token]
-	var url = "http://localhost:8080/api/saves"
+	var headers = Global.auth_headers()
+	var url = Global.api_url("/api/saves")
 	
 	print("[SaveSelectPanel] 获取存档数据...")
 	var error = http_request.request(url, headers, HTTPClient.METHOD_GET)

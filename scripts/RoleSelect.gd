@@ -66,8 +66,8 @@ func _on_confirm_selected():
 		"play_time": 0
 	}
 	var json = JSON.stringify(body)
-	var headers = ["Content-Type: application/json", "Authorization: Bearer " + Global.token]
-	var url = "http://localhost:8080/api/saves"
+	var headers = Global.auth_headers()
+	var url = Global.api_url("/api/saves")
 	
 	print("[RoleSelect] 创建存档请求: ", json)
 	
