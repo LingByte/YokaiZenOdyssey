@@ -1,48 +1,58 @@
 extends Node2D
+## 通关出口：默认隐藏，清怪后由 LevelRuntimeHelper 调用 show_exit()
+## 玩家站在出口按 W (move_up) 进入结算
 
-@onready var area = $ExitArea
-@onready var sprite = $AnimatedSprite2D  # 或 Sprite2D
-@onready var player = null
-var active = false
-var player_on_exit = false
+@onready var area: Area2D = $ExitArea
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-func _ready():
-	area.body_entered.connect(_on_exit_area_body_entered)
-	area.body_exited.connect(_on_exit_area_body_exited)
+var active: bool = false
+var player_on_exit: bool = false
+
+func _ready() -> void:
+	if area:
+		area.collision_layer = 0
+		area.collision_mask = 2 # 玩家层
+		area.monitoring = false
+		area.monitorable = false
+		if not area.body_entered.is_connected(_on_exit_area_body_entered):
+			area.body_entered.connect(_on_exit_area_body_entered)
+		if not area.body_exited.is_connected(_on_exit_area_body_exited):
+			area.body_exited.connect(_on_exit_area_body_exited)
 	hide_exit()
-	show_exit()
 
-# 调用这个函数让出口出现（外部触发）
-func show_exit():
+func show_exit() -> void:
 	visible = true
-	area.monitoring = true
-	sprite.visible = true
+	if sprite:
+		sprite.visible = true
+		if sprite.sprite_frames and sprite.sprite_frames.has_animation(&"default"):
+			sprite.play(&"default")
+	if area:
+		area.monitoring = true
 	active = true
+	print("[LevelExit] 出口已开启")
 
-func hide_exit():
+func hide_exit() -> void:
 	visible = false
-	area.monitoring = false
-	sprite.visible = false
+	if sprite:
+		sprite.visible = false
+	if area:
+		area.monitoring = false
 	active = false
+	player_on_exit = false
 
-# 玩家进入出口区域
-func _on_exit_area_body_entered(body):
-	print("出发了碰撞")
-	if body.is_in_group("player"):
-		print("碰到了")
+func _on_exit_area_body_entered(body: Node) -> void:
+	if body != null and body.is_in_group("player"):
 		player_on_exit = true
-		player = body
 
-func _on_exit_area_body_exited(body):
-	print("出发了离开")
-	if body.is_in_group("player"):
-		print("离开了")
+func _on_exit_area_body_exited(body: Node) -> void:
+	if body != null and body.is_in_group("player"):
 		player_on_exit = false
-		player = null
 
-func _process(delta):
-	if active and player_on_exit and Input.is_action_just_pressed("move_up"):  # "move_up" 绑定 W
-		change_scene()
+func _process(_delta: float) -> void:
+	if active and player_on_exit and Input.is_action_just_pressed("move_up"):
+		_go_settle()
 
-func change_scene():
-	Global.load_scene("res://scenes/levels/Shenxiao.tscn")  # 或你目标场景路径
+func _go_settle() -> void:
+	# 结算数据由 LevelRuntimeHelper 维护在 Global
+	Global.finalize_level_settle()
+	Global.load_scene("res://scenes/SettleUp.tscn")

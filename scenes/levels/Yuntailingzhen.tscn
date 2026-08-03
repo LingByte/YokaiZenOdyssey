@@ -184,7 +184,7 @@ offset_bottom = 720.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_pack_panel")
 
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=2044743475]
-position = Vector2(234, 175)
+position = Vector2(280, 640)
 
 [node name="BasePlayer" parent="." unique_id=1084437226 groups=["player"] instance=ExtResource("4_abc12")]
 visible = false
@@ -665,3 +665,18 @@ stretch_mode = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=788156803]
 position = Vector2(5069.75, 693)
 shape = SubResource("RectangleShape2D_01o5n")
+
+[node name="EnemySpawnContainer" type="Node2D" parent="."]
+
+[node name="SpawnPoint1" type="Marker2D" parent="EnemySpawnContainer"]
+position = Vector2(520, 560)
+
+[node name="SpawnPoint2" type="Marker2D" parent="EnemySpawnContainer"]
+position = Vector2(780, 520)
+
+[node name="SpawnPoint3" type="Marker2D" parent="EnemySpawnContainer"]
+position = Vector2(1100, 540)
+
+[node name="SpawnPoint4" type="Marker2D" parent="EnemySpawnContainer"]
+position = Vector2(1500, 500)
+

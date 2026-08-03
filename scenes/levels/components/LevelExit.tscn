@@ -1,0 +1,81 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="Script" path="res://scripts/levels/shenxiao/LevelExit.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://d2u3p6thx6i4j" path="res://assets/level/shenxiao/exit_common.png" id="2_tex"]
+
+[sub_resource type="AtlasTexture" id="Atlas_0"]
+atlas = ExtResource("2_tex")
+region = Rect2(0, 0, 226, 55)
+
+[sub_resource type="AtlasTexture" id="Atlas_1"]
+atlas = ExtResource("2_tex")
+region = Rect2(0, 55, 226, 55)
+
+[sub_resource type="AtlasTexture" id="Atlas_2"]
+atlas = ExtResource("2_tex")
+region = Rect2(0, 110, 226, 55)
+
+[sub_resource type="AtlasTexture" id="Atlas_3"]
+atlas = ExtResource("2_tex")
+region = Rect2(0, 165, 226, 55)
+
+[sub_resource type="AtlasTexture" id="Atlas_4"]
+atlas = ExtResource("2_tex")
+region = Rect2(0, 220, 226, 55)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_exit"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Atlas_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape_exit"]
+radius = 20.0
+height = 140.0
+
+[node name="LevelExit" type="Node2D"]
+visible = false
+script = ExtResource("1_script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9974, 649)
+sprite_frames = SubResource("SpriteFrames_exit")
+animation = &"default"
+autoplay = "default"
+
+[node name="ExitArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea"]
+position = Vector2(9974, 645)
+rotation = 1.5708
+shape = SubResource("CapsuleShape_exit")
