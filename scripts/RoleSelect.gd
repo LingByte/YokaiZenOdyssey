@@ -58,10 +58,11 @@ func _on_confirm_selected():
 		return
 	
 	# 创建存档请求
+	var progress = Global.default_player_progress()
 	var body = {
 		"slot": Global.current_save_slot,
 		"character": selected_character,
-		"data": "",
+		"data": JSON.stringify(progress),
 		"level": "神霄",
 		"play_time": 0
 	}
@@ -99,6 +100,16 @@ func _on_request_completed(result, response_code, headers, body):
 	
 	# 保存角色选择到全局变量
 	Global.selected_character = selected_character
+	if typeof(response) == TYPE_DICTIONARY and response.has("save"):
+		Global.current_save_data = response["save"]
+	else:
+		Global.current_save_data = {
+			"slot": Global.current_save_slot,
+			"character": selected_character,
+			"data": JSON.stringify(Global.default_player_progress()),
+			"level": "神霄",
+			"play_time": 0,
+		}
 	
 	# 设置刚进入神霄场景的标志
 	Global.just_entered_shenxiao = true

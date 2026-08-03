@@ -2,11 +2,14 @@
 extends "res://characters/player/base/BasePlayer.gd"
 
 func _ready():
-	# 调用基类初始化
-	super._ready()
-	# 可以自定义自己的初始血量或速度
-	max_health = 150
+	base_max_health = 160
+	base_max_mana = 100
+	base_attack_damage = 14
+	base_defense = 6
+	attack_per_level = 3
+	defense_per_level = 3
 	speed = 300.0
+	super._ready()
 
 func handle_input(delta):
 	var input_vector = Vector2.ZERO

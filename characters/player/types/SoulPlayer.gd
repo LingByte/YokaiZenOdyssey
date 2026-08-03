@@ -8,11 +8,16 @@ const FLIP_ROTATION_DURATION := 0.38
 var _flip_tween: Tween
 
 func _ready():
-	super._ready()
-	max_health = 150
+	base_max_health = 150
+	base_max_mana = 120
+	base_attack_damage = 18
+	base_defense = 2
+	attack_per_level = 5
+	defense_per_level = 2
 	speed = 300.0
 	max_jumps = 2
 	double_jump_force = -440.0
+	super._ready()
 	if sprite:
 		if not sprite.animation_changed.is_connected(_on_sprite_animation_changed):
 			sprite.animation_changed.connect(_on_sprite_animation_changed)
