@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="PackedScene" path="res://characters/enemies/base/BaseEnemy.tscn" id="1_base"]
+[ext_resource type="Script" path="res://characters/enemies/types/Enemy01.gd" id="2_script"]
+[ext_resource type="Texture2D" uid="uid://clhs60gucwktb" path="res://assets/sprites/enemies/enemy_right.png" id="3_tex"]
+
+[sub_resource type="AtlasTexture" id="Atlas_fly_0"]
+atlas = ExtResource("3_tex")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="Atlas_fly_1"]
+atlas = ExtResource("3_tex")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="Atlas_fly_2"]
+atlas = ExtResource("3_tex")
+region = Rect2(0, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="Atlas_fly_3"]
+atlas = ExtResource("3_tex")
+region = Rect2(128, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="Atlas_fly_4"]
+atlas = ExtResource("3_tex")
+region = Rect2(128, 128, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_enemy01"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Atlas_fly_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_fly_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_fly_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_fly_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_fly_4")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Atlas_fly_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_fly_1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}]
+
+[node name="Enemy01" instance=ExtResource("1_base")]
+script = ExtResource("2_script")
+max_health = 40
+move_speed = 90.0
+chase_speed = 150.0
+contact_damage = 12
+exp_reward = 30
+patrol_range = 180.0
+detect_range = 420.0
+attack_range = 80.0
+bob_amplitude = 12.0
+bob_speed = 2.6
+flying = true
+can_chase = true
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_enemy01")
+animation = &"fly"
+autoplay = "fly"
